@@ -1,0 +1,66 @@
+.footer {
+  background: #ffffff;
+  color: #374151;
+  padding-top: 0;
+}
+
+/* Red accent line */
+.footer-top-line {
+  height: 2px;
+  background: #dc2626; /* red */
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 50px 20px 30px;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 40px;
+}
+
+.footer-left h3 {
+  font-size: 22px;
+  color: #111827;
+  margin-bottom: 12px;
+}
+
+.footer-left p {
+  font-size: 14px;
+  line-height: 1.7;
+  max-width: 380px;
+}
+
+.footer-links h4,
+.footer-contact h4 {
+  font-size: 15px;
+  margin-bottom: 14px;
+  color: #111827;
+}
+
+.footer-links a {
+  display: block;
+  font-size: 14px;
+  color: #4b5563;
+  text-decoration: none;
+  margin-bottom: 8px;
+  transition: 0.2s;
+}
+
+.footer-links a:hover {
+  color: #dc2626;
+}
+
+.footer-contact p {
+  font-size: 14px;
+  margin-bottom: 6px;
+  color: #4b5563;
+}
+
+.footer-bottom {
+  text-align: center;
+  font-size: 13px;
+  color: #6b7280;
+  padding: 15px 20px;
+  border-top: 1px solid #e5e7eb;
+}

@@ -1,28 +1,30 @@
 import React from "react";
 import "./HeroSection.css";
 
-export default function HeroSection() {
+const HeroSection = ({ heroData }) => {
+  if (!heroData) return null; // safety check
+
   return (
     <section className="hero-container">
       {/* Background Video */}
       <video
         className="hero-video"
-        src="/AI.mp4" // place video inside public folder
+        src={heroData.video}
         autoPlay
         loop
         muted
         playsInline
-      ></video>
+      />
 
       {/* Overlay */}
-      <div className="hero-overlay"></div>
+      <div className="hero-overlay0"></div>
 
       {/* Content */}
       <div className="hero-content">
-        <h1>AI-Powered Automation for Every Decision</h1>
-        {/* <p>Your subheading text goes here. Describe something attractive.</p>
-        <button>Explore More</button> */}
+        <h1>{heroData.heading}</h1>
       </div>
     </section>
   );
-}
+};
+
+export default HeroSection;

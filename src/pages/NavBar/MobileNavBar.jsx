@@ -1,31 +1,31 @@
 import React from "react";
 import "./MobileNavBar.css";
 
-const MobileNavBar = ({ close }) => {
+const MobileNavBar = ({ data, close }) => {
   return (
     <div className="mobile-overlay">
       <div className="mobile-nav">
 
-        {/* Header */}
+        {/* Header – ONLY Close Button */}
         <div className="mobile-header">
-          <div className="logo">A</div>
-
-          <div className="header-icons">
-            <button className="close-btn" onClick={close}>✕</button>
-            <span className="menu-icon">☰</span>
-          </div>
+          <button className="close-btn" onClick={close}>✕</button>
         </div>
 
-        {/* Menu */}
-        <ul>
-          <li>Projects <span>›</span></li>
-          <li>Services <span>›</span></li>
-          <li>Industries <span>›</span></li>
-          <li>Technologies <span>›</span></li>
-          <li>About Us</li>
-          <li>Blog</li>
-          <li>Career</li>
-          <li className="contact-mobile">Contact Us</li>
+        {/* Menu List */}
+        <ul className="mobile-menu">
+          {data.menu.map((item, index) => (
+            <li key={index}>
+              <a href={item.link}>
+                {item.name} <span>›</span>
+              </a>
+            </li>
+          ))}
+
+          <li className="contact-mobile">
+            <a href={data.contact.link}>
+              {data.contact.text}
+            </a>
+          </li>
         </ul>
 
       </div>

@@ -1,0 +1,137 @@
+{
+  "0": {
+    "page": "navbar",
+    "logo": "/logo.png",
+    "company": "Palantir",
+    "menu": [
+      { "name": "Home", "link": "/" },
+      { "name": "Projects", "link": "/projects" },
+      { "name": "Services", "link": "/services" },
+      { "name": "Industries", "link": "/industries" },
+      { "name": "Technologies", "link": "/technologies" },
+      { "name": "About Us", "link": "/about" },
+      { "name": "Blog", "link": "/blog" },
+      { "name": "Career", "link": "/career" }
+    ],
+    "contact": {
+      "text": "Contact Us",
+      "link": "/contact"
+    }
+  },
+
+  "1": {
+    "page": "homepage",
+
+    "heroSection": {
+      "video": "/AI.mp4",
+      "heading": "AI-Powered Automation for Every Decision"
+    },
+
+    "aboutCompany": {
+      "mainHeading": "About Company",
+      "subHeading": "We are a professionally managed company delivering high-quality infrastructure solutions. Our focus is on safety, innovation, and timely project execution across multiple sectors.",
+      "call": {
+        "text": "Call Us Now",
+        "link": "tel:+919987549712"
+      },
+      "cards": [
+        {
+          "image": "https://images.unsplash.com/photo-1503387762-592deb58ef4e",
+          "title": "Strong Foundation",
+          "description": "We build projects with a strong technical foundation, ensuring durability and long-term value."
+        },
+        {
+          "image": "https://images.unsplash.com/photo-1521791136064-7986c2920216",
+          "title": "Expert Team",
+          "description": "Our experienced engineers and managers ensure quality control and precision in every phase."
+        },
+        {
+          "image": "https://images.unsplash.com/photo-1509395176047-4a66953fd231",
+          "title": "Timely Delivery",
+          "description": "We follow strict timelines and project planning to deliver projects on schedule."
+        },
+        {
+          "image": "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab",
+          "title": "Modern Technology",
+          "description": "We use modern tools and construction technology to improve efficiency and safety."
+        },
+        {
+          "image": "https://images.unsplash.com/photo-1497366754035-f200968a6e72",
+          "title": "Client Satisfaction",
+          "description": "Customer trust and satisfaction are at the core of everything we do."
+        }
+      ]
+    },
+
+    "companySafetyCard": {
+      "page": "CompanySafetyCard",
+      "id": "2",
+      "Title": "Company Safety Cards",
+      "cards": [
+        {
+          "id": 1,
+          "title": "Inspections & Audits",
+          "icon": "fa-solid fa-clipboard-list",
+          "imageSrc": "https://media.giphy.com/media/xT9IgG50Fb7Mi0prBC/giphy.gif",
+          "rightHeading": "Run your field safety inspections on any device",
+          "checklist": [
+            "Schedule and track inspections",
+            "Create safety tasks and raise hazards",
+            "Customize your own or choose from our library of compliance checklists"
+          ],
+          "buttonLabel": "Learn more"
+        },
+        {
+          "id": 2,
+          "title": "Safety Meetings",
+          "icon": "fa-solid fa-users",
+          "imageSrc": "https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif",
+          "rightHeading": "Schedule and track your safety meetings and toolbox talks",
+          "checklist": [
+            "Track attendance and topics covered",
+            "Identify training needs with our powerful analytics",
+            "Choose from 100s of templates, forms, and topics"
+          ],
+          "buttonLabel": "Learn more"
+        },
+        {
+          "id": 3,
+          "title": "Incident Reporting",
+          "icon": "fa-regular fa-file-alt",
+          "imageSrc": "https://media.giphy.com/media/111ebonMs90YLu/giphy.gif",
+          "rightHeading": "Report incidents easily",
+          "checklist": [
+            "Quickly report and manage workplace incidents",
+            "Prevent future occurrences",
+            "Stay compliant with industry standards"
+          ],
+          "buttonLabel": "Learn more"
+        },
+        {
+          "id": 4,
+          "title": "Hazard Management",
+          "icon": "fa-solid fa-exclamation-triangle",
+          "imageSrc": "https://media.giphy.com/media/3oEduSbSGpGaRX2Vri/giphy.gif",
+          "rightHeading": "Manage hazards effectively",
+          "checklist": [
+            "Identify, assess, and control hazards",
+            "Mitigate risks before they cause harm",
+            "Maintain a safe work environment"
+          ],
+          "buttonLabel": "Learn more"
+        }
+      ]
+    },
+
+    "heroAboutUs": {
+      "heading": "Our Mission: <span class='highlight'>Empower</span> everyone to be a safety champion",
+      "description1": "In 2014, our three founders lost a mutual friend in a workplace accident. The incident sparked an interest in streamlining workplace safety.",
+      "description2": "Today, thousands of companies worldwide trust Safesite, a powerful, easy-to-use safety management solution proven to cut incident rates in half.",
+      "quote": "With Safesite, we were able to achieve an 84% reduction in recordable incident rate and a 100% reduction in lost time incident rate.",
+      "name": "Derek Smith",
+      "title": "JR Cruz New York, NY",
+      "image": "/girl1.jpg",
+      "backgroundImage": "/banner-watermark.svg"
+    }
+  }
+}

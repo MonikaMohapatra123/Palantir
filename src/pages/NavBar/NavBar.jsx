@@ -1,44 +1,47 @@
 import React, { useState } from "react";
 import "./NavBar.css";
 import MobileNavBar from "./MobileNavBar";
+import data from "../../Json/data.json";
 
 const NavBar = () => {
   const [openMobile, setOpenMobile] = useState(false);
+  const navbar = data["0"]; // ✅ ID based
 
   return (
     <>
       <header className="navbar">
         {/* Left: Logo */}
         <div className="nav-left">
-          <div className="logo">A</div>
+          <img src={navbar.logo} alt="logo" className="logo" />
         </div>
 
         {/* Center: Desktop Links */}
         <nav className="nav-links">
-          <a href="#">Home</a>
-          <a href="#">Projects</a>
-          <a href="#">Services</a>
-          <a href="#">Industries</a>
-          <a href="#">Technologies</a>
-          <a href="#">About Us</a>
-          <a href="#">Blog</a>
-          <a href="#">Career</a>
+          {navbar.menu.map((item, index) => (
+            <a key={index} href={item.link}>
+              {item.name}
+            </a>
+          ))}
         </nav>
 
-        {/* Right: Contact button (desktop) + Hamburger (mobile) */}
+        {/* Right */}
         <div className="nav-right">
-          <button className="contact-btn">Contact Us</button>
+          <a href={navbar.contact.link} className="contact-btn">
+            {navbar.contact.text}
+          </a>
 
-          <button
-            className="menu-btn"
-            onClick={() => setOpenMobile(true)}
-          >
+          <button className="menu-btn" onClick={() => setOpenMobile(true)}>
             ☰
           </button>
         </div>
       </header>
 
-      {openMobile && <MobileNavBar close={() => setOpenMobile(false)} />}
+      {openMobile && (
+        <MobileNavBar
+          data={navbar}
+          close={() => setOpenMobile(false)}
+        />
+      )}
     </>
   );
 };

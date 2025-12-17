@@ -1,19 +1,3 @@
-// import React from 'react'
-// import HeroSection from '../../components/HeroSection/HeroSection'
-// import HeroSlider from '../../components/HeroSlider/HeroSlider'
-// import AboutCompany from '../../components/AboutCompany/AboutCompany'
-// import JoinOurTeam from '../../components/JoinOurTeam/JoinOurTeam'
-
-// const Home = () => {
-//   return (
-//     <div>
-//         <HeroSection/>
-//         {/* <HeroSlider/> */}
-//         <AboutCompany/>
-//         <JoinOurTeam/>
-//     </div>
-//   )
-// }
 
 import React from "react";
 import HeroSection from "../../components/HeroSection/HeroSection";

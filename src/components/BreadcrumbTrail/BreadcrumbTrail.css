@@ -1,0 +1,108 @@
+.breadcrumb-container {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #fff;
+  z-index: 20;
+}
+
+/* Breadcrumb wrapper */
+.breadcrumb-trail {
+  position: relative;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 800;
+  color: #fff;
+  padding: 20px 50px;
+  border-radius: 40px;
+  display: inline-block;
+  backdrop-filter: blur(4px);
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.breadcrumb-link,
+.breadcrumb-link:visited,
+.breadcrumb-link:active,
+.breadcrumb-link:hover,
+.breadcrumb-link:focus {
+  color: #fff !important;     /* Custom orange */
+  text-decoration: none !important;  /* No underline ever */
+  font-size: 20px;
+  font-weight: 700;
+  transition: color 0.3s ease;
+}
+
+
+.breadcrumb-link:hover {
+  color: #f16522 !important;
+  text-decoration: none !important;
+}
+
+
+/* Current page (not a link) */
+.breadcrumb-current {
+  color: #fff;
+  font-weight: 600;
+  font-size: 20px;
+  cursor: default;
+}
+
+
+@media screen and (max-width: 480px) {
+  /* Parent container should be height: 486px */
+.breadcrumb-container {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 20;
+  color: #fff;
+}
+
+/* Breadcrumb visual block */
+.breadcrumb-trail {
+  display: inline-block;
+  padding: 16px 36px;
+  font-size: 13px;
+  font-weight: 800;
+  text-align: center;
+  color: #fff;
+  border-radius: 36px;
+  backdrop-filter: blur(6px);
+  background: rgba(0, 0, 0, 0.25);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Links */
+.breadcrumb-link,
+.breadcrumb-link:visited,
+.breadcrumb-link:active,
+.breadcrumb-link:focus {
+  color: #fff !important;
+  text-decoration: none !important;
+  font-weight: 700;
+  font-size: 13px;
+  transition: color 0.3s ease;
+}
+
+.breadcrumb-link:hover {
+  color: #f16522 !important;
+}
+
+/* Current label */
+.breadcrumb-current {
+  color: #fff;
+  font-weight: 600;
+  font-size: 13px;
+  cursor: default;
+}
+
+/* Optional separator */
+.breadcrumb-section {
+  margin: 0 4px;
+  display: inline;
+  color: #ddd;
+}
+
+}

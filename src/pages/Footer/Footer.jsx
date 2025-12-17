@@ -31,8 +31,21 @@ const Footer = () => {
         </div>
       </div>
 
+      {/* Existing bottom */}
       <div className="footer-bottom">
         © {new Date().getFullYear()} Palantir. All rights reserved.
+      </div>
+
+      {/* ✅ NEW AXIOMOS LINE */}
+      <div className="footer-credit">
+        Website Designed & Maintained by{" "}
+        <a
+          href="https://axiomos.in/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          AXIOMOS
+        </a>
       </div>
     </footer>
   );

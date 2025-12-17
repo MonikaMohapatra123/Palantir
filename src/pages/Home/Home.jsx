@@ -34,9 +34,9 @@ const Home = () => {
       <AboutCompany aboutCompanyData={aboutCompanyData} />
   
       <AllCompanySafetyCard data={data["1"].companySafetyCard} />
-      
+         <HeroAboutUs data={homeData.heroAboutUs} />
       <JoinOurTeam />
-       <HeroAboutUs data={homeData.heroAboutUs} />
+    
     </div>
   );
 };

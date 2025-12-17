@@ -133,5 +133,22 @@
       "image": "/girl1.jpg",
       "backgroundImage": "/banner-watermark.svg"
     }
+  },
+  
+  "2": {
+    "page": "AboutHome",
+    "AboutUssubtitle": "Who We Are",
+    "AboutUstitle": "About",
+    "AboutUshighlight": "Us",
+    "AboutUsdescription": "We are a trusted infrastructure company delivering quality, safety, and innovation across projects. Our focus is on long-term value creation and sustainable development.",
+    "AboutUsimage": "/pic-2.jpg",
+
+    "Highlightssubtitle": "Why Choose Us",
+    "Highlightstitle": "Our",
+    "Highlightshighlight": "Highlights",
+    "Highlightsdescription": "With years of experience, skilled professionals, and a commitment to excellence, we ensure timely delivery and superior project execution.",
+    "Highlightsimage": "/pic-3.jpg"
   }
+
+
 }

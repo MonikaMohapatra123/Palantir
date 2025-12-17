@@ -2,11 +2,13 @@ import React from "react";
 import "./MobileNavBar.css";
 
 const MobileNavBar = ({ data, close }) => {
+  if (!data) return null;
+
   return (
     <div className="mobile-overlay">
       <div className="mobile-nav">
 
-        {/* Header – ONLY Close Button */}
+        {/* Header – Close Button */}
         <div className="mobile-header">
           <button className="close-btn" onClick={close}>✕</button>
         </div>
@@ -16,11 +18,13 @@ const MobileNavBar = ({ data, close }) => {
           {data.menu.map((item, index) => (
             <li key={index}>
               <a href={item.link}>
-                {item.name} <span>›</span>
+                <span>{item.name}</span>
+                <span className="arrow">›</span>
               </a>
             </li>
           ))}
 
+          {/* Contact */}
           <li className="contact-mobile">
             <a href={data.contact.link}>
               {data.contact.text}

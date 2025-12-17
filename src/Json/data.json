@@ -4,7 +4,7 @@
     "logo": "/logo.png",
     "company": "Palantir",
     "menu": [
-      { "name": "Home", "link": "/" },
+     
       { "name": "Projects", "link": "/projects" },
       { "name": "Services", "link": "/services" },
       { "name": "Industries", "link": "/industries" },

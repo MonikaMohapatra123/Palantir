@@ -6,33 +6,35 @@ import Home from "./pages/Home/Home";
 import About from "./pages/About/About";
 import Footer from "./pages/Footer/Footer";
 import Admin from "./pages/Admin/Admin";
-import AddProject from "./pages/AddProject/AddProject";
-import EditProject from "./pages/EditProject/EditProject";
-import AdminProjects from "./pages/AdminProject/AdminProjects";
+import AdminPages from "./pages/AdminPages/AdminPages";
+import AddPage from "./pages/AddPage/AddPage";
+import EditPage from "./pages/EditPage/EditPage";
+
 
 const App = () => {
   const location = useLocation();
 
-  // check if current route is admin
+  // hide navbar/footer for admin routes
   const isAdminRoute = location.pathname.startsWith("/admin");
 
   return (
     <>
-      {/* Show Navbar only if NOT admin */}
       {!isAdminRoute && <NavBar />}
 
       <Routes>
+        {/* Public Routes */}
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
-
-        {/* Admin Routes */}
-        <Route path="/admin" element={<Admin />} />
-        <Route path="/admin/projects" element={<AdminProjects />} />
-        <Route path="/admin/projects/add/:category" element={<AddProject />} />
-        <Route path="/admin/projects/edit/:category" element={<EditProject />} />
+       
+        {/* Admin Layout Route */}
+       
+         <Route path="/admin" element={<Admin/>}>
+        <Route path="pages" element={<AdminPages/>} />
+        <Route path="add" element={<AddPage/>} />
+        <Route path="edit/:id" element={<EditPage/>} />
+      </Route>
       </Routes>
 
-      {/* Show Footer only if NOT admin */}
       {!isAdminRoute && <Footer />}
     </>
   );

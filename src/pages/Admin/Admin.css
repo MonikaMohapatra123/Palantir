@@ -1,55 +1,17 @@
-/* Layout */
 .admin-layout {
-  min-height: 100vh;
-  background: #f4f6f9;
-  padding: 30px;
-  font-family: "Segoe UI", Tahoma, sans-serif;
+  padding: 20px;
 }
 
-/* Title */
-.admin-layout h1 {
-  font-size: 28px;
-  margin-bottom: 25px;
-  color: #2c3e50;
-}
-
-/* NAV GRID */
 .admin-nav {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
-  margin-bottom: 30px;
-}
-
-/* RECTANGLE BOX */
-.admin-nav a {
-  height: 110px;
-  background: #ffffff;
-  border-radius: 12px;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  gap: 20px;
+  margin-bottom: 20px;
+}
 
+.admin-nav a {
+  padding: 10px 16px;
+  background: #222;
+  color: white;
   text-decoration: none;
-  font-size: 18px;
-  font-weight: 600;
-  color: #34495e;
-
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
-  transition: all 0.3s ease;
+  border-radius: 6px;
 }
-
-/* Hover */
-.admin-nav a:hover {
-  background: #007bff;
-  color: #ffffff;
-  transform: translateY(-4px);
-}
-
-/* Content section */
-/* .admin-content {
-  background: #ffffff;
-  padding: 25px;
-  border-radius: 12px;
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
-} */

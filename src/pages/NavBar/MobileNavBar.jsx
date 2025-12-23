@@ -38,3 +38,4 @@ const MobileNavBar = ({ data, close }) => {
 };
 
 export default MobileNavBar;
+

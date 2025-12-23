@@ -1,21 +1,31 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./NavBar.css";
 import MobileNavBar from "./MobileNavBar";
 import data from "../../Json/data.json";
 
 const NavBar = () => {
   const [openMobile, setOpenMobile] = useState(false);
-  const navbar = data["0"]; // ✅ ID based
+  const [scrolled, setScrolled] = useState(false);
+  const navbar = data["0"]; // ID based
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 80);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <>
-      <header className="navbar">
+      <header className={`navbar ${scrolled ? "navbar-scrolled" : ""}`}>
         {/* Left: Logo */}
         <div className="nav-left">
           <img src={navbar.logo} alt="logo" className="logo" />
         </div>
 
-        {/* Center: Desktop Links */}
+        {/* Center: Desktop Menu */}
         <nav className="nav-links">
           {navbar.menu.map((item, index) => (
             <a key={index} href={item.link}>
@@ -37,10 +47,7 @@ const NavBar = () => {
       </header>
 
       {openMobile && (
-        <MobileNavBar
-          data={navbar}
-          close={() => setOpenMobile(false)}
-        />
+        <MobileNavBar data={navbar} close={() => setOpenMobile(false)} />
       )}
     </>
   );

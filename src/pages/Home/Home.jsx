@@ -5,7 +5,10 @@ import AboutCompany from "../../components/AboutCompany/AboutCompany";
 import JoinOurTeam from "../../components/JoinOurTeam/JoinOurTeam";
 import data from "../../Json/data.json";
 import AllCompanySafetyCard from "../../components/AllCompanySafetyCard/AllCompanySafetyCard";
+
 import HeroAboutUs from "../../components/HeroAboutUs/HeroAboutUs";
+import PremiumHomeSection from "../../components/PremiumHomeSection/PremiumHomeSection";
+import HighlightHero from "../../components/HighlightHero/HighlightHero";
 
 const Home = () => {
   const heroData = data["1"]?.heroSection;
@@ -18,7 +21,11 @@ const Home = () => {
       <AboutCompany aboutCompanyData={aboutCompanyData} />
   
       <AllCompanySafetyCard data={data["1"].companySafetyCard} />
+      
+
          <HeroAboutUs data={homeData.heroAboutUs} />
+         <PremiumHomeSection/>
+         <HighlightHero/>
       <JoinOurTeam />
     
     </div>

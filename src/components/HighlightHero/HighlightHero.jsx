@@ -2,7 +2,7 @@ import "./HighlightHero.css";
 
 const HighlightHero = () => {
   return (
-    <section className="highlight">
+    <section className="highlight1">
       <div className="highlight-box">
         <h1>
           Smart <span>Design</span> <br /> Real <span>Impact</span>

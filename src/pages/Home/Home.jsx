@@ -8,7 +8,7 @@ import AllCompanySafetyCard from "../../components/AllCompanySafetyCard/AllCompa
 
 import HeroAboutUs from "../../components/HeroAboutUs/HeroAboutUs";
 import PremiumHomeSection from "../../components/PremiumHomeSection/PremiumHomeSection";
-import HighlightHero from "../../components/HighlightHero/HighlightHero";
+
 
 const Home = () => {
   const heroData = data["1"]?.heroSection;
@@ -25,7 +25,7 @@ const Home = () => {
 
          <HeroAboutUs data={homeData.heroAboutUs} />
          <PremiumHomeSection/>
-         <HighlightHero/>
+      
       <JoinOurTeam />
     
     </div>

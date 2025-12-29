@@ -22,7 +22,6 @@ const Home = () => {
   
       <AllCompanySafetyCard data={data["1"].companySafetyCard} />
       
-
          <HeroAboutUs data={homeData.heroAboutUs} />
          <PremiumHomeSection/>
       

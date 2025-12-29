@@ -1,14 +1,13 @@
 {
-  "0": {
+   "0": {
     "page": "navbar",
     "logo": "/logo.png",
     "company": "Palantir",
     "menu": [
-     
-      { "name": "Projects", "link": "/projects" },
-      { "name": "Services", "link": "/services" },
-      { "name": "Industries", "link": "/industries" },
-      { "name": "Technologies", "link": "/technologies" },
+      { "name": "Projects", "pageType": "Projects", "dropdown": true },
+      { "name": "Services", "pageType": "Services", "dropdown": true },
+      { "name": "Industries", "pageType": "Industries", "dropdown": true },
+      { "name": "Technologies", "pageType": "Technologies", "dropdown": true },
       { "name": "About Us", "link": "/about" },
       { "name": "Blog", "link": "/blog" },
       { "name": "Career", "link": "/career" }

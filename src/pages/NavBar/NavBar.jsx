@@ -1,40 +1,87 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "./NavBar.css";
 import MobileNavBar from "./MobileNavBar";
+import axios from "axios";
 import data from "../../Json/data.json";
 
 const NavBar = () => {
-  const [openMobile, setOpenMobile] = useState(false);
+  const navbar = data["0"];
+
   const [scrolled, setScrolled] = useState(false);
-  const navbar = data["0"]; // ID based
+  const [openMobile, setOpenMobile] = useState(false);
+  const [dropdownData, setDropdownData] = useState({});
+  const [activeDropdown, setActiveDropdown] = useState(null);
 
+  // Scroll effect
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 80);
-    };
+    const onScroll = () => setScrolled(window.scrollY > 80);
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+  // Fetch dropdown data
+  useEffect(() => {
+    axios
+      .get("https://palantir-backend-phi.vercel.app/api/pages")
+      .then((res) => {
+        const grouped = {};
+        res.data.forEach((item) => {
+          if (!grouped[item.pageType]) grouped[item.pageType] = [];
+          grouped[item.pageType].push(item.category);
+        });
+        setDropdownData(grouped);
+      })
+      .catch((err) => console.log(err));
   }, []);
 
   return (
     <>
-      <header className={`navbar ${scrolled ? "navbar-scrolled" : ""}`}>
-        {/* Left: Logo */}
+      <header className={`navbar ${scrolled ? "scrolled" : ""}`}>
+        {/* LEFT */}
         <div className="nav-left">
-          <img src={navbar.logo} alt="logo" className="logo" />
+          <img src={navbar.logo} alt={navbar.company} />
         </div>
 
-        {/* Center: Desktop Menu */}
+        {/* DESKTOP MENU */}
         <nav className="nav-links">
-          {navbar.menu.map((item, index) => (
-            <a key={index} href={item.link}>
-              {item.name}
-            </a>
+          {navbar.menu.map((item) => (
+            <div
+              key={item.name}
+              className="dropdown"
+              onMouseEnter={() =>
+                item.dropdown && setActiveDropdown(item.pageType)
+              }
+              onMouseLeave={() => setActiveDropdown(null)}
+            >
+              {item.dropdown ? (
+                <>
+                  <span className="dropdown-title">{item.name}</span>
+
+                  {activeDropdown === item.pageType && (
+                    <div className="dropdown-menu">
+                      {(dropdownData[item.pageType] || []).map((cat, i) => (
+                        <a
+                          key={i}
+                          href={`/${item.pageType}/${cat
+                            .toLowerCase()
+                            .replace(/\s+/g, "-")}`}
+                        >
+                          {cat}
+                        </a>
+                      ))}
+                    </div>
+                  )}
+                </>
+              ) : (
+                <a href={item.link} className="nav-link">
+                  {item.name}
+                </a>
+              )}
+            </div>
           ))}
         </nav>
 
-        {/* Right */}
+        {/* RIGHT */}
         <div className="nav-right">
           <a href={navbar.contact.link} className="contact-btn">
             {navbar.contact.text}
@@ -46,8 +93,13 @@ const NavBar = () => {
         </div>
       </header>
 
+      {/* MOBILE NAV */}
       {openMobile && (
-        <MobileNavBar data={navbar} close={() => setOpenMobile(false)} />
+        <MobileNavBar
+          menu={navbar.menu}
+          dropdownData={dropdownData}
+          close={() => setOpenMobile(false)}
+        />
       )}
     </>
   );

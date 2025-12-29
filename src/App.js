@@ -8,6 +8,7 @@ import Admin from "./pages/Admin/Admin";
 import AdminPages from "./pages/AdminPages/AdminPages";
 import AddPage from "./pages/AddPage/AddPage";
 import EditPage from "./pages/EditPage/EditPage";
+import PageDetails from "./pages/PageDetails/PageDetails";
 
 
 const App = () => {
@@ -24,9 +25,9 @@ const App = () => {
         {/* Public Routes */}
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
-       
+         <Route path="/:pageType/:category" element={<PageDetails/>} />
         {/* Admin Layout Route */}
-       
+        
          <Route path="/admin" element={<Admin/>}>
         <Route path="pages" element={<AdminPages/>} />
         <Route path="add" element={<AddPage/>} />

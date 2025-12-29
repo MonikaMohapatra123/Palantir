@@ -1,41 +1,63 @@
-import React from "react";
-import "./MobileNavBar.css";
+import React, { useState } from "react";
+import "./NavBar.css";
 
-const MobileNavBar = ({ data, close }) => {
-  if (!data) return null;
+const MobileNavBar = ({ menu, dropdownData, close }) => {
+  const [openDropdown, setOpenDropdown] = useState(null);
 
   return (
-    <div className="mobile-overlay">
+    <div className="mobile-nav-overlay">
       <div className="mobile-nav">
-
-        {/* Header – Close Button */}
         <div className="mobile-header">
-          <button className="close-btn" onClick={close}>✕</button>
+          <span>Menu</span>
+          <button onClick={close}>✕</button>
         </div>
 
-        {/* Menu List */}
-        <ul className="mobile-menu">
-          {data.menu.map((item, index) => (
-            <li key={index}>
-              <a href={item.link}>
-                <span>{item.name}</span>
-                <span className="arrow">›</span>
-              </a>
-            </li>
+        <div className="mobile-menu">
+          {menu.map((item) => (
+            <div key={item.name} className="mobile-item">
+              {item.dropdown ? (
+                <>
+                  <div
+                    className="mobile-title"
+                    onClick={() =>
+                      setOpenDropdown(
+                        openDropdown === item.pageType
+                          ? null
+                          : item.pageType
+                      )
+                    }
+                  >
+                    {item.name}
+                    <span>▾</span>
+                  </div>
+
+                  {openDropdown === item.pageType && (
+                    <div className="mobile-dropdown">
+                      {(dropdownData[item.pageType] || []).map((cat, i) => (
+                        <a
+                          key={i}
+                          href={`/${item.pageType}/${cat
+                            .toLowerCase()
+                            .replace(/\s+/g, "-")}`}
+                          onClick={close}
+                        >
+                          {cat}
+                        </a>
+                      ))}
+                    </div>
+                  )}
+                </>
+              ) : (
+                <a href={item.link} onClick={close}>
+                  {item.name}
+                </a>
+              )}
+            </div>
           ))}
-
-          {/* Contact */}
-          <li className="contact-mobile">
-            <a href={data.contact.link}>
-              {data.contact.text}
-            </a>
-          </li>
-        </ul>
-
+        </div>
       </div>
     </div>
   );
 };
 
 export default MobileNavBar;
-

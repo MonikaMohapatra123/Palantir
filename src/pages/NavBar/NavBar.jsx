@@ -42,44 +42,8 @@ const NavBar = () => {
           <img src={navbar.logo} alt={navbar.company} />
         </div>
 
-        {/* DESKTOP MENU */}
-        <nav className="nav-links">
-          {navbar.menu.map((item) => (
-            <div
-              key={item.name}
-              className="dropdown"
-              onMouseEnter={() =>
-                item.dropdown && setActiveDropdown(item.pageType)
-              }
-              onMouseLeave={() => setActiveDropdown(null)}
-            >
-              {item.dropdown ? (
-                <>
-                  <span className="dropdown-title">{item.name}</span>
-
-                  {activeDropdown === item.pageType && (
-                    <div className="dropdown-menu">
-                      {(dropdownData[item.pageType] || []).map((cat, i) => (
-                        <a
-                          key={i}
-                          href={`/${item.pageType}/${cat
-                            .toLowerCase()
-                            .replace(/\s+/g, "-")}`}
-                        >
-                          {cat}
-                        </a>
-                      ))}
-                    </div>
-                  )}
-                </>
-              ) : (
-                <a href={item.link} className="nav-link">
-                  {item.name}
-                </a>
-              )}
-            </div>
-          ))}
-        </nav>
+        {/* CENTER (hidden like Palantir) */}
+        <nav className="nav-links" />
 
         {/* RIGHT */}
         <div className="nav-right">
@@ -87,13 +51,16 @@ const NavBar = () => {
             {navbar.contact.text}
           </a>
 
-          <button className="menu-btn" onClick={() => setOpenMobile(true)}>
+          <button
+            className="menu-btn"
+            onClick={() => setOpenMobile(true)}
+          >
             ☰
           </button>
         </div>
       </header>
 
-      {/* MOBILE NAV */}
+      {/* OVERLAY MENU */}
       {openMobile && (
         <MobileNavBar
           menu={navbar.menu}

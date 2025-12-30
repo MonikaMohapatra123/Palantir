@@ -7,11 +7,13 @@ const MobileNavBar = ({ menu, dropdownData, close }) => {
   return (
     <div className="mobile-nav-overlay">
       <div className="mobile-nav">
+        {/* HEADER */}
         <div className="mobile-header">
           <span>Menu</span>
           <button onClick={close}>✕</button>
         </div>
 
+        {/* MENU */}
         <div className="mobile-menu">
           {menu.map((item) => (
             <div key={item.name} className="mobile-item">
@@ -54,6 +56,11 @@ const MobileNavBar = ({ menu, dropdownData, close }) => {
               )}
             </div>
           ))}
+
+          {/* CONTACT BUTTON */}
+          <a href="/contact" className="mobile-contact" onClick={close}>
+            Contact
+          </a>
         </div>
       </div>
     </div>

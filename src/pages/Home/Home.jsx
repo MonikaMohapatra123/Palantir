@@ -19,8 +19,9 @@ const Home = () => {
   return (
     <div>
       <HeroSection heroData={heroData} />
-      <AboutCompany aboutCompanyData={aboutCompanyData} />
         <ThesisSection/>
+      <AboutCompany aboutCompanyData={aboutCompanyData} />
+      
       <AllCompanySafetyCard data={data["1"].companySafetyCard} />
       
          <HeroAboutUs data={homeData.heroAboutUs} />

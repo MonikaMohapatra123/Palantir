@@ -9,6 +9,11 @@ import AllCompanySafetyCard from "../../components/AllCompanySafetyCard/AllCompa
 import HeroAboutUs from "../../components/HeroAboutUs/HeroAboutUs";
 import PremiumHomeSection from "../../components/PremiumHomeSection/PremiumHomeSection";
 import ThesisSection from "../../components/ThesisSection/ThesisSection";
+import ScrollStory from "../../components/ScrollTextSection/ScrollTextSection";
+import ScrollTextStory from "../../components/ScrollTextSection/ScrollTextSection";
+import PartnerCards from "../../components/PartnerCards/PartnerCards";
+import ButtonGroup from "../../components/ButtonGroup/ButtonGroup";
+
 
 
 const Home = () => {
@@ -20,14 +25,18 @@ const Home = () => {
     <div>
       <HeroSection heroData={heroData} />
         <ThesisSection/>
-      <AboutCompany aboutCompanyData={aboutCompanyData} />
+        <ScrollTextStory/>
+        <JoinOurTeam />
+        <PartnerCards/>
+        <ButtonGroup/>
+   {/* <AboutCompany aboutCompanyData={aboutCompanyData} />
       
       <AllCompanySafetyCard data={data["1"].companySafetyCard} />
       
          <HeroAboutUs data={homeData.heroAboutUs} />
-         <PremiumHomeSection/>
+         <PremiumHomeSection/> */}
       
-      <JoinOurTeam />
+      
     
     </div>
   );

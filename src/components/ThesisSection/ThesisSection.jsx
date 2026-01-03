@@ -1,5 +1,6 @@
-import React, { useEffect, useRef, useState, useCallback } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./ThesisSection.css";
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 const thesisData = [
   {
@@ -13,115 +14,93 @@ const thesisData = [
     image: "/pic-2.jpg",
   },
   {
-    tag: "Working Intelligence",
-    title: "Operational Intelligence Systems",
+    tag: "Energy Security",
+    title: "Energy Security for the Future",
     image: "/pic-3.jpg",
   },
 ];
 
 const ThesisSection = () => {
-  const [index, setIndex] = useState(0);
-  const [offset, setOffset] = useState(0);
-  const [isDragging, setIsDragging] = useState(false);
-
   const sliderRef = useRef(null);
-  const startX = useRef(0);
-  const autoTimer = useRef(null);
+  const [activeIndex, setActiveIndex] = useState(0);
 
-  /* ---------------- AUTO SLIDE ---------------- */
-  const stopAutoSlide = useCallback(() => {
-    if (autoTimer.current) clearInterval(autoTimer.current);
+  /* AUTO SLIDE */
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveIndex((prev) =>
+        prev === thesisData.length - 1 ? 0 : prev + 1
+      );
+    }, 3200);
+
+    return () => clearInterval(interval);
   }, []);
 
-  const startAutoSlide = useCallback(() => {
-    stopAutoSlide();
-    autoTimer.current = setInterval(() => {
-      setIndex((prev) => (prev + 1) % thesisData.length);
-    }, 4000);
-  }, [stopAutoSlide]);
-
+  /* SCROLL */
   useEffect(() => {
-    startAutoSlide();
-    return stopAutoSlide;
-  }, [startAutoSlide, stopAutoSlide]);
+    if (!sliderRef.current) return;
 
-  /* ---------------- DRAG FUNCTIONS ---------------- */
-  const handleMouseDown = (e) => {
-    stopAutoSlide();
-    setIsDragging(true);
-    startX.current = e.clientX;
+    sliderRef.current.scrollTo({
+      left: sliderRef.current.offsetWidth * activeIndex,
+      behavior: "smooth",
+    });
+  }, [activeIndex]);
 
-    // Track mouse outside slider
-    window.addEventListener("mousemove", handleMouseMove);
-    window.addEventListener("mouseup", handleMouseUp);
+  /* ARROWS */
+  const prevSlide = () => {
+    setActiveIndex(
+      activeIndex === 0 ? thesisData.length - 1 : activeIndex - 1
+    );
   };
 
-  const handleMouseMove = (e) => {
-    if (!isDragging) return;
-    setOffset(e.clientX - startX.current);
-  };
-
-  const handleMouseUp = () => {
-    if (!isDragging) return;
-
-    const sliderWidth = sliderRef.current.offsetWidth;
-
-    if (offset < -sliderWidth / 4) {
-      setIndex((prev) => (prev + 1) % thesisData.length);
-    } else if (offset > sliderWidth / 4) {
-      setIndex((prev) =>
-        prev === 0 ? thesisData.length - 1 : prev - 1
-      );
-    }
-
-    setOffset(0);
-    setIsDragging(false);
-    startAutoSlide();
-
-    window.removeEventListener("mousemove", handleMouseMove);
-    window.removeEventListener("mouseup", handleMouseUp);
+  const nextSlide = () => {
+    setActiveIndex(
+      activeIndex === thesisData.length - 1 ? 0 : activeIndex + 1
+    );
   };
 
   return (
-    <div className="thesis-container">
-      {/* ---------------- TABS ---------------- */}
-      <div className="tags-row">
-        {thesisData.map((item, i) => (
-          <div
-            key={i}
-            className={`tab ${index === i ? "active running" : ""}`}
-            onClick={() => setIndex(i)}
+    <section className="thesis-section">
+      {/* TABS */}
+      <div className="thesis-tabs">
+        {thesisData.map((item, index) => (
+          <button
+            key={index}
+            className={index === activeIndex ? "active" : ""}
+            onClick={() => setActiveIndex(index)}
           >
-            <span className="tab-text">{item.tag}</span>
-          </div>
+            <span>{item.tag}</span>
+          </button>
         ))}
       </div>
 
-      {/* ---------------- IMAGE SLIDER ---------------- */}
-      <div
-        className="thesis-image-slider"
-        ref={sliderRef}
-        onMouseDown={handleMouseDown}
-      >
-        {/* TITLE OVER IMAGE */}
-        <div className="image-title">
-          <h1>{thesisData[index].title} ↗</h1>
-        </div>
+      {/* SLIDER */}
+      <div className="thesis-slider-wrapper">
+        <button className="nav-arrow left" onClick={prevSlide}>
+          <FaChevronLeft />
+        </button>
 
-        <div
-          className="image-track"
-          style={{
-            transform: `translateX(calc(-${index * 100}% + ${offset}px))`,
-            transition: isDragging ? "none" : "transform 0.6s ease",
-          }}
-        >
-          {thesisData.map((item, i) => (
-            <img key={i} src={item.image} alt="" draggable="false" />
+        <div className="thesis-slider" ref={sliderRef}>
+          {thesisData.map((item, index) => (
+            <div className="thesis-slide" key={index}>
+              <img src={item.image} alt={item.title} />
+              <div className="thesis-overlay">
+                <span className="thesis-count">18 THESES</span>
+                <h2>{item.title}</h2>
+                <div className="thesis-actions">
+                  <button className="outline">PDF ↓</button>
+                  <button className="outline">SHARE →</button>
+                </div>
+              </div>
+            </div>
           ))}
         </div>
+
+        <button className="nav-arrow right" onClick={nextSlide}>
+          <FaChevronRight />
+        </button>
       </div>
-    </div>
-  )
+    </section>
+  );
 };
 
 export default ThesisSection;

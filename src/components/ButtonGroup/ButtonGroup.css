@@ -1,0 +1,58 @@
+.button-group {
+  width: 100%;
+  display: flex;
+
+}
+
+.btn {
+  flex: 1;
+  height: 100px;
+  border: none;
+  /* border-radius: 12px; */
+  font-size: 30px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 48px;
+  cursor: pointer;
+  background: none;
+  margin-bottom: 40px;
+  padding: 70px;
+}
+
+/* Left Button */
+.btn-light {
+  background-color: #e6e6e6;
+  color: #111;
+}
+
+/* Right Button */
+.btn-dark {
+  background-color: #1f2424;
+  color: #fff;
+}
+
+/* Arrow - NO background */
+.arrow {
+  font-size: 34px;
+  line-height: 1;
+  background: transparent;   /* ✅ no background */
+  padding: 0;                /* ✅ no padding */
+  border-radius: 0;          /* ✅ no circle */
+  transition: transform 0.3s ease;
+}
+
+/* Arrow colors */
+.btn-light .arrow {
+  color: #000; /* black arrow */
+}
+
+.btn-dark .arrow {
+  color: #fff; /* white arrow */
+}
+
+/* Hover effect (only movement) */
+.btn:hover .arrow {
+  transform: translateX(8px);
+}

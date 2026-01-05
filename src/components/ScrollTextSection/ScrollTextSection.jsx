@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./ScrollTextSection.css";
 
-const ScrollTextSection = () => {
+const ScrollTextSection = ({ scrollTextData }) => {
   const [scrollY, setScrollY] = useState(0);
 
   useEffect(() => {
@@ -9,6 +9,8 @@ const ScrollTextSection = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  if (!scrollTextData) return null;
 
   return (
     <section className="scroll-container">
@@ -18,31 +20,23 @@ const ScrollTextSection = () => {
         style={{ transform: `translateY(${scrollY * 0.15}px)` }}
       >
         <h1>
-          Our software powers real-time,
-          <span> AI-driven </span>
-          decisions in critical government and commercial enterprises in the
-          West, from the factory floors to the front lines.
+          {scrollTextData.mainText.before}
+          <span> {scrollTextData.mainText.highlight} </span>
+          {scrollTextData.mainText.after}
         </h1>
       </div>
 
-      {/* IMPORTANT: SPACE HOLDER (prevents overlap) */}
+      {/* SPACE HOLDER */}
       <div className="hero-spacer"></div>
 
-      {/* SECOND SECTION */}
+      {/* PRODUCTS SECTION */}
       <div className="products-section">
-        <div className="product">
-          <h2>AIP</h2>
-          <p>Automate operations, from the factory floor to the front lines</p>
-        </div>
-
-        <div className="product">
-          <h2>Gotham</h2>
-          <p>Achieve AI-driven combat superiority, from space to mud</p>
-        </div>
-
-        <div className="product">
-          <h2>Foundry</h2>
-        </div>
+        {scrollTextData.products.map((item, index) => (
+          <div className="product" key={index}>
+            <h2>{item.title}</h2>
+            {item.description && <p>{item.description}</p>}
+          </div>
+        ))}
       </div>
     </section>
   );

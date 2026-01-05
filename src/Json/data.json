@@ -23,116 +23,214 @@
 
     "heroSection": {
       "video": "/AI.mp4",
-      "heading": "AI-Powered Automation for Every Decision"
+      "heading": "Bring Your Business Online With IT Company Services"
+    },
+    "thesisSection": {
+  "theses": [
+    {
+      "tag": "Node.js",
+      "title": "Scalable Server-Side Applications Using JavaScript",
+      "image": "https://images.unsplash.com/photo-1627398242454-45a1465c2479",
+      "count": "BACKEND"
+    },
+    {
+      "tag": "Next.js",
+      "title": "High-Performance & SEO-Friendly React Framework",
+      "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c",
+      "count": "FRONTEND"
+    },
+    {
+      "tag": "React",
+      "title": "Dynamic & Component-Based User Interfaces",
+      "image": "https://images.unsplash.com/photo-1633356122544-f134324a6cee",
+      "count": "FRONTEND"
+    },
+    {
+      "tag": "TypeScript",
+      "title": "Strongly Typed JavaScript for Large Applications",
+      "image": "https://images.unsplash.com/photo-1518770660439-4636190af475",
+      "count": "LANGUAGE"
+    },
+    {
+      "tag": "Vue.js",
+      "title": "Progressive JavaScript Framework for UI Development",
+      "image": "https://images.unsplash.com/photo-1526378722484-bd91ca387e72",
+      "count": "FRONTEND"
+    },
+    {
+      "tag": "Angular",
+      "title": "Enterprise-Grade Frontend Framework by Google",
+      "image": "https://images.unsplash.com/photo-1558655146-d09347e92766",
+      "count": "FRONTEND"
+    },
+    {
+      "tag": "Rust",
+      "title": "High-Performance & Memory-Safe System Programming",
+      "image": "https://images.unsplash.com/photo-1581090700227-1e37b190418e",
+      "count": "LANGUAGE"
+    },
+    {
+      "tag": "Django",
+      "title": "Secure & Rapid Backend Development with Python",
+      "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5",
+      "count": "BACKEND"
+    },
+    {
+      "tag": "Express.js",
+      "title": "Minimal & Fast Node.js Web Framework",
+      "image": "https://images.unsplash.com/photo-1515879218367-8466d910aaa4",
+      "count": "BACKEND"
     },
 
-    "aboutCompany": {
-      "mainHeading": "About Company",
-      "subHeading": "We are a professionally managed company delivering high-quality infrastructure solutions. Our focus is on safety, innovation, and timely project execution across multiple sectors.",
-      "call": {
-        "text": "Call Us Now",
-        "link": "tel:+919987549712"
+    {
+      "tag": "Flutter",
+      "title": "Cross-Platform Mobile App Development Framework",
+      "image": "https://images.unsplash.com/photo-1517430816045-df4b7de11d1d",
+      "count": "MOBILE"
+    },
+    {
+      "tag": "React Native",
+      "title": "Native Mobile Apps Using React & JavaScript",
+      "image": "https://images.unsplash.com/photo-1526498460520-4c246339dccb",
+      "count": "MOBILE"
+    },
+    {
+      "tag": "Swift",
+      "title": "Powerful Programming Language for iOS Apps",
+      "image": "https://images.unsplash.com/photo-1555949963-aa79dcee981c",
+      "count": "MOBILE"
+    },
+
+    {
+      "tag": "MongoDB",
+      "title": "Flexible NoSQL Database for Modern Applications",
+      "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31",
+      "count": "DATABASE"
+    },
+    {
+      "tag": "MySQL",
+      "title": "Reliable Relational Database Management System",
+      "image": "https://images.unsplash.com/photo-1585079542156-2755d9c8a094",
+      "count": "DATABASE"
+    },
+    {
+      "tag": "REST API",
+      "title": "Standard Communication Between Client & Server",
+      "image": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4",
+      "count": "API"
+    },
+    {
+      "tag": "GraphQL",
+      "title": "Efficient & Flexible API Query Language",
+      "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd",
+      "count": "API"
+    },
+    {
+      "tag": "Payment APIs",
+      "title": "Secure Online Payment & Transaction Integration",
+      "image": "https://images.unsplash.com/photo-1556740749-887f6717d7e4",
+      "count": "API"
+    },
+    {
+      "tag": "Google APIs",
+      "title": "Powerful APIs for Maps, Auth & Cloud Services",
+      "image": "https://images.unsplash.com/photo-1573164713714-d95e436ab8d6",
+      "count": "API"
+    }
+  ]
+}
+,"scrollTextSection": {
+ "mainText": {
+  "before": "Solutions We Provide — We specialize in crafting",
+  "highlight": "top-tier digital solutions",
+  "after": "and products with excellent professional services."
+}
+,
+  "products": [
+    {
+      "title": "Web App Development",
+      "description": "Build high-quality, scalable, and fault-resilient web applications using modern technologies and best development practices."
+    },
+    {
+      "title": "Mobile App Development",
+      "description": "Design and develop user-friendly mobile applications tailored to your business goals and target audience."
+    },
+    {
+      "title": "Digital Marketing",
+      "description": "Promote your brand through effective online marketing strategies to increase visibility, engagement, and conversions."
+    },
+    {
+      "title": "Search Engine Optimization",
+      "description": "Enhance your website’s search engine visibility and rankings with proven SEO techniques and data-driven strategies."
+    },
+    {
+      "title": "Data Analysis",
+      "description": "Validate and strengthen your project ideas through detailed business and data analysis insights."
+    },
+    {
+      "title": "Dedicated Development Team",
+      "description": "Get a skilled and committed development team exclusively focused on delivering your project efficiently and on time."
+    }
+  ]
+}
+,
+     "joinOurTeam": {
+      "image": "/girl.jpg",
+      "imageAlt": "Team discussion",
+      "title": "There is so much left to build",
+      "description": "Palantirians deliver mission-critical outcomes for the West's most important institutions.",
+      "button": {
+        "text": "LEARN MORE",
+        "link": "/about"
+      }
+    },
+    "partnerSection": {
+      "heading": {
+        "line1": "What our partners say",
+        "line2": "about us"
       },
       "cards": [
         {
-          "image": "https://images.unsplash.com/photo-1503387762-592deb58ef4e",
-          "title": "Strong Foundation",
-          "description": "We build projects with a strong technical foundation, ensuring durability and long-term value."
+          "name": "CAZ INVESTMENTS",
+          "mid": "With AIP, we can now process over 100 times more leads with the same amount of resources.",
+          "bottom": "This has reduced our lead processing time by over 90%. This would not have been possible without AIP."
         },
         {
-          "image": "https://images.unsplash.com/photo-1521791136064-7986c2920216",
-          "title": "Expert Team",
-          "description": "Our experienced engineers and managers ensure quality control and precision in every phase."
+          "name": "PANASONIC ENERGY NORTH AMERICA",
+          "mid": "Ask Atom powered by Palantir AIP serves as a vital training tool for our technicians.",
+          "bottom": "Cutting a 3–6 month learning curve down to just a few weeks."
         },
         {
-          "image": "https://images.unsplash.com/photo-1509395176047-4a66953fd231",
-          "title": "Timely Delivery",
-          "description": "We follow strict timelines and project planning to deliver projects on schedule."
+          "name": "UNITED AIRLINES",
+          "mid": "We deployed Chime late last year and have already saved almost 300 delays.",
+          "bottom": "This represents millions of dollars of cost avoidance."
         },
         {
-          "image": "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab",
-          "title": "Modern Technology",
-          "description": "We use modern tools and construction technology to improve efficiency and safety."
-        },
-        {
-          "image": "https://images.unsplash.com/photo-1497366754035-f200968a6e72",
-          "title": "Client Satisfaction",
-          "description": "Customer trust and satisfaction are at the core of everything we do."
+          "name": "FUJITSU",
+          "mid": "We combined Foundry’s data integration with Fujitsu’s machine learning AI.",
+          "bottom": "Resulting in alert systems, demand forecasting, and inventory optimization."
         }
       ]
     },
-
-    "companySafetyCard": {
-      "page": "CompanySafetyCard",
-      "id": "2",
-      "Title": "Company Safety Cards",
-      "cards": [
+        "buttonGroup": {
+      "buttons": [
         {
-          "id": 1,
-          "title": "Inspections & Audits",
-          "icon": "fa-solid fa-clipboard-list",
-          "imageSrc": "https://media.giphy.com/media/xT9IgG50Fb7Mi0prBC/giphy.gif",
-          "rightHeading": "Run your field safety inspections on any device",
-          "checklist": [
-            "Schedule and track inspections",
-            "Create safety tasks and raise hazards",
-            "Customize your own or choose from our library of compliance checklists"
-          ],
-          "buttonLabel": "Learn more"
+          "text": "Request a Demo",
+          "variant": "cta-light",
+          "link": "/demo",
+          "external": false
         },
         {
-          "id": 2,
-          "title": "Safety Meetings",
-          "icon": "fa-solid fa-users",
-          "imageSrc": "https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif",
-          "rightHeading": "Schedule and track your safety meetings and toolbox talks",
-          "checklist": [
-            "Track attendance and topics covered",
-            "Identify training needs with our powerful analytics",
-            "Choose from 100s of templates, forms, and topics"
-          ],
-          "buttonLabel": "Learn more"
-        },
-        {
-          "id": 3,
-          "title": "Incident Reporting",
-          "icon": "fa-regular fa-file-alt",
-          "imageSrc": "https://media.giphy.com/media/111ebonMs90YLu/giphy.gif",
-          "rightHeading": "Report incidents easily",
-          "checklist": [
-            "Quickly report and manage workplace incidents",
-            "Prevent future occurrences",
-            "Stay compliant with industry standards"
-          ],
-          "buttonLabel": "Learn more"
-        },
-        {
-          "id": 4,
-          "title": "Hazard Management",
-          "icon": "fa-solid fa-exclamation-triangle",
-          "imageSrc": "https://media.giphy.com/media/3oEduSbSGpGaRX2Vri/giphy.gif",
-          "rightHeading": "Manage hazards effectively",
-          "checklist": [
-            "Identify, assess, and control hazards",
-            "Mitigate risks before they cause harm",
-            "Maintain a safe work environment"
-          ],
-          "buttonLabel": "Learn more"
+          "text": "Start Building",
+          "variant": "cta-dark",
+          "link": "/get-started",
+          "external": false
         }
       ]
     },
+       
 
-    "heroAboutUs": {
-      "heading": "Our Mission: <span class='highlight'>Empower</span> everyone to be a safety champion",
-      "description1": "In 2014, our three founders lost a mutual friend in a workplace accident. The incident sparked an interest in streamlining workplace safety.",
-      "description2": "Today, thousands of companies worldwide trust Safesite, a powerful, easy-to-use safety management solution proven to cut incident rates in half.",
-      "quote": "With Safesite, we were able to achieve an 84% reduction in recordable incident rate and a 100% reduction in lost time incident rate.",
-      "name": "Derek Smith",
-      "title": "JR Cruz New York, NY",
-      "image": "/girl1.jpg",
-      "backgroundImage": "/banner-watermark.svg"
-    }
-  },
+
   
   "2": {
     "page": "AboutHome",
@@ -150,4 +248,5 @@
   }
 
 
+}
 }

@@ -15,6 +15,13 @@
   padding: 0 40px 40px;
   flex-wrap: wrap;
 }
+.thesis-heading {
+  text-align: center;
+  font-size: 36px;
+  font-weight: 600;
+  margin-bottom: 30px;
+  text-decoration: underline;
+}
 
 .thesis-tabs button {
   position: relative;
@@ -104,7 +111,7 @@
 .thesis-overlay h2 {
   font-size: 38px;
   margin: 20px 0 30px;
-  color: #111;
+  color: #ebe0e0;
 }
 
 .thesis-actions {

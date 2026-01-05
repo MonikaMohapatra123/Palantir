@@ -1,19 +1,32 @@
-// src/components/ButtonGroup/ButtonGroup.jsx
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import "./ButtonGroup.css";
 
-const ButtonGroup = () => {
+const ButtonGroup = ({ buttonGroupData }) => {
+  const navigate = useNavigate();
+
+  if (!buttonGroupData) return null;
+
+  const handleClick = (button) => {
+    if (button.external) {
+      window.open(button.link, "_blank");
+    } else {
+      navigate(button.link);
+    }
+  };
+
   return (
     <div className="cta-wrapper">
-      <button className="cta-button cta-light">
-        <span className="cta-text">Request a Demo</span>
-        <span className="cta-arrow">→</span>
-      </button>
-
-      <button className="cta-button cta-dark">
-        <span className="cta-text">Start Building</span>
-        <span className="cta-arrow">→</span>
-      </button>
+      {buttonGroupData.buttons.map((btn, index) => (
+        <button
+          key={index}
+          className={`cta-button ${btn.variant}`}
+          onClick={() => handleClick(btn)}
+        >
+          <span className="cta-text">{btn.text}</span>
+          <span className="cta-arrow">→</span>
+        </button>
+      ))}
     </div>
   );
 };

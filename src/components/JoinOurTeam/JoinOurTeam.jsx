@@ -2,29 +2,26 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import "./JoinOurTeam.css";
 
-const JoinOurTeam = () => {
+const JoinOurTeam = ({ joinTeamData }) => {
   const navigate = useNavigate();
+
+  if (!joinTeamData) return null;
 
   return (
     <section className="join-wrapper">
       {/* Left Image */}
       <div className="join-image">
-        <img src="/girl.jpg" alt="Team discussion" />
+        <img src={joinTeamData.image} alt={joinTeamData.imageAlt} />
       </div>
 
       {/* Right Content Card */}
       <div className="join-card">
-        <h2>
-          There is so much left to build
-        </h2>
+        <h2>{joinTeamData.title}</h2>
 
-        <p>
-          Palantirians deliver mission-critical outcomes for the West's most
-          important institutions.
-        </p>
+        <p>{joinTeamData.description}</p>
 
-        <button onClick={() => navigate("/about")}>
-          LEARN MORE
+        <button onClick={() => navigate(joinTeamData.button.link)}>
+          {joinTeamData.button.text}
         </button>
       </div>
     </section>

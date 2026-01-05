@@ -184,34 +184,34 @@
         "link": "/about"
       }
     },
-    "partnerSection": {
-      "heading": {
-        "line1": "What our partners say",
-        "line2": "about us"
-      },
-      "cards": [
-        {
-          "name": "CAZ INVESTMENTS",
-          "mid": "With AIP, we can now process over 100 times more leads with the same amount of resources.",
-          "bottom": "This has reduced our lead processing time by over 90%. This would not have been possible without AIP."
-        },
-        {
-          "name": "PANASONIC ENERGY NORTH AMERICA",
-          "mid": "Ask Atom powered by Palantir AIP serves as a vital training tool for our technicians.",
-          "bottom": "Cutting a 3–6 month learning curve down to just a few weeks."
-        },
-        {
-          "name": "UNITED AIRLINES",
-          "mid": "We deployed Chime late last year and have already saved almost 300 delays.",
-          "bottom": "This represents millions of dollars of cost avoidance."
-        },
-        {
-          "name": "FUJITSU",
-          "mid": "We combined Foundry’s data integration with Fujitsu’s machine learning AI.",
-          "bottom": "Resulting in alert systems, demand forecasting, and inventory optimization."
-        }
-      ]
+ "partnerSection": {
+  "heading": {
+    "line1": "Our Partner Testimonials"
+  },
+  "cards": [
+    {
+      "name": "Samantha Patel — Head of Engineering",
+      "mid": "Despite the time zone differences, working with Axiomos was seamless. Their team was incredibly responsive, transparent, and committed to delivering excellence.",
+      "bottom": "The custom CRM solution they built for our firm has significantly improved our workflow efficiency. (San Francisco, USA)"
     },
+    {
+      "name": "Meera Shah — Senior Product Manager",
+      "mid": "Axiomos has an impressive grasp of emerging technologies and an adaptive work ethic that allowed our project to scale seamlessly.",
+      "bottom": "Their proactive approach, coupled with outstanding technical expertise, ensured a smooth and efficient development process. Highly recommend for innovative solutions! (Bangalore, India)"
+    },
+    {
+      "name": "Rajiv Malhotra — Director of IT",
+      "mid": "Axiomos has played a crucial role in our digital transformation journey.",
+      "bottom": "Their deep understanding of system architecture and automation has helped streamline our business processes, making our operations far more efficient and data-driven. (London, UK)"
+    },
+    {
+      "name": "Alok Kumar Pandey — Partner, Prathnide Law Firm",
+      "mid": "Due to their responsiveness & patience, the collaboration progressed smoothly from start to finish, resulting in a high-quality product & ensuring their continued engagement.",
+      "bottom": "Axiomos’ skill set was precisely what was needed, and despite an irregular request towards the end stages of the project, communications never suffered. (Supreme Court, New Delhi, India)"
+    }
+  ]
+}
+,
         "buttonGroup": {
       "buttons": [
         {

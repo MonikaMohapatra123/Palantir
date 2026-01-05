@@ -3,17 +3,16 @@ import React from "react";
 import "./ButtonGroup.css";
 
 const ButtonGroup = () => {
-  
   return (
-    <div className="button-group">
-      <button className="btn btn-light">
-        <span>Request a Demo</span>
-        <span className="arrow">→</span>
+    <div className="cta-wrapper">
+      <button className="cta-button cta-light">
+        <span className="cta-text">Request a Demo</span>
+        <span className="cta-arrow">→</span>
       </button>
 
-      <button className="btn btn-dark">
-        <span>Start Building</span>
-        <span className="arrow">→</span>
+      <button className="cta-button cta-dark">
+        <span className="cta-text">Start Building</span>
+        <span className="cta-arrow">→</span>
       </button>
     </div>
   );

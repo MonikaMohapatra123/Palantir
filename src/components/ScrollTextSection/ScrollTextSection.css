@@ -1,9 +1,11 @@
 .scroll-container {
   background: #ffffff;
-  /* padding-top: 100px; */
+  padding: 80px 20px; /* mobile side padding */
 }
 
-/* FIRST TEXT */
+/* ======================
+   FIRST TEXT SECTION
+====================== */
 .hero-text {
   max-width: 1100px;
   margin: 0 auto;
@@ -11,7 +13,7 @@
 }
 
 .hero-text h1 {
-  font-size: 59px;
+  font-size: 58px;
   font-weight: 500;
   line-height: 1.15;
   color: #1f1f1f;
@@ -21,12 +23,14 @@
   color: #bdbdbd;
 }
 
-/* THIS IS THE KEY FIX */
+/* Spacer to prevent overlap */
 .hero-spacer {
-  height: 220px; /* adjust if text height changes */
+  height: 220px;
 }
 
-/* SECOND SECTION */
+/* ======================
+   PRODUCTS SECTION
+====================== */
 .products-section {
   max-width: 1100px;
   margin: 0 auto;
@@ -41,10 +45,80 @@
 .product h2 {
   font-size: 64px;
   font-weight: 500;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 
 .product p {
   font-size: 18px;
   color: #555;
+  max-width: 600px;
+}
+
+/* ======================
+   TABLET (<= 1024px)
+====================== */
+@media (max-width: 1024px) {
+  .hero-text h1 {
+    font-size: 46px;
+    line-height: 1.2;
+  }
+
+  .hero-spacer {
+    height: 180px;
+  }
+
+  .product h2 {
+    font-size: 48px;
+  }
+}
+
+/* ======================
+   MOBILE (<= 768px)
+====================== */
+@media (max-width: 768px) {
+  .scroll-container {
+    padding: 60px 16px;
+  }
+
+  .hero-text {
+    transform: none !important; /* smoother on mobile */
+  }
+
+  .hero-text h1 {
+    font-size: 32px;
+    line-height: 1.35;
+  }
+
+  .hero-spacer {
+    height: 120px;
+  }
+
+  .products-section {
+    margin-top: 20px;
+  }
+
+  .product {
+    padding: 40px 0;
+  }
+
+  .product h2 {
+    font-size: 34px;
+  }
+
+  .product p {
+    font-size: 16px;
+  }
+}
+
+/* ======================
+   SMALL MOBILE (<= 480px)
+====================== */
+@media (max-width: 480px) {
+  .hero-text h1 {
+    font-size: 28px;
+  }
+
+  .product h2 {
+    font-size: 28px;
+  }
 }

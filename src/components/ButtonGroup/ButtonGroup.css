@@ -1,5 +1,7 @@
-/* Container */
-.button-group {
+/* ======================
+   WRAPPER
+====================== */
+.cta-wrapper {
   width: 100%;
   display: flex;
   gap: 24px;
@@ -8,12 +10,14 @@
   padding: 24px 0;
 }
 
-/* Button common */
-.btn {
+/* ======================
+   BUTTON – COMMON
+====================== */
+.cta-button {
   flex: 1;
   height: 140px;
   border: none;
-  border-radius: 6px;
+  border-radius: 8px;
   font-size: 34px;
   font-weight: 500;
   display: flex;
@@ -21,46 +25,72 @@
   justify-content: space-between;
   padding: 0 48px;
   cursor: pointer;
+  transition: all 0.25s ease;
 }
 
-/* Light button */
-.btn-light {
+/* ======================
+   TEXT
+====================== */
+.cta-text {
+  display: flex;
+  align-items: center;
+}
+
+/* ======================
+   LIGHT BUTTON
+====================== */
+.cta-light {
   background-color: #e6e6e6;
   color: #111;
 }
 
-/* Dark button */
-.btn-dark {
+/* ======================
+   DARK BUTTON
+====================== */
+.cta-dark {
   background-color: #1f2424;
   color: #ffffff;
 }
 
-/* Arrow */
-.arrow {
+/* ======================
+   ARROW
+====================== */
+.cta-arrow {
   font-size: 36px;
   font-weight: 300;
   line-height: 1;
 }
 
 /* ======================
-   MOBILE – COLUMN STYLE
+   INTERACTION
+====================== */
+.cta-button:hover {
+  opacity: 0.95;
+}
+
+.cta-button:active {
+  transform: scale(0.98);
+}
+
+/* ======================
+   MOBILE – SOLID BUTTONS
 ====================== */
 @media (max-width: 768px) {
-  .button-group {
-    flex-direction: column;   /* column layout */
-    gap: 12px;
-    padding: 16px 0;
+  .cta-wrapper {
+    flex-direction: column;
+    gap: 16px;
+    padding: 20px 20px;
   }
 
-  .btn {
-    height: 56px;            /* thin layer */
-    font-size: 15px;
-    padding: 0 16px;
-    border-radius: 4px;
-  }
-
-  .arrow {
+  .cta-button {
+    height: 72px;
     font-size: 16px;
+    padding: 20px  20px;
+    /* border-radius: 12px; */
+  }
+
+  .cta-arrow {
+    font-size: 28px;
   }
 }
 
@@ -68,13 +98,14 @@
    SMALL MOBILE
 ====================== */
 @media (max-width: 480px) {
-  .btn {
-    height: 48px;
-    font-size: 14px;
-    padding: 0 14px;
+  .cta-button {
+    height: 124px;
+    font-size: 15px;
+    padding: 18px 18px;
+   
   }
 
-  .arrow {
-    font-size: 15px;
+  .cta-arrow {
+    font-size: 17px;
   }
 }

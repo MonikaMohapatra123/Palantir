@@ -1,58 +1,80 @@
+/* Container */
 .button-group {
   width: 100%;
   display: flex;
-
+  gap: 24px;
+  border-top: 1px solid #bfbfbf;
+  border-bottom: 1px solid #bfbfbf;
+  padding: 24px 0;
 }
 
+/* Button common */
 .btn {
   flex: 1;
-  height: 100px;
+  height: 140px;
   border: none;
-  /* border-radius: 12px; */
-  font-size: 30px;
+  border-radius: 6px;
+  font-size: 34px;
   font-weight: 500;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 48px;
   cursor: pointer;
-  background: none;
-  margin-bottom: 40px;
-  padding: 70px;
 }
 
-/* Left Button */
+/* Light button */
 .btn-light {
   background-color: #e6e6e6;
   color: #111;
 }
 
-/* Right Button */
+/* Dark button */
 .btn-dark {
   background-color: #1f2424;
-  color: #fff;
+  color: #ffffff;
 }
 
-/* Arrow - NO background */
+/* Arrow */
 .arrow {
-  font-size: 34px;
+  font-size: 36px;
+  font-weight: 300;
   line-height: 1;
-  background: transparent;   /* ✅ no background */
-  padding: 0;                /* ✅ no padding */
-  border-radius: 0;          /* ✅ no circle */
-  transition: transform 0.3s ease;
 }
 
-/* Arrow colors */
-.btn-light .arrow {
-  color: #000; /* black arrow */
+/* ======================
+   MOBILE – COLUMN STYLE
+====================== */
+@media (max-width: 768px) {
+  .button-group {
+    flex-direction: column;   /* column layout */
+    gap: 12px;
+    padding: 16px 0;
+  }
+
+  .btn {
+    height: 56px;            /* thin layer */
+    font-size: 15px;
+    padding: 0 16px;
+    border-radius: 4px;
+  }
+
+  .arrow {
+    font-size: 16px;
+  }
 }
 
-.btn-dark .arrow {
-  color: #fff; /* white arrow */
-}
+/* ======================
+   SMALL MOBILE
+====================== */
+@media (max-width: 480px) {
+  .btn {
+    height: 48px;
+    font-size: 14px;
+    padding: 0 14px;
+  }
 
-/* Hover effect (only movement) */
-.btn:hover .arrow {
-  transform: translateX(8px);
+  .arrow {
+    font-size: 15px;
+  }
 }

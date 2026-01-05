@@ -1,38 +1,33 @@
 import React from "react";
-import { FaArrowRight } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import "./JoinOurTeam.css";
 
 const JoinOurTeam = () => {
   const navigate = useNavigate();
 
-  const data = {
-    image: "/girl.jpg",
-    subheading: "Careers",
-    heading: "Join Our Team and Build Your Future With Us",
-    buttonText: "Know More",
-  };
-
-  const handleClick = () => {
-    navigate("/about");
-  };
-
   return (
-    <div className="join-team-container">
-      <div className="join-team-image">
-        <img src={data.image} alt="Join Our Team" />
+    <section className="join-wrapper">
+      {/* Left Image */}
+      <div className="join-image">
+        <img src="/girl.jpg" alt="Team discussion" />
       </div>
 
-      <div className="join-team-content">
-        <p className="join-subheading">{data.subheading}</p>
-        <h2 className="join-main-text">{data.heading}</h2>
+      {/* Right Content Card */}
+      <div className="join-card">
+        <h2>
+          There is so much left to build
+        </h2>
 
-        <button className="join-button" onClick={handleClick}>
-          {data.buttonText}
-          <FaArrowRight className="button-icon" />
+        <p>
+          Palantirians deliver mission-critical outcomes for the West's most
+          important institutions.
+        </p>
+
+        <button onClick={() => navigate("/about")}>
+          LEARN MORE
         </button>
       </div>
-    </div>
+    </section>
   );
 };
 

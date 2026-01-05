@@ -5,22 +5,23 @@ const MobileNavBar = ({ menu, dropdownData, close }) => {
   const [openDropdown, setOpenDropdown] = useState(null);
 
   return (
-    <div className="mobile-nav-overlay">
-      <div className="mobile-nav">
-        {/* HEADER */}
-        <div className="mobile-header">
-          <span>Menu</span>
+    <div className="desktop-overlay" onClick={close}>
+      <div
+        className="desktop-menu"
+        onClick={(e) => e.stopPropagation()}
+      >
+        <div className="desktop-header">
+          <span>Palantir</span>
           <button onClick={close}>✕</button>
         </div>
 
-        {/* MENU */}
-        <div className="mobile-menu">
+        <div className="desktop-menu-items">
           {menu.map((item) => (
-            <div key={item.name} className="mobile-item">
+            <div key={item.name} className="desktop-item">
               {item.dropdown ? (
                 <>
                   <div
-                    className="mobile-title"
+                    className="desktop-title"
                     onClick={() =>
                       setOpenDropdown(
                         openDropdown === item.pageType
@@ -34,7 +35,7 @@ const MobileNavBar = ({ menu, dropdownData, close }) => {
                   </div>
 
                   {openDropdown === item.pageType && (
-                    <div className="mobile-dropdown">
+                    <div className="desktop-dropdown">
                       {(dropdownData[item.pageType] || []).map((cat, i) => (
                         <a
                           key={i}
@@ -56,11 +57,6 @@ const MobileNavBar = ({ menu, dropdownData, close }) => {
               )}
             </div>
           ))}
-
-          {/* CONTACT BUTTON */}
-          <a href="/contact" className="mobile-contact" onClick={close}>
-            Contact
-          </a>
         </div>
       </div>
     </div>

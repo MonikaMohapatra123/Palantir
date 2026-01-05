@@ -8,18 +8,15 @@ const NavBar = () => {
   const navbar = data["0"];
 
   const [scrolled, setScrolled] = useState(false);
-  const [openMobile, setOpenMobile] = useState(false);
+  const [openMenu, setOpenMenu] = useState(false);
   const [dropdownData, setDropdownData] = useState({});
-  const [activeDropdown, setActiveDropdown] = useState(null);
 
-  // Scroll effect
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 80);
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // Fetch dropdown data
   useEffect(() => {
     axios
       .get("https://palantir-backend-phi.vercel.app/api/pages")
@@ -37,35 +34,27 @@ const NavBar = () => {
   return (
     <>
       <header className={`navbar ${scrolled ? "scrolled" : ""}`}>
-        {/* LEFT */}
         <div className="nav-left">
           <img src={navbar.logo} alt={navbar.company} />
+          <span className="company-name">{navbar.company}</span>
         </div>
 
-        {/* CENTER (hidden like Palantir) */}
-        <nav className="nav-links" />
-
-        {/* RIGHT */}
         <div className="nav-right">
           <a href={navbar.contact.link} className="contact-btn">
             {navbar.contact.text}
           </a>
 
-          <button
-            className="menu-btn"
-            onClick={() => setOpenMobile(true)}
-          >
+          <button className="menu-btn" onClick={() => setOpenMenu(true)}>
             ☰
           </button>
         </div>
       </header>
 
-      {/* OVERLAY MENU */}
-      {openMobile && (
+      {openMenu && (
         <MobileNavBar
           menu={navbar.menu}
           dropdownData={dropdownData}
-          close={() => setOpenMobile(false)}
+          close={() => setOpenMenu(false)}
         />
       )}
     </>

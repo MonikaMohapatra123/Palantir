@@ -2,7 +2,7 @@
    "0": {
     "page": "navbar",
     "logo": "/logo.png",
-    "company": "Palantir",
+    "company": "Axiomos",
     "menu": [
       { "name": "Projects", "pageType": "Projects", "dropdown": true },
       { "name": "Services", "pageType": "Services", "dropdown": true },

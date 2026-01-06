@@ -35,7 +35,7 @@ const ThesisSection = ({ thesisData }) => {
     <section className="thesis-section">
 
       {/* ✅ HEADING */}
-      <h2 className="thesis-heading">Tech Stack</h2>
+     
 
       {/* TABS */}
       <div className="thesis-tabs">

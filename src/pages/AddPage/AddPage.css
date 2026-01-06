@@ -1,5 +1,4 @@
-/* ===== Page Wrapper ===== */
-.add-form {
+.addPage-form {
   max-width: 900px;
   margin: 40px auto;
   padding: 30px;
@@ -12,47 +11,31 @@
   font-family: "Segoe UI", sans-serif;
 }
 
-/* ===== Main Title ===== */
-.add-form h2 {
+.addPage-title {
   text-align: center;
   color: #222;
-  margin-bottom: 10px;
 }
 
-/* ===== Section Card ===== */
-.add-form h3 {
+.addPage-section-title {
   margin-top: 25px;
-  margin-bottom: 10px;
-  padding-bottom: 6px;
   border-bottom: 2px solid #e5e7eb;
-  color: #111827;
+  padding-bottom: 6px;
 }
 
-/* ===== Inputs ===== */
-.add-form input,
-.add-form textarea {
+.addPage-input,
+.addPage-textarea,
+.addPage-select {
   width: 100%;
   padding: 12px 14px;
-  font-size: 14px;
-  border: 1px solid #d1d5db;
   border-radius: 8px;
-  outline: none;
-  transition: all 0.2s ease;
+  border: 1px solid #d1d5db;
 }
 
-.add-form textarea {
+.addPage-textarea {
   min-height: 90px;
-  resize: vertical;
 }
 
-.add-form input:focus,
-.add-form textarea:focus {
-  border-color: #2563eb;
-  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
-}
-
-/* ===== Section Item Card ===== */
-.item-box {
+.addPage-itemBox {
   background: #f9fafb;
   border: 1px solid #e5e7eb;
   border-radius: 10px;
@@ -60,58 +43,47 @@
   display: flex;
   flex-direction: column;
   gap: 12px;
-  margin-top: 10px;
 }
 
-/* ===== Buttons ===== */
-button {
-  border: none;
-  padding: 12px 16px;
-  border-radius: 8px;
-  font-size: 14px;
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
-
-/* Add Item Buttons */
-button[type="button"] {
+.addPage-addBtn {
   background: #e0e7ff;
   color: #1e3a8a;
-  align-self: flex-start;
+  padding: 10px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  width: fit-content;
 }
 
-button[type="button"]:hover {
+.addPage-addBtn:hover {
   background: #c7d2fe;
 }
 
-/* Remove Button */
-.item-box button {
+.addPage-removeBtn {
   background: #fee2e2;
   color: #991b1b;
+  padding: 8px 14px;
+  border-radius: 6px;
   align-self: flex-end;
+  cursor: pointer;
 }
 
-.item-box button:hover {
+.addPage-removeBtn:hover {
   background: #fecaca;
 }
 
-/* Save Button */
-button[type="submit"] {
+.addPage-saveBtn {
   background: linear-gradient(135deg, #2563eb, #1e40af);
-  color: white;
-  font-size: 15px;
+  color: #fff;
+  padding: 14px;
+  border-radius: 10px;
   font-weight: 600;
   margin-top: 30px;
+  cursor: pointer;
 }
 
-button[type="submit"]:hover {
-  opacity: 0.9;
-}
-
-/* ===== Responsive ===== */
 @media (max-width: 768px) {
-  .add-form {
-    padding: 20px;
+  .addPage-form {
     margin: 20px;
+    padding: 20px;
   }
 }

@@ -5,12 +5,10 @@
   box-sizing: border-box;
   font-family: "Inter", sans-serif;
 }
-
 a {
   text-decoration: none;
   color: inherit;
 }
-
 /* ================= WRAPPER ================= */
 .pal-navbar-wrapper {
   position: fixed;
@@ -20,13 +18,10 @@ a {
   display: flex;
   justify-content: center;
   z-index: 1000;
- 
 }
-
 .pal-navbar-wrapper--scrolled .pal-navbar {
   background: rgba(0, 0, 0, 0.55);
 }
-
 /* ================= NAVBAR ================= */
 .pal-navbar {
   width: 100%;                /* ✅ FIX */
@@ -42,39 +37,34 @@ a {
   justify-content: space-between;
    margin: 10px;
 }
-
 /* ================= LEFT ================= */
 .pal-navbar-left {
   display: flex;
   align-items: center;
   gap: 10px;
 }
-
 .pal-navbar-logo {
   height: 34px;
 }
-
 .pal-navbar-company {
   color: #ffffff;
   font-size: 17px;
   font-weight: 600;
 }
-
 /* ================= RIGHT ================= */
 .pal-navbar-right {
   display: flex;
   align-items: center;
   gap: 14px;
 }
-
 /* ================= CONTACT BUTTON ================= */
 .pal-navbar-contact-btn {
-  height: 44px;
-  padding: 0 28px;
+  height: 40px;
+  padding: 0 38px;
   background: #ffffff;
-  color: #000000;
-  font-size: 14px;
-  font-weight: 600;
+  color: hsla(0, 0%, 0%, 0.486);
+  font-size: 17px;
+  font-weight: 500;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -82,17 +72,15 @@ a {
   border: 1px solid #000;
   transition: background 0.25s ease, color 0.25s ease;
 }
-
 .pal-navbar-contact-btn:hover {
   background: #000000;
   color: #ffffff;
 }
-
 /* ================= ICON GROUP ================= */
 .pal-navbar-icon-group {
   display: flex;
   align-items: center;
-  height: 44px;
+  height: 40px;
   overflow: hidden;
 }
 
@@ -100,6 +88,7 @@ a {
 .pal-navbar-icon-btn {
   width: 44px;
   height: 44px;
+  color: hsla(0, 0%, 0%, 0.486);
   background: #ffffff;
   border: 1px solid #000;
   color: #000000;
@@ -227,68 +216,144 @@ a {
 /* MEGA MENU STYLES */
 /* ===================== */
 
-/* FULL SCREEN OVERLAY */
+/* ===================== */
+/* MEGA MENU OVERLAY */
+/* ===================== */
+
 .mega-overlay {
   position: fixed;
   inset: 0;
-  background: #000; /* black background */
+  background: rgba(0, 0, 0, 0);
   z-index: 9999;
   overflow-y: auto;
+  animation: megaBgFade 0.45s ease forwards;
 }
 
+@keyframes megaBgFade {
+  from {
+    background: rgba(0, 0, 0, 0);
+  }
+  to {
+    background: rgba(0, 0, 0, 1);
+  }
+}
+
+/* ===================== */
 /* CONTAINER */
+/* ===================== */
+
 .mega-container {
   min-height: 100vh;
   padding: 60px 80px;
   display: grid;
   grid-template-columns: 1fr 1.2fr 1fr;
   gap: 60px;
-  color: #fff;
+  color: #ffffff;
+  position: relative;
 }
 
+/* ===================== */
 /* CLOSE BUTTON */
+/* ===================== */
 .mega-close-btn {
-  position: absolute;
+  position: fixed;
   top: 30px;
   right: 40px;
+  z-index: 10000;
   background: none;
   border: none;
   font-size: 28px;
-  color: #fff;
+  color: #ffffff;
   cursor: pointer;
+
+  opacity: 0;
+  animation: closeFadeIn 0.3s ease forwards;
+  animation-delay: 0.35s;   /* 👈 KEY LINE */
+}
+@keyframes closeFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
-/* COLUMNS */
+
+/* ===================== */
+/* COLUMN BASE */
+/* ===================== */
+
 .mega-col {
   display: flex;
   flex-direction: column;
   gap: 18px;
-   border-top: 1px solid white;
- 
+  border-top: 1px solid #ffffff;
+  opacity: 0;
+  transform: translateY(45px);
+  animation: megaColumnIn 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
+/* CENTER COLUMN */
 .mega-col.center {
-  /* border-left: 1px solid #222;
-  border-right: 1px solid #222; */
-  border-top: 1px solid white;
   padding: 0 30px;
 }
 
+/* ===================== */
+/* STAGGER DELAYS */
+/* ===================== */
+
+.mega-delay-1 {
+  animation-delay: 0.25s;
+}
+
+.mega-delay-2 {
+  animation-delay: 0.55s;
+}
+
+.mega-delay-3 {
+  animation-delay: 0.85s;
+}
+
+/* ===================== */
+/* COLUMN ANIMATION */
+/* ===================== */
+
+@keyframes megaColumnIn {
+  from {
+    opacity: 0;
+    transform: translateY(45px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* ===================== */
 /* TITLES */
+/* ===================== */
+
 .mega-title {
   font-size: 13px;
-  color: #888;
+  color: #9a9a9a;
   letter-spacing: 1px;
   margin-top: 10px;
 }
 
+/* ===================== */
 /* NAV ITEMS */
+/* ===================== */
+
 .mega-item {
   font-size: 20px;
   font-weight: 600;
 }
 
+/* ===================== */
 /* SUB MENU */
+/* ===================== */
+
 .mega-sub {
   display: flex;
   flex-direction: column;
@@ -297,37 +362,235 @@ a {
 }
 
 .mega-sub-item {
-  color: #ccc;
-  font-size: 16px; /* slightly bigger */
-  text-decoration: none;
+  font-size: 16px;
+  color: #cfcfcf;
   display: flex;
-  gap: 10px;
   align-items: center;
-  transition: 0.3s;
+  gap: 10px;
+  transition: 0.3s ease;
 }
 
 .mega-sub-item:hover {
-  color: #fff;
-  transform: translateX(5px);
+  color: #ffffff;
+  transform: translateX(6px);
 }
+
+/* ARROW */
+.arrow-icon {
+  font-size: 18px;
+  color: #ffffff;
+}
+
+/* ===================== */
+/* LATEST NEWS */
+/* ===================== */
+
+.news-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.newsroom-link {
+  font-size: 12px;
+  letter-spacing: 1px;
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+.latest-news-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+}
+
+.latest-news-card {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.news-meta {
+  font-size: 12px;
+  color: #9a9a9a;
+}
+
+.latest-news-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.latest-news-card h3 {
+  font-size: 22px;
+  line-height: 1.3;
+  font-weight: 400;
+}
+
+.latest-news-card h3 strong {
+  font-weight: 600;
+}
+
+.latest-news-card p {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #cfcfcf;
+}
+
+.latest-news-card:hover h3 {
+  text-decoration: underline;
+}
+
+/* ===================== */
+/* OFFERINGS */
+/* ===================== */
+
+.offer-desc {
+  font-size: 14px;
+  color: #aaaaaa;
+}
+
+.learn-more {
+  color: #ffffff;
+  margin-top: 10px;
+}
+
+/* ===================== */
+/* RESPONSIVE */
+/* ===================== */
+
+@media (max-width: 992px) {
+  .mega-container {
+    grid-template-columns: 1fr;
+    padding: 40px 24px;
+  }
+
+  .mega-col.center {
+    padding: 0;
+    border: none;
+  }
+
+  .latest-news-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .latest-news-card img {
+    height: 220px;
+  }
+
+  .mega-close-btn {
+    top: 20px;
+    right: 20px;
+  }
+}
+
+
+
 
 /* ARROW */
 .arrow-icon {
   color: #fff; /* white */
   font-size: 18px; /* slightly bigger arrow */
 }
+/* ===================== */
+/* LATEST NEWS – EXACT UI */
+/* ===================== */
 
-/* NEWS */
-.news-card {
+.news-header {
   display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.newsroom-link {
+  font-size: 12px;
+  color: #fff;
+  letter-spacing: 1px;
+  text-decoration: underline;
+}
+
+/* GRID */
+.latest-news-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+}
+
+/* CARD */
+.latest-news-card {
+  display: flex;
+  flex-direction: column;
   gap: 14px;
 }
 
-.news-card img {
-  width: 80px;
-  height: 80px;
+/* SOURCE + DATE */
+.news-meta {
+  font-size: 12px;
+  color: #9a9a9a;
+  letter-spacing: 0.4px;
+}
+
+/* IMAGE */
+.latest-news-card img {
+  width: 100%;
+  height: 180px;
   object-fit: cover;
 }
+
+/* HEADLINE */
+.latest-news-card h3 {
+  font-size: 22px;
+  line-height: 1.3;
+  font-weight: 400;
+  color: #fff;
+}
+
+.latest-news-card h3 strong {
+  font-weight: 600;
+}
+
+/* DESCRIPTION */
+.latest-news-card p {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #cfcfcf;
+}
+
+/* HOVER */
+.latest-news-card:hover h3 {
+  text-decoration: underline;
+}
+
+/* ===================== */
+/* MOBILE */
+/* ===================== */
+@media (max-width: 992px) {
+  .latest-news-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .latest-news-card img {
+    height: 220px;
+  }
+}
+
+
+/* ===================== */
+/* MOBILE FIX */
+/* ===================== */
+@media (max-width: 992px) {
+  .latest-news-item {
+    flex-direction: column;
+  }
+
+  .latest-news-item img {
+    width: 100%;
+    height: 220px;
+  }
+}
+
 
 .news-card p {
   margin: 4px 0;
@@ -378,4 +641,111 @@ a {
   .arrow-icon {
     font-size: 20px;
   }
+}
+
+
+
+
+
+/* ================= GET STARTED ================= */
+.getstarted-overlay {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  z-index: 9999;
+}
+
+.getstarted-left {
+  flex: 1;
+  background: rgba(0,0,0,0.85);
+}
+
+.getstarted-right {
+  flex: 1;
+  background: #fff;
+  padding: 80px;
+  position: relative;
+}
+
+.getstarted-right h2 {
+  font-size: 32px;
+  margin-bottom: 40px;
+}
+
+.getstarted-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.getstarted-form input {
+  border: none;
+  border-bottom: 1px solid #000;
+  padding: 10px 0;
+  font-size: 16px;
+}
+
+.getstarted-form button {
+  margin-top: 30px;
+  padding: 14px;
+  background: #000;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+/* ================= SEARCH ================= */
+.search-overlay {
+  position: fixed;
+  inset: 0;
+  background: #0b0b0b;
+  z-index: 9999;
+  color: #fff;
+}
+
+.search-content {
+  max-width: 900px;
+  margin: 140px auto;
+}
+
+.search-input {
+  width: 110%;
+  background: none;
+  border: 1px solid #fff;
+  padding: 16px;
+  font-size: 12px;
+  color: #fff;
+}
+
+.search-popular {
+  margin-top: 30px;
+}
+
+.search-popular span {
+  font-size: 12px;
+  color: #aaa;
+}
+
+.search-tags {
+  margin-top: 10px;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.search-tags a {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+/* ================= CLOSE ================= */
+.overlay-close {
+  position: absolute;
+  top: 25px;
+  left: 43px;
+  background: none;
+  border: none;
+  font-size: 26px;
+  cursor: pointer;
+  color: inherit;
 }

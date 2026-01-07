@@ -71,10 +71,10 @@ const ThesisSection = ({ thesisData }) => {
                 <span className="thesis-count">{item.count}</span>
                 <h2>{item.title}</h2>
 
-                <div className="thesis-actions">
+                {/* <div className="thesis-actions">
                   <button className="outline">PDF ↓</button>
                   <button className="outline">SHARE →</button>
-                </div>
+                </div> */}
               </div>
             </div>
           ))}

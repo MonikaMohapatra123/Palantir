@@ -99,14 +99,19 @@
 import React, { useEffect, useState } from "react";
 import "./NavBar.css";
 import MegaMenu from "./MegaMenu";
+import GetStartedOverlay from "./GetStartedOverlay";
+import SearchOverlay from "./SearchOverlay";
 import { FiSearch } from "react-icons/fi";
 import axios from "axios";
 import data from "../../Json/data.json";
 
 const NavBar = () => {
   const navbar = data["0"];
+
   const [scrolled, setScrolled] = useState(false);
   const [openMenu, setOpenMenu] = useState(false);
+  const [openGetStarted, setOpenGetStarted] = useState(false);
+  const [openSearch, setOpenSearch] = useState(false);
   const [dropdownData, setDropdownData] = useState({});
 
   useEffect(() => {
@@ -130,11 +135,7 @@ const NavBar = () => {
 
   return (
     <>
-      <header
-        className={`pal-navbar-wrapper ${
-          scrolled ? "pal-navbar-wrapper--scrolled" : ""
-        }`}
-      >
+      <header className={`pal-navbar-wrapper ${scrolled ? "pal-navbar-wrapper--scrolled" : ""}`}>
         <div className="pal-navbar">
           {/* LEFT */}
           <div className="pal-navbar-left">
@@ -144,12 +145,18 @@ const NavBar = () => {
 
           {/* RIGHT */}
           <div className="pal-navbar-right">
-            <a href={navbar.contact.link} className="pal-navbar-contact-btn">
-              {navbar.contact.text}
-            </a>
+            <button
+              className="pal-navbar-contact-btn"
+              onClick={() => setOpenGetStarted(true)}
+            >
+              Get Started
+            </button>
 
             <div className="pal-navbar-icon-group">
-              <button className="pal-navbar-icon-btn">
+              <button
+                className="pal-navbar-icon-btn"
+                onClick={() => setOpenSearch(true)}
+              >
                 <FiSearch />
               </button>
 
@@ -164,7 +171,6 @@ const NavBar = () => {
         </div>
       </header>
 
-      {/* ✅ FULL WIDTH MEGA MENU */}
       {openMenu && (
         <MegaMenu
           menu={navbar.menu}
@@ -172,9 +178,16 @@ const NavBar = () => {
           close={() => setOpenMenu(false)}
         />
       )}
+
+      {openGetStarted && (
+        <GetStartedOverlay close={() => setOpenGetStarted(false)} />
+      )}
+
+      {openSearch && (
+        <SearchOverlay close={() => setOpenSearch(false)} />
+      )}
     </>
   );
 };
 
 export default NavBar;
-

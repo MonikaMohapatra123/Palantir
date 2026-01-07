@@ -21,6 +21,7 @@
   font-weight: 600;
   margin-bottom: 30px;
   text-decoration: underline;
+  
 }
 
 .thesis-tabs button {
@@ -112,6 +113,7 @@
   font-size: 38px;
   margin: 20px 0 30px;
   color: #ebe0e0;
+  text-align: center;
 }
 
 .thesis-actions {

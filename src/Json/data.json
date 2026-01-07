@@ -13,8 +13,8 @@
       { "name": "Career", "link": "/career" }
     ],
     "contact": {
-      "text": "Contact Us",
-      "link": "/contact"
+      "text": "Get Started",
+      "link": "/get-started"
     }
   },
 

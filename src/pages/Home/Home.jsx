@@ -22,6 +22,7 @@ const Home = () => {
       <ScrollTextStory scrollTextData={scrollTextData} />
       <JoinOurTeam joinTeamData={joinTeamData} />
       <PartnerCards partnerData={partnerData} />
+  
       <ButtonGroup buttonGroupData={buttonGroupData} />
     </div>
   );

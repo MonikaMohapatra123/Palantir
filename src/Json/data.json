@@ -140,39 +140,28 @@
   ]
 }
 ,"scrollTextSection": {
- "mainText": {
-  "before": "Solutions We Provide — We specialize in crafting",
-  "highlight": "top-tier digital solutions",
-  "after": "and products with excellent professional services."
-}
+  "mainText": {
+    "before": "Our Projects — We design and build",
+    "highlight": "impactful digital experiences",
+    "after": "that showcase brands, expertise, and professional excellence."
+  }
 ,
-  "products": [
-    {
-      "title": "Web App Development",
-      "description": "Build high-quality, scalable, and fault-resilient web applications using modern technologies and best development practices."
-    },
-    {
-      "title": "Mobile App Development",
-      "description": "Design and develop user-friendly mobile applications tailored to your business goals and target audience."
-    },
-    {
-      "title": "Digital Marketing",
-      "description": "Promote your brand through effective online marketing strategies to increase visibility, engagement, and conversions."
-    },
-    {
-      "title": "Search Engine Optimization",
-      "description": "Enhance your website’s search engine visibility and rankings with proven SEO techniques and data-driven strategies."
-    },
-    {
-      "title": "Data Analysis",
-      "description": "Validate and strengthen your project ideas through detailed business and data analysis insights."
-    },
-    {
-      "title": "Dedicated Development Team",
-      "description": "Get a skilled and committed development team exclusively focused on delivering your project efficiently and on time."
-    }
-  ]
+"products": [
+  {
+    "title": "Avenue Group",
+    "description": "A professional business portfolio website designed to highlight premium offices and showroom projects. Built using React and Node.js, the platform delivers smooth navigation, interactive project showcases, API-driven content, mobile responsiveness, and SEO optimization to reflect brand credibility and innovation."
+  },
+  {
+    "title": "Priya Infra",
+    "description": "A construction and civil engineering website created to showcase ongoing and completed projects. Developed with React and Node.js, it features a structured layout, dynamic project displays, real-time API updates, mobile responsiveness, and SEO-friendly architecture to support business growth."
+  },
+  {
+    "title": "Law Firm",
+    "description": "A comprehensive legal services website designed for law professionals and clients. The platform focuses on clarity, trust, and professionalism with a clean interface, responsive design, optimized performance, and SEO readiness to represent legal excellence."
+  }
+]
 }
+
 ,
      "joinOurTeam": {
       "image": "/girl.jpg",

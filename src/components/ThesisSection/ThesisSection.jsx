@@ -33,10 +33,6 @@ const ThesisSection = ({ thesisData }) => {
 
   return (
     <section className="thesis-section">
-
-      {/* ✅ HEADING */}
-     
-
       {/* TABS */}
       <div className="thesis-tabs">
         {thesisData.map((item, index) => (
@@ -67,14 +63,13 @@ const ThesisSection = ({ thesisData }) => {
           {thesisData.map((item, index) => (
             <div className="thesis-slide" key={index}>
               <img src={item.image} alt={item.title} />
-              <div className="thesis-overlay">
-                <span className="thesis-count">{item.count}</span>
-                <h2>{item.title}</h2>
 
-                {/* <div className="thesis-actions">
-                  <button className="outline">PDF ↓</button>
-                  <button className="outline">SHARE →</button>
-                </div> */}
+              {/* ✅ IMPROVED TEXT STRUCTURE */}
+              <div className="thesis-overlay">
+                <div className="thesis-overlay-content">
+                  <span className="thesis-count">{item.count}</span>
+                  <h2>{item.title}</h2>
+                </div>
               </div>
             </div>
           ))}

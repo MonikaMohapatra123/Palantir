@@ -1,23 +1,44 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./ScrollTextSection.css";
 
 const ScrollTextSection = ({ scrollTextData }) => {
-  const [scrollY, setScrollY] = useState(0);
+  const sectionRef = useRef(null);
+  const [offset, setOffset] = useState(0);
 
   useEffect(() => {
-    const handleScroll = () => setScrollY(window.scrollY);
+    const handleScroll = () => {
+      if (!sectionRef.current) return;
+
+      const rect = sectionRef.current.getBoundingClientRect();
+      const windowHeight = window.innerHeight;
+
+      // start moving only when section enters viewport
+      if (rect.top < windowHeight && rect.bottom > 0) {
+        const progress = Math.min(
+          Math.max((windowHeight - rect.top) / windowHeight, 0),
+          1
+        );
+
+        setOffset(progress * 60); // max 60px movement
+      }
+    };
+
     window.addEventListener("scroll", handleScroll);
+    handleScroll();
+
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   if (!scrollTextData) return null;
 
   return (
-    <section className="scroll-container">
-      {/* FIRST PARAGRAPH */}
+    <section ref={sectionRef} className="scroll-container">
+      {/* HERO TEXT */}
       <div
         className="hero-text"
-        style={{ transform: `translateY(${scrollY * 0.15}px)` }}
+        style={{
+          transform: `translateY(${offset}px)`,
+        }}
       >
         <h1>
           {scrollTextData.mainText.before}
@@ -26,10 +47,10 @@ const ScrollTextSection = ({ scrollTextData }) => {
         </h1>
       </div>
 
-      {/* SPACE HOLDER */}
+      {/* SPACER */}
       <div className="hero-spacer"></div>
 
-      {/* PRODUCTS SECTION */}
+      {/* PRODUCTS */}
       <div className="products-section">
         {scrollTextData.products.map((item, index) => (
           <div className="product" key={index}>

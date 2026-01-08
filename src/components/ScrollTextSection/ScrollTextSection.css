@@ -1,19 +1,24 @@
+/* ======================
+   MAIN CONTAINER
+====================== */
 .scroll-container {
   background: #ffffff;
-  padding: 80px 20px; /* mobile side padding */
+  padding: 30px 20px 80px; /* ✅ minimal top space */
 }
 
 /* ======================
-   FIRST TEXT SECTION
+   HERO TEXT
 ====================== */
 .hero-text {
   max-width: 1100px;
   margin: 0 auto;
+  padding-top: 10px; /* controlled spacing */
   will-change: transform;
-  
+    transition: transform 0.1s linear;
 }
 
 .hero-text h1 {
+  margin: 0; /* 🔴 IMPORTANT: removes default browser gap */
   font-size: 58px;
   font-weight: 500;
   line-height: 1.15;
@@ -24,9 +29,9 @@
   color: #bdbdbd;
 }
 
-/* Spacer to prevent overlap */
+/* Spacer to avoid overlap */
 .hero-spacer {
-  height: 220px;
+  height: 180px;
 }
 
 /* ======================
@@ -35,21 +40,21 @@
 .products-section {
   max-width: 1100px;
   margin: 0 auto;
-  border-top: 1px solid #eee;
+ 
 }
 
 .product {
-  padding: 60px 0;
-  border-bottom: 1px solid #eee;
+  padding: 40px 0;
 }
 
 .product h2 {
+  margin: 0 0 12px;
   font-size: 64px;
   font-weight: 500;
-  margin-bottom: 12px;
 }
 
 .product p {
+  margin: 0;
   font-size: 18px;
   color: #555;
   max-width: 600px;
@@ -65,7 +70,7 @@
   }
 
   .hero-spacer {
-    height: 180px;
+    height: 140px;
   }
 
   .product h2 {
@@ -78,7 +83,7 @@
 ====================== */
 @media (max-width: 768px) {
   .scroll-container {
-    padding: 60px 16px;
+    padding: 24px 16px 60px;
   }
 
   .hero-text {
@@ -91,11 +96,7 @@
   }
 
   .hero-spacer {
-    height: 120px;
-  }
-
-  .products-section {
-    margin-top: 20px;
+    height: 100px;
   }
 
   .product {

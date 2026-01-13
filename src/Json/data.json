@@ -181,7 +181,7 @@
     {
       "name": "Samantha Patel — Head of Engineering",
       "mid": "Despite the time zone differences, working with Axiomos was seamless. Their team was incredibly responsive, transparent, and committed to delivering excellence.",
-      "bottom": "The custom CRM solution they built for our firm has significantly improved our workflow efficiency. (San Francisco, USA)"
+      "bottom": "The custom CRM "
     },
     {
       "name": "Meera Shah — Senior Product Manager",
@@ -216,11 +216,9 @@
           "external": false
         }
       ]
+    }
     },
        
-
-
-  
   "2": {
     "page": "AboutHome",
     "AboutUssubtitle": "Who We Are",
@@ -228,7 +226,6 @@
     "AboutUshighlight": "Us",
     "AboutUsdescription": "We are a trusted infrastructure company delivering quality, safety, and innovation across projects. Our focus is on long-term value creation and sustainable development.",
     "AboutUsimage": "/pic-2.jpg",
-
     "Highlightssubtitle": "Why Choose Us",
     "Highlightstitle": "Our",
     "Highlightshighlight": "Highlights",
@@ -237,5 +234,5 @@
   }
 
 
-}
+
 }

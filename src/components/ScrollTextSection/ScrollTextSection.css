@@ -3,7 +3,7 @@
 ====================== */
 .scroll-container {
   background: #ffffff;
-  padding: 30px 20px 80px; /* ✅ minimal top space */
+  padding: 30px 20px 80px;
 }
 
 /* ======================
@@ -12,13 +12,13 @@
 .hero-text {
   max-width: 1100px;
   margin: 0 auto;
-  padding-top: 10px; /* controlled spacing */
+  padding-top: 10px;
   will-change: transform;
-    transition: transform 0.1s linear;
+  transition: transform 0.1s linear;
 }
 
 .hero-text h1 {
-  margin: 0; /* 🔴 IMPORTANT: removes default browser gap */
+  margin: 0;
   font-size: 58px;
   font-weight: 500;
   line-height: 1.15;
@@ -29,35 +29,68 @@
   color: #bdbdbd;
 }
 
-/* Spacer to avoid overlap */
+/* Spacer */
 .hero-spacer {
   height: 180px;
 }
 
 /* ======================
-   PRODUCTS SECTION
+   PRODUCTS SECTION (HORIZONTAL)
 ====================== */
 .products-section {
   max-width: 1100px;
   margin: 0 auto;
- 
+  display: flex;
+  gap: 28px;
+  overflow-x: auto;
+  padding-bottom: 20px;
+  scroll-behavior: smooth;
 }
 
+/* Hide scrollbar */
+.products-section::-webkit-scrollbar {
+  display: none;
+}
+.products-section {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* ======================
+   PRODUCT CARD
+====================== */
 .product {
-  padding: 40px 0;
+  min-width: 340px;
+  background: #f5f5f5;
+  padding: 36px 32px;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  cursor: pointer;
+  position: relative;
+  flex-shrink: 0;
 }
 
+/* IMAGE-LIKE HOVER EFFECT */
+.product:hover {
+  transform: scale(1.06);
+  box-shadow: 0 22px 48px rgba(0, 0, 0, 0.14);
+  z-index: 2;
+}
+
+/* ======================
+   TEXT STYLES
+====================== */
 .product h2 {
-  margin: 0 0 12px;
-  font-size: 64px;
+  margin: 0 0 14px;
+  font-size: 22px;
   font-weight: 500;
+  letter-spacing: 0.5px;
 }
 
 .product p {
   margin: 0;
-  font-size: 18px;
+  font-size: 16px;
+  line-height: 1.6;
   color: #555;
-  max-width: 600px;
 }
 
 /* ======================
@@ -73,8 +106,9 @@
     height: 140px;
   }
 
-  .product h2 {
-    font-size: 48px;
+  .product {
+    min-width: 300px;
+    padding: 32px 28px;
   }
 }
 
@@ -87,7 +121,7 @@
   }
 
   .hero-text {
-    transform: none !important; /* smoother on mobile */
+    transform: none !important;
   }
 
   .hero-text h1 {
@@ -100,15 +134,16 @@
   }
 
   .product {
-    padding: 40px 0;
+    min-width: 260px;
+    padding: 28px 24px;
   }
 
   .product h2 {
-    font-size: 34px;
+    font-size: 20px;
   }
 
   .product p {
-    font-size: 16px;
+    font-size: 15px;
   }
 }
 
@@ -120,7 +155,7 @@
     font-size: 28px;
   }
 
-  .product h2 {
-    font-size: 28px;
+  .product {
+    min-width: 240px;
   }
 }

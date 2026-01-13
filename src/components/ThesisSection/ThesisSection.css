@@ -3,7 +3,7 @@
 ================================ */
 .thesis-section {
   background: #e5e5e5;
-  padding: 40px 0 80px;
+  padding: 80px 0;              /* ✔ Equal top & bottom spacing */
 }
 
 /* ===============================
@@ -12,25 +12,29 @@
 .thesis-tabs {
   display: flex;
   gap: 12px;
-  padding: 0 40px 40px;
+  padding: 40px 40px;           /* ✔ Equal space above & below tabs */
+  margin-bottom: 40px;          /* ✔ Gap between tabs & slider */
   flex-wrap: wrap;
+  background: #e5e5e5;
 }
 
 .thesis-tabs button {
   position: relative;
-  background: #fff;
+  background: #ffffff;
   border: 1px solid #d0d0d0;
   padding: 10px 22px;
   font-size: 13px;
   border-radius: 6px;
   cursor: pointer;
   overflow: hidden;
+  transition: border-color 0.3s ease;
 }
 
 .thesis-tabs button span {
   position: relative;
   z-index: 2;
   color: hsl(0, 0%, 47%);
+  transition: color 0.3s ease;
 }
 
 .thesis-tabs button::before {
@@ -57,6 +61,13 @@
   to {
     transform: translateX(0);
   }
+}
+
+/* ===============================
+   SLIDER WRAPPER
+================================ */
+.thesis-slider-wrapper {
+  position: relative;
 }
 
 /* ===============================
@@ -87,18 +98,15 @@
 }
 
 /* ===============================
-   OVERLAY (FIXED TEXT DESIGN)
+   OVERLAY
 ================================ */
 .thesis-overlay {
   position: absolute;
   inset: 0;
   z-index: 2;
-
   display: flex;
   align-items: center;
-
   padding: 0 80px;
-
   background: linear-gradient(
     to right,
     rgba(0, 0, 0, 0.6),
@@ -131,13 +139,6 @@
 }
 
 /* ===============================
-   SLIDER WRAPPER
-================================ */
-.thesis-slider-wrapper {
-  position: relative;
-}
-
-/* ===============================
    NAV ARROWS
 ================================ */
 .nav-arrow {
@@ -151,7 +152,6 @@
   color: white;
   cursor: pointer;
   z-index: 5;
-
   display: flex;
   align-items: center;
   justify-content: center;
@@ -167,6 +167,6 @@
 }
 
 .nav-arrow:hover {
-  background: white;
-  color: black;
+  background: #ffffff;
+  color: #000000;
 }

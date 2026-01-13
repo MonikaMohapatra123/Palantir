@@ -1,67 +1,119 @@
 .hero-container {
   position: relative;
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   overflow: hidden;
 }
 
+/* Video */
 .hero-video {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  z-index: 1;
+  z-index: -2;
+  pointer-events: none;
 }
 
+/* Overlay */
 .hero-overlay0 {
-  position: absolute;
+  position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.4);
-  z-index: 2;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: -1;
 }
 
+/* Hero Content */
 .hero-content {
   position: relative;
-  z-index: 3;
-  height: 100%;
+  z-index: 1;
+  height: 100vh;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
   padding: 20px;
-  color: white;
+  color: #ffffff;
 }
 
 .hero-content h1 {
   font-size: 4rem;
-  font-weight:700;
-  margin-bottom: 15px;
-  text-shadow: 0 4px 10px rgba(0,0,0,0.6);
-   max-width: 700px;
+  font-weight: 700;
+  max-width: 800px;
+  line-height: 1.2;
+  text-shadow: 0 6px 18px rgba(0, 0, 0, 0.7);
 }
 
-.hero-content p {
-  font-size: 1.4rem;
-  max-width: 700px;
-  text-shadow: 0 4px 10px rgba(0,0,0,0.6);
+/* Responsive */
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 2.6rem;
+  }
 }
 
-.hero-content button {
-  margin-top: 25px;
-  padding: 12px 32px;
-  font-size: 1.1rem;
-  border: none;
-  background: #e50914;
-  color: white;
-  border-radius: 10px;
+.scroll-down {
+  position: fixed;       /* fix it to viewport bottom */
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #ffffff;
+  font-family: sans-serif;
+  z-index: 2;
   cursor: pointer;
-  transition: 0.3s;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.4);
 }
 
-.hero-content button:hover {
-  background: #b00610;
+/* Arrow with tail */
+.scroll-down .arrow {
+  width: 2px;            /* thin tail */
+  height: 20px;           /* tail length */
+  background: #fff;       /* white tail */
+  position: relative;
+  margin-bottom: 8px;
+  animation: bounce 2s infinite;
+}
+
+.scroll-down .arrow::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%) rotate(45deg); /* right side of tip */
+  width: 10px;
+  height: 10px;
+  border-bottom: 1px solid #fff;
+  border-right: 1px solid #fff;
+  background: transparent;
+}
+
+.scroll-down .arrow::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%) rotate(-45deg); /* left side of tip */
+  width: 10px;
+  height: 10px;
+  border-bottom: 2px solid #fff;
+  border-left: 2px solid #fff;
+  background: transparent;
+}
+
+/* Scroll Text */
+.scroll-down .scroll-text {
+  font-size: 1rem;
+  letter-spacing: 1px;
+  color: #fff;
+  text-align: center;
+}
+
+/* Bounce Animation */
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+  40% { transform: translateX(-50%) translateY(-8px); }
+  60% { transform: translateX(-50%) translateY(-4px); }
 }

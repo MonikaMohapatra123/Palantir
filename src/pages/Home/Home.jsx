@@ -6,6 +6,7 @@ import ScrollTextStory from "../../components/ScrollTextSection/ScrollTextSectio
 import PartnerCards from "../../components/PartnerCards/PartnerCards";
 import ButtonGroup from "../../components/ButtonGroup/ButtonGroup";
 import data from "../../Json/data.json";
+import "./Home.css";
 
 const Home = () => {
   const heroData = data["1"]?.heroSection;
@@ -16,15 +17,19 @@ const Home = () => {
   const buttonGroupData = data["1"]?.buttonGroup;
 
   return (
-    <div>
+    <>
+      {/* 🔒 FIXED HERO */}
       <HeroSection heroData={heroData} />
-      <ThesisSection thesisData={thesisData} />
-      <ScrollTextStory scrollTextData={scrollTextData} />
-      <JoinOurTeam joinTeamData={joinTeamData} />
-      <PartnerCards partnerData={partnerData} />
-  
-      <ButtonGroup buttonGroupData={buttonGroupData} />
-    </div>
+
+      {/* 🔽 SCROLLING CONTENT (ON TOP OF HERO) */}
+      <div className="page-content">
+        <ThesisSection thesisData={thesisData} />
+        <ScrollTextStory scrollTextData={scrollTextData} />
+        <JoinOurTeam joinTeamData={joinTeamData} />
+        <PartnerCards partnerData={partnerData} />
+        <ButtonGroup buttonGroupData={buttonGroupData} />
+      </div>
+    </>
   );
 };
 

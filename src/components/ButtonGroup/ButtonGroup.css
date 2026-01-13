@@ -25,31 +25,43 @@
   justify-content: space-between;
   padding: 0 48px;
   cursor: pointer;
-  transition: all 0.25s ease;
+  transition: background-color 0.35s ease, color 0.35s ease;
 }
 
 /* ======================
-   TEXT
+   TEXT & ARROW
 ====================== */
-.cta-text {
-  display: flex;
-  align-items: center;
+.cta-text,
+.cta-arrow {
+  transition: transform 0.3s ease, color 0.35s ease;
 }
 
 /* ======================
-   LIGHT BUTTON
+   LIGHT (CEMENT)
 ====================== */
 .cta-light {
   background-color: #e6e6e6;
   color: #111;
 }
 
+/* hover → dark */
+.cta-light:hover {
+  background-color: hwb(180 71% 27%);
+  color: #ffffff;
+}
+
 /* ======================
-   DARK BUTTON
+   DARK
 ====================== */
 .cta-dark {
   background-color: #1f2424;
   color: #ffffff;
+}
+
+/* hover → cement */
+.cta-dark:hover {
+  background-color: #a19d9d;
+  color: #111;
 }
 
 /* ======================
@@ -62,31 +74,37 @@
 }
 
 /* ======================
-   INTERACTION
+   HOVER SLIDE EFFECT
 ====================== */
-.cta-button:hover {
-  opacity: 0.95;
+.cta-button:hover .cta-text {
+  transform: translateX(6px);
 }
 
+.cta-button:hover .cta-arrow {
+  transform: translateX(12px);
+}
+
+/* ======================
+   ACTIVE
+====================== */
 .cta-button:active {
   transform: scale(0.98);
 }
 
 /* ======================
-   MOBILE – SOLID BUTTONS
+   MOBILE
 ====================== */
 @media (max-width: 768px) {
   .cta-wrapper {
     flex-direction: column;
     gap: 16px;
-    padding: 20px 20px;
+    padding: 20px;
   }
 
   .cta-button {
     height: 72px;
     font-size: 16px;
-    padding: 20px  20px;
-    /* border-radius: 12px; */
+    padding: 20px;
   }
 
   .cta-arrow {
@@ -99,13 +117,12 @@
 ====================== */
 @media (max-width: 480px) {
   .cta-button {
-    height: 124px;
+    height: 64px;
     font-size: 15px;
-    padding: 18px 18px;
-   
+    padding: 18px;
   }
 
   .cta-arrow {
-    font-size: 17px;
+    font-size: 22px;
   }
 }

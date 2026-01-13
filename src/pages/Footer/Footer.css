@@ -1,146 +1,106 @@
-.footer {
+.pl-footer {
   background: #ffffff;
-  color: #374151;
-  padding-top: 0;
+  border-top: 1px solid #e5e7eb;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  color: #111827;
 }
 
-/* Red accent line */
-.footer-top-line {
-  height: 2px;
-  background: #dc2626;
-}
-
-.footer-container {
-  max-width: 1200px;
+.pl-footer-inner {
+  max-width: 1400px;
   margin: auto;
-  padding: 50px 20px 30px;
+  padding: 60px 40px;
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr;
+  grid-template-columns: 1.4fr 1fr 1fr 1fr 1fr;
   gap: 40px;
 }
 
 /* LEFT */
-.footer-left h3 {
-  font-size: 22px;
-  color: #111827;
-  margin-bottom: 12px;
-}
-
-.footer-left p {
-  font-size: 14px;
-  line-height: 1.7;
-  max-width: 380px;
-}
-
-/* LINKS + CONTACT */
-.footer-links h4,
-.footer-contact h4 {
-  font-size: 15px;
-  margin-bottom: 14px;
-  color: #111827;
-}
-
-.footer-links a {
-  display: block;
-  font-size: 14px;
-  color: #4b5563;
-  text-decoration: none;
-  margin-bottom: 8px;
-  transition: 0.2s;
-}
-
-.footer-links a:hover {
-  color: #dc2626;
-}
-
-.footer-contact p {
-  font-size: 14px;
-  margin-bottom: 6px;
-  color: #4b5563;
-}
-
-/* BOTTOM */
-.footer-bottom {
-  text-align: center;
+.pl-footer-left {
   font-size: 13px;
-  color: #6b7280;
-  padding: 15px 20px;
-  border-top: 1px solid #e5e7eb;
 }
 
-/* ============================= */
-/* 📱 MOBILE RESPONSIVE */
-/* ============================= */
-
-@media (max-width: 768px) {
-  .footer-container {
-    grid-template-columns: 1fr;
-    gap: 30px;
-    padding: 40px 20px 25px;
-  }
-
-  .footer-left h3 {
-    font-size: 20px;
-  }
-
-  .footer-left p {
-    max-width: 100%;
-  }
-
-  .footer-links h4,
-  .footer-contact h4 {
-    font-size: 14px;
-  }
-
-  .footer-links a,
-  .footer-contact p {
-    font-size: 13px;
-  }
+.copyright {
+  line-height: 1.6;
+  color: #374151;
 }
-/* ============================= */
-/* AXIOMOS CREDIT LINE */
-/* ============================= */
 
-.footer-credit {
-  text-align: center;
+.footer-divider {
+  height: 1px;
+  background: #d1d5db;
+  margin: 16px 0;
+  width: 220px;
+}
+
+.footer-link {
   font-size: 13px;
-  color: #f0f1f1;
-  padding: 12px 20px;
-  background: hsl(0, 8%, 7%);
-}
-
-.footer-credit a {
-  color: #dc2626;
-  font-weight: 600;
+  color: #111827;
   text-decoration: none;
 }
 
-.footer-credit a:hover {
+.footer-link:hover {
   text-decoration: underline;
 }
 
-/* Mobile */
-@media (max-width: 480px) {
-  .footer-credit {
-    font-size: 12px;
+.regions {
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  color: #6b7280;
+}
+
+.social-buttons {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.social-buttons button {
+  background: transparent;
+  border: 1px solid #9ca3af;
+  padding: 6px 14px;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  cursor: pointer;
+}
+
+.social-buttons button:hover {
+  background: #111827;
+  color: #ffffff;
+}
+
+/* COLUMNS */
+.pl-footer-col h5 {
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  color: #6b7280;
+  margin-bottom: 14px;
+}
+
+.pl-footer-col a {
+  display: block;
+  font-size: 13px;
+  color: #111827;
+  text-decoration: none;
+  margin-bottom: 8px;
+}
+
+.pl-footer-col a:hover {
+  text-decoration: underline;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .pl-footer-inner {
+    grid-template-columns: 1fr 1fr;
   }
 }
 
-/* ============================= */
-/* 📱 SMALL MOBILE */
-/* ============================= */
-
-@media (max-width: 480px) {
-  .footer-container {
-    padding: 35px 16px 20px;
-    gap: 25px;
+@media (max-width: 600px) {
+  .pl-footer-inner {
+    grid-template-columns: 1fr;
   }
 
-  .footer-left h3 {
-    font-size: 18px;
-  }
-
-  .footer-bottom {
-    font-size: 12px;
+  .footer-divider {
+    width: 100%;
   }
 }

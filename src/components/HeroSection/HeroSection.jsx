@@ -2,7 +2,7 @@ import React from "react";
 import "./HeroSection.css";
 
 const HeroSection = ({ heroData }) => {
-  if (!heroData) return null; // safety check
+  if (!heroData) return null;
 
   return (
     <section className="hero-container">
@@ -19,10 +19,17 @@ const HeroSection = ({ heroData }) => {
       {/* Overlay */}
       <div className="hero-overlay0"></div>
 
-      {/* Content */}
+      {/* Hero Content */}
       <div className="hero-content">
         <h1>{heroData.heading}</h1>
       </div>
+
+      {/* Scroll Arrow & Text */}
+      <div className="scroll-down">
+  <div className="arrow"></div>
+  <span className="scroll-text">Scroll to Explore</span>
+</div>
+
     </section>
   );
 };

@@ -8,7 +8,7 @@ const Footer = () => {
         {/* LEFT COLUMN */}
         <div className="pl-footer-left">
           <p className="copyright">
-            © 2026 Palantir Technologies Inc.
+            © 2026 Axiomos Technologies LLP.
             <br />
             All rights reserved.
           </p>

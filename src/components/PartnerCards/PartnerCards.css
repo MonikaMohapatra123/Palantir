@@ -40,10 +40,19 @@
 }
 
 @media (hover: hover) {
-  .partner-scroll:hover .partner-track {
+  .partner-card:hover {
+    animation-play-state: paused;
+  }
+
+  .partner-card:hover ~ .partner-card {
+    animation-play-state: paused;
+  }
+
+  .partner-track:hover {
     animation-play-state: paused;
   }
 }
+
 
 /* ===============================
    CARD
@@ -74,58 +83,44 @@
   font-size: 14px;
   letter-spacing: 1px;
   font-weight: 500;
-  margin-bottom: 24px;
+  margin-bottom: 20px;
   color: #111;
 }
 
 /* ===============================
-   TEXT BASE (CLIPPED)
+   TEXT CONTAINER (FIXED – NO CUT)
+================================ */
+.card-content {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;          /* visible lines */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  transition: all 0.6s ease;
+}
+
+/* ===============================
+   TEXT
 ================================ */
 .card-text {
-  font-size: 19px;
+  font-size: 18px;
   line-height: 1.6;
   color: #110202;
-
-  position: absolute;
-  left: 28px;
-  right: 28px;
-  top: 120px;
-
-  /* THIS IS THE FIX */
-  clip-path: inset(0 0 0 0);
-
-  transition:
-    transform 0.7s cubic-bezier(0.4, 0, 0.2, 1),
-    clip-path 0.7s cubic-bezier(0.4, 0, 0.2, 1);
-
-  will-change: transform, clip-path;
+  margin-bottom: 14px;
+  margin-top: 10px;
+  transition: font-size 0.4s ease;
 }
 
 /* ===============================
-   INITIAL STATES
-================================ */
-.mid-text {
-  transform: translateY(0);
-  clip-path: inset(0 0 0 0);
-}
-
-.bottom-text {
-  transform: translateY(100%);
-  clip-path: inset(100% 0 0 0);
-}
-
-/* ===============================
-   HOVER — PERFECT HANDOFF
+   HOVER SHOW ALL TEXT
 ================================ */
 @media (hover: hover) {
-  .partner-card:hover .mid-text {
-    transform: translateY(-100%);
-    clip-path: inset(0 0 100% 0); /* FULLY CUT */
+  .partner-card:hover .card-content {
+    -webkit-line-clamp: unset;
+    max-height: 320px;
   }
 
-  .partner-card:hover .bottom-text {
-    transform: translateY(0);
-    clip-path: inset(0 0 0 0);
+  .partner-card:hover .card-text {
+    font-size: 14px;
   }
 }
 
@@ -156,7 +151,6 @@
 
   .card-text {
     font-size: 16px;
-    top: 105px;
   }
 }
 
@@ -173,7 +167,6 @@
 
   .card-text {
     font-size: 14px;
-    top: 90px;
   }
 }
 

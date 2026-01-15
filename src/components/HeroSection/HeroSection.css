@@ -39,19 +39,24 @@
 }
 
 .hero-content h1 {
-  font-size: 4rem;
-  font-weight: 700;
-  max-width: 800px;
-  line-height: 1.2;
+  font-family: 'Inter', sans-serif;
+  font-size: 3.2rem;
+  font-weight: 500;        /* IMPORTANT */
+  letter-spacing: -0.5px; /* modern AI look */
+  line-height: 1.25;
+  max-width: 900px;
+  margin: 0 auto;
   text-shadow: 0 6px 18px rgba(0, 0, 0, 0.7);
 }
 
-/* Responsive */
+
 @media (max-width: 768px) {
   .hero-content h1 {
-    font-size: 2.6rem;
+    font-size: 2.4rem;
+    font-weight: 500;
   }
 }
+
 
 .scroll-down {
   position: fixed;       /* fix it to viewport bottom */

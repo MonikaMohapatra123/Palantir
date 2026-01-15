@@ -12,8 +12,8 @@
 .thesis-tabs {
   display: flex;
   gap: 12px;
-  padding: 40px 40px;           /* ✔ Equal space above & below tabs */
-  margin-bottom: 40px;          /* ✔ Gap between tabs & slider */
+  padding: 30px 30px;           /* ✔ Equal space above & below tabs */
+  margin-bottom: 20px;          /* ✔ Gap between tabs & slider */
   flex-wrap: wrap;
   background: #e5e5e5;
 }
@@ -156,6 +156,7 @@
   align-items: center;
   justify-content: center;
   transition: background 0.3s ease, color 0.3s ease;
+  border-radius: 2px;
 }
 
 .nav-arrow.left {

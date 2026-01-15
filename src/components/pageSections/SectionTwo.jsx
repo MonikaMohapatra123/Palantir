@@ -6,16 +6,17 @@ const SectionTwo = ({ data }) => {
 
   return (
     <section className="section section-two">
-      <h2>{data.heading}</h2>
+      {data.items.map((item, i) => (
+        <div className="split-row" key={i}>
+          <div className="left">
+            <h2>{item.title}</h2>
+          </div>
 
-      <div className="card-grid">
-        {data.items.map((item, i) => (
-          <div className="card" key={i}>
-            <h4>{item.title}</h4>
+          <div className="right">
             <p>{item.description}</p>
           </div>
-        ))}
-      </div>
+        </div>
+      ))}
     </section>
   );
 };

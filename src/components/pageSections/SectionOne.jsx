@@ -5,9 +5,14 @@ const SectionOne = ({ data }) => {
   if (!data) return null;
 
   return (
-    <section className="section section-one">
-      <h1>{data.heading}</h1>
-      <p>{data.description}</p>
+    <section className="section-one">
+      <div className="section-one-inner">
+        <h1 className="section-one-title">{data.heading}</h1>
+
+        <p className="section-one-description">
+          {data.description}
+        </p>
+      </div>
     </section>
   );
 };

@@ -5,13 +5,12 @@ const SectionThree = ({ data }) => {
   if (!data) return null;
 
   return (
-    <section className="section section-three">
-      <h2 className="section-title">{data.heading}</h2>
+    <section className="section-three">
+      <h2 className="section-three-title">{data.heading}</h2>
 
-      <div className="list-grid">
+      <div className="section-three-list">
         {data.items.map((item, i) => (
-          <div className="list-item" key={i}>
-            <span className="list-index">{i + 1}</span>
+          <div className="section-three-item" key={i}>
             <h4>{item.title}</h4>
             <p>{item.description}</p>
           </div>

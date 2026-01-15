@@ -104,7 +104,7 @@
 .card-text {
   font-size: 18px;
   line-height: 1.6;
-  color: #c4bbbb;
+  color: hsl(0, 3%, 7%);
   margin-bottom: 14px;
   margin-top: 20px;
   transition: font-size 0.4s ease;

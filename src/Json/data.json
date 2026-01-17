@@ -1,22 +1,54 @@
 {
-   "0": {
+  
+  "0": {
     "page": "navbar",
     "logo": "/logo.png",
     "company": "Axiomos",
     "menu": [
-      { "name": "Projects", "pageType": "Projects", "dropdown": true },
-      { "name": "Services", "pageType": "Services", "dropdown": true },
-      { "name": "Industries", "pageType": "Industries", "dropdown": true },
-      { "name": "Technologies", "pageType": "Technologies", "dropdown": true },
-      { "name": "About Us", "link": "/about" },
-      { "name": "Blog", "link": "/blog" },
-      { "name": "Career", "link": "/career" }
+      {
+        "name": "Projects",
+        "pageType": "Projects",
+        "dropdown": true,
+        "link": "/projects"
+      },
+      {
+        "name": "Services",
+        "pageType": "Services",
+        "dropdown": true,
+        "link": "/services"
+      },
+      {
+        "name": "Industries",
+        "pageType": "Industries",
+        "dropdown": true,
+        "link": "/industries"
+      },
+      {
+        "name": "Technologies",
+        "pageType": "Technologies",
+        "dropdown": true,
+        "link": "/technologies"
+      },
+      {
+        "name": "About Us",
+        "link": "/about"
+      },
+      {
+        "name": "Blog",
+        "link": "/blog"
+      },
+      {
+        "name": "Career",
+        "link": "/career"
+      }
     ],
     "contact": {
       "text": "Get Started",
       "link": "/get-started"
     }
-  },
+  }
+
+,
 
   "1": {
     "page": "homepage",

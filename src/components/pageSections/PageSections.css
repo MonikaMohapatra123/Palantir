@@ -206,3 +206,88 @@
     font-size: 26px;
   }
 }
+/* ================= MOBILE RESPONSIVE FIX ================= */
+
+@media (max-width: 768px) {
+
+  /* COMMON */
+  .section {
+    padding: 60px 24px;
+  }
+
+  .section p {
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  /* ================= SECTION ONE ================= */
+
+  .section-one {
+    min-height: auto;
+    padding: 80px 0;
+  }
+
+  .section-one-inner {
+    flex-direction: column;
+    padding: 0 24px;
+    gap: 24px;
+  }
+
+  .section-one-title {
+    font-size: 3rem; /* from 6rem */
+    line-height: 1.1;
+    margin: 0;
+  }
+
+  .section-one-description {
+    max-width: 100%;
+    font-size: 1.05rem;
+  }
+
+  /* ================= SECTION TWO ================= */
+
+  .split-row {
+    padding: 32px 24px;
+    gap: 14px;
+  }
+
+  .split-row .left h2 {
+    font-size: 22px;
+  }
+
+  .split-row .left h2::before {
+    font-size: 20px;
+  }
+
+  .split-row .right p {
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  /* ================= SECTION THREE ================= */
+
+  .section-three {
+    padding: 60px 24px;
+  }
+
+  .section-three-title {
+    font-size: 24px;
+    margin-bottom: 40px;
+  }
+
+  .section-three-list {
+    gap: 32px;
+  }
+
+  .section-three-item {
+    padding-top: 20px;
+  }
+
+  .section-three-item h4 {
+    font-size: 18px;
+  }
+
+  .section-three-item p {
+    font-size: 15px;
+  }
+}

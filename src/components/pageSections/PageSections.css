@@ -13,17 +13,17 @@
 .section p {
   font-size: 16px;
   line-height: 1.8;
-  color: #555;
   max-width: 900px;
 }
+
+/* ================= SECTION ONE ================= */
 
 .section-one {
   width: 100%;
   min-height: 100vh;
-  background: #1f2326; /* dark charcoal */
+  background: inherit; /* 🔥 IMPORTANT */
   display: flex;
   align-items: center;
-  margin: 0px;
 }
 
 .section-one-inner {
@@ -34,53 +34,42 @@
   align-items: flex-start;
 }
 
-/* LEFT BIG HEADING */
 .section-one-title {
   font-size: 6rem;
   font-weight: 300;
-  color: #ffffff;
+  color: inherit; /* 🔥 */
   margin: 10px;
 }
 
-/* RIGHT TEXT BLOCK */
 .section-one-description {
   max-width: 420px;
   font-size: 1.3rem;
   line-height: 1.6;
-  color: #ffffff;
+  color: inherit; /* 🔥 */
   margin-top: 1rem;
 }
 
-/* ===============================
-   SECTION TWO – SPLIT ROW DESIGN
-================================ */
+/* ================= SECTION TWO ================= */
 
 .section-two {
-  background: linear-gradient(180deg, #1c1f22 0%, #141618 100%);
-  color: #ffffff;
+  background: inherit; /* 🔥 */
+  color: inherit;
   padding: 0;
   width: 100%;
 }
 
-/* -------------------------------
-   ROW STYLE
--------------------------------- */
 .split-row {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 48px 80px;
-  border-bottom: 1px solid #ffffffde;
+  border-bottom: 1px solid currentColor; /* 🔥 */
 }
 
-/* top white line for first row */
 .split-row:first-child {
-  border-top: 1px solid  white;
+  border-top: 1px solid currentColor;
 }
 
-/* -------------------------------
-   LEFT SIDE (TITLE)
--------------------------------- */
 .split-row .left {
   width: 40%;
 }
@@ -88,22 +77,17 @@
 .split-row .left h2 {
   font-size: 36px;
   font-weight: 500;
-  line-height: 1.2;
   margin: 0;
-  color: #ffffff;
+  color: inherit;
 }
 
-/* arrow before title */
 .split-row .left h2::before {
   content: "↳ ";
   font-size: 28px;
   margin-right: 6px;
-  color: #ffffff;
+  color: inherit;
 }
 
-/* -------------------------------
-   RIGHT SIDE (DESCRIPTION)
--------------------------------- */
 .split-row .right {
   width: 45%;
 }
@@ -111,120 +95,91 @@
 .split-row .right p {
   font-size: 16px;
   line-height: 1.6;
-  color: #d7d7d7;
+  color: inherit;
   margin: 0;
   max-width: 520px;
 }
 
-/* -------------------------------
-   RESPONSIVE
--------------------------------- */
-@media (max-width: 1024px) {
-  .split-row {
-    padding: 40px 48px;
-  }
+/* ================= SECTION THREE ================= */
 
-  .split-row .left h2 {
-    font-size: 30px;
-  }
-}
-
-@media (max-width: 768px) {
-  .split-row {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 32px 24px;
-    gap: 16px;
-  }
-
-  .split-row .left,
-  .split-row .right {
-    width: 100%;
-  }
-
-  .split-row .left h2 {
-    font-size: 26px;
-  }
-
-  .split-row .right p {
-    max-width: 100%;
-  }
-}
-
-
-/* ===== Section Three ===== */
 .section-three {
   background: #ffffff;
   padding: 90px 12%;
   color: #000;
 }
 
-/* Title */
 .section-three-title {
   font-size: 34px;
   font-weight: 600;
   margin-bottom: 70px;
-  letter-spacing: -0.3px;
 }
 
-/* Vertical List */
 .section-three-list {
   display: flex;
   flex-direction: column;
   gap: 48px;
 }
 
-/* Item */
 .section-three-item {
   border-top: 1px solid #000;
   padding-top: 28px;
   max-width: 900px;
 }
 
-/* Title */
 .section-three-item h4 {
   font-size: 20px;
   font-weight: 600;
-  margin-bottom: 10px;
 }
 
-/* Text */
 .section-three-item p {
   font-size: 16px;
   line-height: 1.7;
   color: #333;
-  max-width: 720px;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-  .section-three {
-    padding: 60px 6%;
-  }
+/* ================= THEME SWITCH ================= */
 
-  .section-three-title {
-    font-size: 26px;
-  }
+/* DARK (default) */
+.dark-theme {
+  background: #1f2326;
+  color: #ffffff;
 }
-/* ================= MOBILE RESPONSIVE FIX ================= */
+
+/* LIGHT (Services page) */
+.light-theme {
+  background: #ffffff;
+  color: #000000;
+}
+
+/* ================= SERVICE PAGE DESIGN ================= */
+
+.section-three-service {
+  padding: 100px 80px;
+}
+
+.section-three-service .section-three-title {
+  font-size: 48px;
+  font-weight: 500;
+  margin-bottom: 80px;
+  max-width: 700px;
+}
+
+.section-three-service .section-three-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 80px 120px;
+}
+
+.section-three-service .section-three-item {
+  padding-top: 0;
+  border-top: none;
+}
+
+/* ================= RESPONSIVE ================= */
 
 @media (max-width: 768px) {
-
-  /* COMMON */
   .section {
     padding: 60px 24px;
-  }
-
-  .section p {
-    font-size: 15px;
-    line-height: 1.7;
-  }
-
-  /* ================= SECTION ONE ================= */
-
-  .section-one {
-    min-height: auto;
-    padding: 80px 0;
   }
 
   .section-one-inner {
@@ -234,60 +189,33 @@
   }
 
   .section-one-title {
-    font-size: 3rem; /* from 6rem */
-    line-height: 1.1;
-    margin: 0;
+    font-size: 3rem;
   }
-
-  .section-one-description {
-    max-width: 100%;
-    font-size: 1.05rem;
-  }
-
-  /* ================= SECTION TWO ================= */
 
   .split-row {
+    flex-direction: column;
     padding: 32px 24px;
-    gap: 14px;
   }
-
-  .split-row .left h2 {
-    font-size: 22px;
-  }
-
-  .split-row .left h2::before {
-    font-size: 20px;
-  }
-
-  .split-row .right p {
-    font-size: 15px;
-    line-height: 1.6;
-  }
-
-  /* ================= SECTION THREE ================= */
 
   .section-three {
     padding: 60px 24px;
   }
+}
 
-  .section-three-title {
-    font-size: 24px;
-    margin-bottom: 40px;
-  }
+/* ===== SERVICE PAGE ARROW FOR SECTION THREE ===== */
 
-  .section-three-list {
-    gap: 32px;
-  }
+.section-three-service .section-three-item p {
+  position: relative;
+  padding-left: 28px; /* space for arrow */
+}
 
-  .section-three-item {
-    padding-top: 20px;
-  }
-
-  .section-three-item h4 {
-    font-size: 18px;
-  }
-
-  .section-three-item p {
-    font-size: 15px;
-  }
+/* Arrow before description */
+.section-three-service .section-three-item p::before {
+  content: "↳";
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 20px;
+  line-height: 1.6;
+  color: #000;
 }

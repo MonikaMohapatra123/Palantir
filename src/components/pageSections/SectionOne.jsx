@@ -1,14 +1,36 @@
-import React from "react";
-import "./PageSections.css";
+// import React from "react";
+// import "./PageSections.css";
 
-const SectionOne = ({ data }) => {
+// const SectionOne = ({ data }) => {
+//   if (!data) return null;
+
+//   return (
+//     <section className="section-one">
+//       <div className="section-one-inner">
+//         <h1 className="section-one-title">{data.heading}</h1>
+
+//         <p className="section-one-description">
+//           {data.description}
+//         </p>
+//       </div>
+//     </section>
+//   );
+// };
+
+// export default SectionOne;
+
+
+const SectionOne = ({ data, isService }) => {
   if (!data) return null;
 
   return (
-    <section className="section-one">
+    <section
+      className={`section-one ${
+        isService ? "light-theme" : "dark-theme"
+      }`}
+    >
       <div className="section-one-inner">
         <h1 className="section-one-title">{data.heading}</h1>
-
         <p className="section-one-description">
           {data.description}
         </p>
@@ -16,5 +38,5 @@ const SectionOne = ({ data }) => {
     </section>
   );
 };
-
 export default SectionOne;
+

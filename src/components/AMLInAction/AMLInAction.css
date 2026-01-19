@@ -1,0 +1,63 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+
+.aml {
+  padding: 90px 80px;
+  border-top: 1px solid #e6e6e6;
+  border-bottom: 1px solid #e6e6e6;
+  font-family: "Poppins", sans-serif;
+  background: #fff;
+}
+
+/* Heading */
+.aml-heading {
+  font-size: 72px;
+  font-weight: 500;
+  letter-spacing: -0.5px;
+  margin-bottom: 70px;
+  color: #111;
+}
+
+/* Grid — THIS CREATES EDGE SPACE */
+.aml-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 48px;
+
+  padding-left: 60px;   /* 👈 space before first image */
+  padding-right: 60px;  /* 👈 space after last image */
+}
+
+/* Card */
+.aml-card {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Index */
+.aml-index {
+  font-size: 11px;
+  font-weight: 500;
+  color: #9a9a9a;
+  margin-bottom: 12px;
+}
+
+/* Image (FULL WIDTH like reference) */
+.aml-card img {
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+  margin-bottom: 20px;
+}
+
+/* Text */
+.aml-card p {
+  font-size: 15px;
+  line-height: 1.75;
+  color: #2a2a2a;
+  max-width: 95%;
+}
+
+.aml-card p strong {
+  font-weight: 600;
+  color: #000;
+}

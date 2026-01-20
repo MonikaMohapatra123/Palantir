@@ -1,23 +1,3 @@
-// import React from "react";
-// import "./PageSections.css";
-
-// const SectionOne = ({ data }) => {
-//   if (!data) return null;
-
-//   return (
-//     <section className="section-one">
-//       <div className="section-one-inner">
-//         <h1 className="section-one-title">{data.heading}</h1>
-
-//         <p className="section-one-description">
-//           {data.description}
-//         </p>
-//       </div>
-//     </section>
-//   );
-// };
-
-// export default SectionOne;
 
  import "./PageSections.css";
 const SectionOne = ({ data, isService }) => {
@@ -39,4 +19,3 @@ const SectionOne = ({ data, isService }) => {
   );
 };
 export default SectionOne;
-

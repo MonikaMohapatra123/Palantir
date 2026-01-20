@@ -5,58 +5,70 @@
   box-sizing: border-box;
   font-family: "Inter", sans-serif;
 }
+
 a {
   text-decoration: none;
   color: inherit;
 }
+
 /* ================= WRAPPER ================= */
 .pal-navbar-wrapper {
   position: fixed;
   top: 14px;
   left: 0;
-  width: 100%;                /* ✅ FIX */
+  width: 100%;
+  /* ✅ FIX */
   display: flex;
   justify-content: center;
   z-index: 1000;
 }
+
 .pal-navbar-wrapper--scrolled .pal-navbar {
   background: rgba(0, 0, 0, 0.55);
 }
+
 /* ================= NAVBAR ================= */
 .pal-navbar {
-  width: 100%;                /* ✅ FIX */
+  width: 100%;
+  /* ✅ FIX */
   max-width: 1400px;
   height: 72px;
   background: rgba(0, 0, 0, 0.35);
   backdrop-filter: blur(32px);
   border-radius: 18px;
   border: 1px solid rgba(255, 255, 255, 0.08);
-  padding: 0 27px;             /* equal spacing */
+  padding: 0 27px;
+  /* equal spacing */
   display: flex;
   align-items: center;
   justify-content: space-between;
-   margin: 10px;
+  margin: 10px;
 }
+
 /* ================= LEFT ================= */
 .pal-navbar-left {
   display: flex;
   align-items: center;
   gap: 10px;
 }
+
 .pal-navbar-logo {
   height: 34px;
 }
+
 .pal-navbar-company {
   color: #ffffff;
   font-size: 17px;
   font-weight: 600;
 }
+
 /* ================= RIGHT ================= */
 .pal-navbar-right {
   display: flex;
   align-items: center;
   gap: 14px;
 }
+
 /* ================= CONTACT BUTTON ================= */
 .pal-navbar-contact-btn {
   height: 40px;
@@ -72,10 +84,12 @@ a {
   border: 1px solid #000;
   transition: background 0.25s ease, color 0.25s ease;
 }
+
 .pal-navbar-contact-btn:hover {
   background: #000000;
   color: #ffffff;
 }
+
 /* ================= ICON GROUP ================= */
 .pal-navbar-icon-group {
   display: flex;
@@ -148,6 +162,7 @@ a {
   from {
     transform: translateX(100%);
   }
+
   to {
     transform: translateX(0);
   }
@@ -233,6 +248,7 @@ a {
   from {
     background: rgba(0, 0, 0, 0);
   }
+
   to {
     background: rgba(0, 0, 0, 1);
   }
@@ -268,12 +284,15 @@ a {
 
   opacity: 0;
   animation: closeFadeIn 0.3s ease forwards;
-  animation-delay: 0.35s;   /* 👈 KEY LINE */
+  animation-delay: 0.35s;
+  /* 👈 KEY LINE */
 }
+
 @keyframes closeFadeIn {
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
@@ -324,6 +343,7 @@ a {
     opacity: 0;
     transform: translateY(45px) scale(0.97);
   }
+
   to {
     opacity: 1;
     transform: translateY(0) scale(1);
@@ -490,9 +510,12 @@ a {
 
 /* ARROW */
 .arrow-icon {
-  color: #fff; /* white */
-  font-size: 18px; /* slightly bigger arrow */
+  color: #fff;
+  /* white */
+  font-size: 18px;
+  /* slightly bigger arrow */
 }
+
 /* ===================== */
 /* LATEST NEWS – EXACT UI */
 /* ===================== */
@@ -635,13 +658,15 @@ a {
   }
 
   .mega-sub-item {
-    font-size: 18px; /* adjust for mobile */
+    font-size: 18px;
+    /* adjust for mobile */
   }
 
   .arrow-icon {
     font-size: 20px;
   }
 }
+
 /* ===================== */
 /* MEGA FOOTER */
 /* ===================== */
@@ -749,7 +774,7 @@ a {
 
 .getstarted-left {
   flex: 1;
-  background: rgba(0,0,0,0.85);
+  background: rgba(0, 0, 0, 0.85);
 }
 
 .getstarted-right {

@@ -26,7 +26,7 @@
 
 
 
-
+ import "./PageSections.css";
 const SectionTwo = ({ data, isService }) => {
   if (!data) return null;
 

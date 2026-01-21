@@ -14,12 +14,15 @@ const SearchOverlay = ({ close }) => {
 
         <div className="search-popular">
           <span>POPULAR SEARCHES</span>
+
           <div className="search-tags">
-            <a>Foundry</a>
-            <a>Gotham</a>
-            <a>Apollo</a>
-            <a>Ontology</a>
-            <a>Artificial Intelligence (AI)</a>
+            <button className="search-tag">Foundry</button>
+            <button className="search-tag">Gotham</button>
+            <button className="search-tag">Apollo</button>
+            <button className="search-tag">Ontology</button>
+            <button className="search-tag">
+              Artificial Intelligence (AI)
+            </button>
           </div>
         </div>
       </div>

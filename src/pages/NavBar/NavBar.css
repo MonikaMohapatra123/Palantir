@@ -859,3 +859,15 @@ a {
   cursor: pointer;
   color: inherit;
 }
+.search-tag {
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 4px 8px;
+}
+
+.search-tag:hover {
+  text-decoration: underline;
+}

@@ -9,7 +9,7 @@
 /* LEFT SIDE */
 .left-section {
   position: relative;
-  margin-top:30px;
+  margin-top: 30px;
 }
 
 .left-section h1 {
@@ -41,9 +41,12 @@
   align-items: center;
   padding: 20px 0;
   border-top: 1px solid #000;
-  text-decoration: none;
+  background: none;
+  border: none;
+  cursor: pointer;
   color: #000;
   font-size: 18px;
+  text-align: left;
 }
 
 .row-link:last-child {

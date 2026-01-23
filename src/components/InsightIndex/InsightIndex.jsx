@@ -27,10 +27,10 @@ const InsightIndex = () => {
       {/* RIGHT */}
       <div className="right-section">
         {links.map((item, i) => (
-          <a key={i} href="#" className="row-link">
+          <button key={i} className="row-link">
             <span>{item}</span>
             <span className="arrow">→</span>
-          </a>
+          </button>
         ))}
       </div>
     </section>

@@ -1,0 +1,126 @@
+.featured-posts {
+  padding: 80px 100px;
+  background: #ffffff;
+  font-family: "Inter", sans-serif;
+}
+
+/* Section Title */
+.section-title {
+  font-size: 36px;
+  font-weight: 500;
+  margin-bottom: 50px;
+  color: #000;
+}
+
+/* =========================
+   TOP FEATURED SECTION
+========================= */
+.featured-main {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 80px;
+  align-items: center;
+  margin-bottom: 70px;
+}
+
+/* Featured Image */
+.featured-image {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+}
+
+.featured-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Right Content */
+.featured-content h3 {
+  font-size: 32px;
+  font-weight: 500;
+  margin-bottom: 24px;
+  color: #000;
+}
+
+.featured-content p {
+  font-size: 15px;
+  line-height: 1.8;
+  color: #444;
+  margin-bottom: 16px;
+  max-width: 420px;
+}
+
+/* Read More Link */
+.read-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #000;
+  text-decoration: none;
+  margin-top: 20px;
+  border-bottom: 1px solid #000;
+  width: fit-content;
+  padding-bottom: 2px;
+}
+
+/* =========================
+   BOTTOM GRID SECTION
+========================= */
+.featured-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+}
+
+/* Card Image */
+.featured-card img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  display: block;
+  margin-bottom: 12px;
+}
+
+/* Card Text */
+.featured-card p {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #000;
+}
+
+/* =========================
+   RESPONSIVE (OPTIONAL BUT CLEAN)
+========================= */
+@media (max-width: 1024px) {
+  .featured-posts {
+    padding: 60px 40px;
+  }
+
+  .featured-main {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .featured-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .featured-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .section-title {
+    font-size: 28px;
+  }
+
+  .featured-content h3 {
+    font-size: 24px;
+  }
+}

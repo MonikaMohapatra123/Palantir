@@ -1,15 +1,15 @@
 import React from 'react'
-import BlogHero from '../../components/Blog/BlogHero'
-import BlogList from '../../components/Blog/BlogList'
 import EditorsPickSlider from '../../components/EditorsPickSlider/EditorsPickSlider'
+import InsightIndex from '../../components/InsightIndex/InsightIndex'
+import FeaturedPosts from '../../components/FeaturedPosts/FeaturedPosts'
 
 const Blog = () => {
   return (
     <div>
-      <BlogHero/>
-     
+     <InsightIndex/>
+      <FeaturedPosts/>
       <EditorsPickSlider/>
-       <BlogList/>
+    
     </div>
   )
 }

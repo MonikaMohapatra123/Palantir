@@ -1,0 +1,59 @@
+.palantir-layout {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  height: 100vh;
+  padding: 60px 90px;
+  background: #fff;
+}
+
+/* LEFT SIDE */
+.left-section {
+  position: relative;
+  margin-top:30px;
+}
+
+.left-section h1 {
+  font-size: 72px;
+  font-weight: 400;
+  margin: 0;
+}
+
+/* paragraph is vertically centered */
+.left-section p {
+  position: absolute;
+  top: 45%;
+  max-width: 420px;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #555;
+}
+
+/* RIGHT SIDE */
+.right-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.row-link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+  border-top: 1px solid #000;
+  text-decoration: none;
+  color: #000;
+  font-size: 18px;
+}
+
+.row-link:last-child {
+  border-bottom: 1px solid #000;
+}
+
+.row-link:hover {
+  padding-left: 8px;
+}
+
+.arrow {
+  font-size: 20px;
+}

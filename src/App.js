@@ -10,6 +10,7 @@ import AddPage from "./pages/AddPage/AddPage";
 import EditPage from "./pages/EditPage/EditPage";
 import PageDetails from "./pages/PageDetails/PageDetails";
 import ServicePage from "./pages/ServicePage/ServicePage";
+import Blog from "./pages/Blog/Blog";
 
 
 const App = () => {
@@ -28,6 +29,8 @@ const App = () => {
         <Route path="/about" element={<About />} />
          <Route path="/:pageType/:category" element={<PageDetails/>} />
          <Route path="/services" element={ <ServicePage/>}/>
+         <Route path="/blog" element={ <Blog/>}></Route>
+        
         
         {/* Admin Layout Route */}
         

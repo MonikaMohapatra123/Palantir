@@ -6,6 +6,7 @@ const MegaMenu = ({ menu, dropdownData, close }) => {
   const formatForURL = (text) =>
     text.replace(/\s+/g, "-").toLowerCase();
 
+  
   return (
     <div className="mega-overlay">
       <div className="mega-container">

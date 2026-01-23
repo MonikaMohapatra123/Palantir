@@ -1,0 +1,80 @@
+.editors {
+  padding: 80px 6%;
+  background: #0e0e0e;
+  color: #ffffff;
+}
+
+.editors-header {
+  margin-bottom: 30px;
+}
+
+.editors-header h2 {
+  font-size: 2.2rem;
+  font-weight: 600;
+}
+
+.editors-header p {
+  color: #bdbdbd;
+  margin-top: 6px;
+}
+
+.editors-slider {
+  display: flex;
+  gap: 24px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 10px;
+}
+
+.editors-slider::-webkit-scrollbar {
+  display: none;
+}
+
+.editors-card {
+  min-width: 320px;
+  height: 420px;
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  scroll-snap-align: start;
+  transition: transform 0.4s ease;
+}
+
+.editors-card:hover {
+  transform: translateY(-8px);
+}
+
+.editors-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.editors-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.8),
+    rgba(0, 0, 0, 0.2)
+  );
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.editors-overlay span {
+  font-size: 0.8rem;
+  background: rgba(255, 255, 255, 0.15);
+  width: fit-content;
+  padding: 6px 12px;
+  border-radius: 20px;
+  margin-bottom: 10px;
+}
+
+.editors-overlay h3 {
+  font-size: 1.2rem;
+  font-weight: 500;
+  line-height: 1.4;
+}

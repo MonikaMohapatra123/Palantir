@@ -3,12 +3,14 @@ import EditorsPickSlider from '../../components/EditorsPickSlider/EditorsPickSli
 import InsightIndex from '../../components/InsightIndex/InsightIndex'
 import FeaturedPosts from '../../components/FeaturedPosts/FeaturedPosts'
 
+
 const Blog = () => {
   return (
     <div>
      <InsightIndex/>
       <FeaturedPosts/>
       <EditorsPickSlider/>
+    
     
     </div>
   )

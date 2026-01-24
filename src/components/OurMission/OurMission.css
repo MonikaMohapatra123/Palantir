@@ -1,0 +1,75 @@
+.mission-section {
+  padding: 40px 60px;
+  background: #ffffff;
+  overflow: hidden;
+}
+
+.mission-title {
+  font-size: 32px;
+  font-weight: 500;
+  margin-bottom: 24px;
+}
+
+/* SLIDER */
+.mission-slider {
+  width: 100%;
+  overflow: hidden;
+}
+
+/* TRACK */
+.mission-track {
+  display: flex;
+  gap: 28px;
+  animation: scroll 45s linear infinite;
+}
+
+.mission-slider:hover .mission-track {
+  animation-play-state: paused;
+}
+
+/* CARD */
+.mission-card {
+  min-width: 260px;
+  max-width: 260px;
+  cursor: pointer;
+}
+
+.mission-category {
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: #6b6b6b;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.mission-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  margin-bottom: 12px;
+}
+
+.mission-card h3 {
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.4;
+  margin-bottom: 10px;
+  color: #000;
+}
+
+.watch-link {
+  font-size: 13px;
+  color: #6b6b6b;
+  border-bottom: 1px solid #cfcfcf;
+  width: fit-content;
+}
+
+/* INFINITE SCROLL */
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}

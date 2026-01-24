@@ -11,6 +11,7 @@ import EditPage from "./pages/EditPage/EditPage";
 import PageDetails from "./pages/PageDetails/PageDetails";
 import ServicePage from "./pages/ServicePage/ServicePage";
 import Blog from "./pages/Blog/Blog";
+import CaseStudies from "./pages/CaseStudies/CaseStudies";
 
 
 const App = () => {
@@ -30,6 +31,7 @@ const App = () => {
          <Route path="/:pageType/:category" element={<PageDetails/>} />
          <Route path="/services" element={ <ServicePage/>}/>
          <Route path="/blog" element={ <Blog/>}></Route>
+          <Route path="/case-studies" element={<CaseStudies/>}></Route>
         
         
         {/* Admin Layout Route */}

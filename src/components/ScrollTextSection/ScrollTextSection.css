@@ -1,24 +1,24 @@
+/* ======================
+   CONTAINER
+====================== */
 .scroll-container {
   background: #ffffff;
   padding: 30px 20px 80px;
-  /* ✅ minimal top space */
 }
 
 /* ======================
-   HERO TEXTF
+   HERO TEXT
 ====================== */
 .hero-text {
   max-width: 1100px;
   margin: 0 auto;
   padding-top: 10px;
-  /* controlled spacing */
   will-change: transform;
-  transition: transform 0.1s linear;
+  transition: transform 0.25s ease-out;
 }
 
 .hero-text h1 {
   margin: 0;
-  /* 🔴 IMPORTANT: removes default browser gap */
   font-size: 58px;
   font-weight: 500;
   line-height: 1.15;
@@ -29,107 +29,14 @@
   color: #bdbdbd;
 }
 
-/* Spacer to avoid overlap */
+/* Spacer */
 .hero-spacer {
   height: 180px;
 }
 
 /* ======================
-   PRODUCTS SECTION
+   PRODUCTS
 ====================== */
-.products-section {
-  max-width: 1100px;
-  margin: 0 auto;
-
-}
-
-.product {
-  padding: 40px 0;
-}
-
-.product h2 {
-  margin: 0 0 12px;
-  font-size: 64px;
-  font-weight: 500;
-}
-
-.product p {
-  margin: 0;
-  font-size: 18px;
-  color: #555;
-  max-width: 600px;
-}
-
-/* ======================
-   TABLET (<= 1024px)
-====================== */
-@media (max-width: 1024px) {
-  .hero-text h1 {
-    font-size: 46px;
-    line-height: 1.2;
-  }
-
-  .hero-spacer {
-    height: 140px;
-  }
-
-  .product h2 {
-    font-size: 48px;
-  }
-}
-
-/* ======================
-   MOBILE (<= 768px)
-====================== */
-@media (max-width: 768px) {
-  .scroll-container {
-    padding: 24px 16px 60px;
-  }
-
-  .hero-text {
-    transform: none !important;
-    /* smoother on mobile */
-  }
-
-  .hero-text h1 {
-    font-size: 32px;
-    line-height: 1.35;
-  }
-
-  .hero-spacer {
-    height: 100px;
-  }
-
-  .product {
-    padding: 40px 0;
-  }
-
-  .product h2 {
-    font-size: 34px;
-  }
-
-  .product p {
-    font-size: 16px;
-  }
-}
-
-/* ======================
-   SMALL MOBILE (<= 480px)
-====================== */
-@media (max-width: 480px) {
-  .hero-text h1 {
-    font-size: 28px;
-  }
-
-  .product h2 {
-    font-size: 28px;
-  }
-}
-
-/* ======================
-   PRODUCT ROW LAYOUT
-====================== */
-
 .products-section {
   max-width: 1100px;
   margin: 0 auto;
@@ -146,6 +53,11 @@
 
 .product-info {
   flex: 1;
+  transition: transform 0.35s ease;
+}
+
+.product-info.text-hovered {
+  transform: translateX(-12px); /* slight slide left */
 }
 
 .product-row h2 {
@@ -164,13 +76,29 @@
 /* ======================
    HOVER IMAGE
 ====================== */
-
-.row-image {
+.row-image-wrapper {
   width: 320px;
   height: 200px;
-  overflow: hidden;
   flex-shrink: 0;
-  animation: fadeUp 0.35s ease;
+  position: relative;
+}
+
+.row-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 0.35s ease, transform 0.35s ease;
+  
+  overflow: hidden;
+}
+
+.row-image.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .row-image img {
@@ -179,29 +107,50 @@
   object-fit: cover;
 }
 
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(12px);
+/* ======================
+   TABLET
+====================== */
+@media (max-width: 1024px) {
+  .hero-text h1 {
+    font-size: 46px;
   }
 
-  to {
-    opacity: 1;
-    transform: translateY(0);
+  .hero-spacer {
+    height: 140px;
+  }
+
+  .product-row h2 {
+    font-size: 48px;
   }
 }
 
 /* ======================
    MOBILE
 ====================== */
-
 @media (max-width: 768px) {
+  .scroll-container {
+    padding: 24px 16px 60px;
+  }
+
+  .hero-text {
+    transform: none !important;
+  }
+
+  .hero-text h1 {
+    font-size: 32px;
+    line-height: 1.35;
+  }
+
+  .hero-spacer {
+    height: 100px;
+  }
+
   .product-row {
     flex-direction: column;
     align-items: flex-start;
   }
 
-  .row-image {
+  .row-image-wrapper {
     width: 100%;
     height: 220px;
     margin-top: 16px;
@@ -209,5 +158,26 @@
 
   .product-row h2 {
     font-size: 34px;
+  }
+
+  .product-row p {
+    font-size: 16px;
+  }
+
+  .product-info.text-hovered {
+    transform: translateX(0); /* no slide on mobile */
+  }
+}
+
+/* ======================
+   SMALL MOBILE
+====================== */
+@media (max-width: 480px) {
+  .hero-text h1 {
+    font-size: 28px;
+  }
+
+  .product-row h2 {
+    font-size: 28px;
   }
 }

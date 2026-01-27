@@ -1,18 +1,15 @@
 /* ===============================
    HERO SECTION BASE
 ================================ */
-
 .hero-container {
   position: relative;
   width: 100%;
   min-height: 100vh;
   overflow: hidden;
 }
-
 /* ===============================
    BACKGROUND VIDEO
 ================================ */
-
 .hero-video {
   position: fixed;
   top: 0;

@@ -7,22 +7,31 @@ const ScrollTextSection = ({ scrollTextData }) => {
   const [hoveredIndex, setHoveredIndex] = useState(null);
 
   /* ===========================
-     SCROLL ANIMATION
+     SMOOTH SCROLL ANIMATION
   =========================== */
   useEffect(() => {
+    let ticking = false;
+
     const handleScroll = () => {
       if (!sectionRef.current) return;
 
-      const rect = sectionRef.current.getBoundingClientRect();
-      const windowHeight = window.innerHeight;
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          const rect = sectionRef.current.getBoundingClientRect();
+          const windowHeight = window.innerHeight;
 
-      if (rect.top < windowHeight && rect.bottom > 0) {
-        const progress = Math.min(
-          Math.max((windowHeight - rect.top) / windowHeight, 0),
-          1
-        );
+          if (rect.top < windowHeight && rect.bottom > 0) {
+            const progress = Math.min(
+              Math.max((windowHeight - rect.top) / windowHeight, 0),
+              1
+            );
+            setOffset(progress * 60); // control strength
+          }
 
-        setOffset(progress * 60);
+          ticking = false;
+        });
+
+        ticking = true;
       }
     };
 
@@ -62,17 +71,25 @@ const ScrollTextSection = ({ scrollTextData }) => {
             onMouseLeave={() => setHoveredIndex(null)}
           >
             {/* LEFT TEXT */}
-            <div className="product-info">
+            <div
+              className={`product-info ${
+                hoveredIndex === index ? "text-hovered" : ""
+              }`}
+            >
               <h2>{item.title}</h2>
               {item.description && <p>{item.description}</p>}
             </div>
 
-            {/* RIGHT IMAGE (ONLY THIS ROW) */}
-            {hoveredIndex === index && (
-              <div className="row-image">
+            {/* RIGHT IMAGE */}
+            <div className="row-image-wrapper">
+              <div
+                className={`row-image ${
+                  hoveredIndex === index ? "visible" : ""
+                }`}
+              >
                 <img src={item.image} alt={item.title} />
               </div>
-            )}
+            </div>
           </div>
         ))}
       </div>

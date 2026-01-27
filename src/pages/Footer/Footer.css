@@ -38,7 +38,7 @@
 }
 
 .footer-link:hover {
-  text-decoration: underline;
+  color: #111827;
 }
 
 .regions {
@@ -47,12 +47,12 @@
   color: #6b7280;
 }
 
+/* SOCIAL */
 .social-buttons {
   margin-top: 20px;
   display: flex;
   flex-direction: column;
   gap: 10px;
-  
 }
 
 .social-buttons button {
@@ -63,8 +63,8 @@
   letter-spacing: 0.08em;
   cursor: pointer;
   border-radius: 50px;
- width: 50%;
-  
+  width: 50%;
+  transition: background 0.25s ease, color 0.25s ease;
 }
 
 .social-buttons button:hover {
@@ -80,16 +80,77 @@
   margin-bottom: 14px;
 }
 
+/* DOCUMENT LINKS */
 .pl-footer-col a {
-  display: block;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
   font-size: 13px;
   color: #111827;
   text-decoration: none;
   margin-bottom: 8px;
+
+  transition:
+    transform 0.25s ease,
+    opacity 0.25s ease,
+    font-size 0.25s ease;
+}
+
+.pl-footer-col a::before {
+  content: "–";
+  opacity: 0;
+  transform: translateX(-6px);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  color: #6b7280;
 }
 
 .pl-footer-col a:hover {
-  text-decoration: underline;
+  transform: translateX(8px) scale(1.04);
+  opacity: 0.75; /* fade ONLY on hover */
+}
+
+.pl-footer-col a:hover::before {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* LIST BUTTONS */
+.footer-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  margin-bottom: 8px;
+  font-size: 13px;
+  color: #111827;
+  text-align: left;
+  cursor: pointer;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+
+  transition:
+    transform 0.25s ease,
+    opacity 0.25s ease,
+    font-size 0.25s ease;
+}
+
+.footer-btn::before {
+  content: "–";
+  opacity: 0;
+  transform: translateX(-6px);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  color: #6b7280;
+}
+
+.footer-btn:hover {
+  transform: translateX(8px) scale(1.04);
+  opacity: 0.75; /* fade ONLY on hover */
+}
+
+.footer-btn:hover::before {
+  opacity: 1;
+  transform: translateX(0);
 }
 
 /* RESPONSIVE */
@@ -107,18 +168,4 @@
   .footer-divider {
     width: 100%;
   }
-}
-.footer-btn {
-  background: none;
-  border: none;
-  padding: 0;
-  margin-bottom: 8px;
-  font-size: 13px;
-  color: #111827;
-  text-align: left;
-  cursor: pointer;
-}
-
-.footer-btn:hover {
-  text-decoration: underline;
 }

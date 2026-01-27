@@ -94,3 +94,89 @@
     font-size: 40px;
   }
 }
+/* ================================
+   RESPONSIVE DESIGN
+================================ */
+
+/* Tablet & Small Laptop */
+@media (max-width: 1024px) {
+
+  .palantir-left {
+    padding: 60px;
+  }
+
+  .palantir-right {
+    padding: 60px;
+  }
+
+  .palantir-left h1 {
+    font-size: 44px;
+  }
+}
+
+/* Tablet Portrait & Mobile */
+@media (max-width: 900px) {
+
+  .palantir-wrapper {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+
+  .palantir-left {
+    padding: 50px 32px 20px;
+  }
+
+  .palantir-right {
+    padding: 20px 32px 50px;
+  }
+
+  .palantir-left h1 {
+    font-size: 36px;
+    line-height: 1.2;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+
+  .palantir-left {
+    padding: 40px 20px 10px;
+  }
+
+  .palantir-right {
+    padding: 10px 20px 40px;
+  }
+
+  .palantir-left h1 {
+    font-size: 30px;
+  }
+
+  .palantir-form label {
+    font-size: 9px;
+  }
+
+  .palantir-form input,
+  .palantir-form select,
+  .palantir-form textarea {
+    font-size: 13px;
+    padding: 8px 2px;
+  }
+
+  .palantir-submit-btn {
+    width: 100%;
+    padding: 14px;
+    font-size: 13px;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 420px) {
+
+  .palantir-left h1 {
+    font-size: 26px;
+  }
+
+  .palantir-form label {
+    letter-spacing: 0.5px;
+  }
+}

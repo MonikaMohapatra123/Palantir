@@ -61,3 +61,78 @@
   font-weight: 600;
   color: #000;
 }
+
+/* ================================
+   RESPONSIVE DESIGN
+================================ */
+
+/* Tablet (max-width: 1024px) */
+@media (max-width: 1024px) {
+
+  .aml {
+    padding: 70px 40px;
+  }
+
+  .aml-heading {
+    font-size: 52px;
+    margin-bottom: 50px;
+  }
+
+  .aml-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .aml-card img {
+    height: 210px;
+  }
+}
+
+/* Mobile (max-width: 768px) */
+@media (max-width: 768px) {
+
+  .aml {
+    padding: 60px 24px;
+  }
+
+  .aml-heading {
+    font-size: 38px;
+    margin-bottom: 40px;
+  }
+
+  .aml-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .aml-index {
+    font-size: 10px;
+  }
+
+  .aml-card img {
+    height: 200px;
+  }
+
+  .aml-card p {
+    font-size: 14px;
+    max-width: 100%;
+  }
+}
+
+/* Small Mobile (max-width: 480px) */
+@media (max-width: 480px) {
+
+  .aml {
+    padding: 50px 18px;
+  }
+
+  .aml-heading {
+    font-size: 32px;
+  }
+
+  .aml-card img {
+    height: 180px;
+  }
+}

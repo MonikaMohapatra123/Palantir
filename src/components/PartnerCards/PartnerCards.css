@@ -29,7 +29,7 @@
 }
 
 /* ===============================
-   MOVING TRACK
+   MOVING TRACK (DESKTOP)
 ================================ */
 .partner-track {
   display: flex;
@@ -39,20 +39,10 @@
   will-change: transform;
 }
 
-@media (hover: hover) {
-  .partner-card:hover {
-    animation-play-state: paused;
-  }
-
-  .partner-card:hover ~ .partner-card {
-    animation-play-state: paused;
-  }
-
-  .partner-track:hover {
-    animation-play-state: paused;
-  }
+/* Pause animation on hover */
+.partner-track:hover {
+  animation-play-state: paused;
 }
-
 
 /* ===============================
    CARD
@@ -88,11 +78,11 @@
 }
 
 /* ===============================
-   TEXT CONTAINER (FIXED – NO CUT)
+   TEXT CONTAINER
 ================================ */
 .card-content {
   display: -webkit-box;
-  -webkit-line-clamp: 3;          /* visible lines */
+  -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
   transition: all 0.6s ease;
@@ -111,7 +101,7 @@
 }
 
 /* ===============================
-   HOVER SHOW ALL TEXT
+   HOVER SHOW MORE TEXT
 ================================ */
 @media (hover: hover) {
   .partner-card:hover .card-content {
@@ -125,7 +115,7 @@
 }
 
 /* ===============================
-   INFINITE SCROLL
+   INFINITE SCROLL KEYFRAMES
 ================================ */
 @keyframes scroll {
   from {
@@ -137,7 +127,7 @@
 }
 
 /* ===============================
-   RESPONSIVE
+   TABLET
 ================================ */
 @media (max-width: 1024px) {
   .partner-heading {
@@ -146,7 +136,7 @@
 
   .partner-card {
     width: 260px;
-    height: 340px;
+    height: 320px;
   }
 
   .card-text {
@@ -154,55 +144,96 @@
   }
 }
 
+/* ===============================
+   MOBILE SLIDER MODE
+================================ */
 @media (max-width: 768px) {
+
   .partner-heading {
     font-size: 30px;
     white-space: normal;
+    width: 100%;
   }
 
+  /* Horizontal swipe */
+  .partner-scroll {
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Stop animation */
+  .partner-track {
+    animation: none;
+    width: auto;
+    gap: 16px;
+  }
+
+  /* One card per screen */
   .partner-card {
-    width: 220px;
-    height: 300px;
+    width: 85vw;
+    height: 240px;
+    padding: 22px;
+    scroll-snap-align: start;
+  }
+
+  .card-content {
+    -webkit-line-clamp: 4;
   }
 
   .card-text {
     font-size: 14px;
+    margin-top: 10px;
   }
 }
 
+/* ===============================
+   SMALL MOBILE
+================================ */
 @media (max-width: 480px) {
   .partner-heading {
     font-size: 26px;
   }
 
   .partner-card {
-    width: 200px;
-    height: 280px;
+    width: 90vw;
+    height: 220px;
   }
 
   .card-text {
     font-size: 13px;
   }
 }
+
 /* ===============================
-   MOBILE FIX – STOP VIBRATION
+   HIDE SCROLLBAR
 ================================ */
-@media (hover: none) and (pointer: coarse) {
-  .partner-track {
-    animation: none; /* stop infinite scroll on mobile */
-    transform: translateX(0);
-  }
+.partner-scroll::-webkit-scrollbar {
+  display: none;
+}
+.partner-scroll {
+  scrollbar-width: none;
+}
+/* ===============================
+   MOBILE CARD DESIGN UPGRADE
+================================ */
+@media (max-width: 768px) {
 
   .partner-card {
-    height: auto; /* prevent layout jump */
+    background: linear-gradient(135deg, #ffffff, #f2f2f2);
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.12);
   }
 
-  .card-content {
-    -webkit-line-clamp: unset; /* show full text */
-    max-height: none;
+  .card-title {
+    font-size: 12px;
+    letter-spacing: 1.2px;
+    color: #666;
   }
 
   .card-text {
     font-size: 14px;
+    line-height: 1.6;
+    color: #222;
   }
 }

@@ -61,7 +61,7 @@ const PageDetails = () => {
 
 
       <SectionThree data={page.section3} isService={isServicePage} />
-      {isServicePage && <PalantirForm />}
+      {isServicePage && <PalantirForm/>}
 
     </div>
   );

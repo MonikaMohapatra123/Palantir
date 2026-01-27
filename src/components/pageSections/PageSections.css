@@ -219,3 +219,127 @@
   line-height: 1.6;
   color: #000;
 }
+
+/* ================== MOBILE FIX (MAX 768px) ================== */
+@media (max-width: 768px) {
+
+  /* ---------- SECTION ONE ---------- */
+
+  .section-one {
+    min-height: auto;
+    padding: 80px 0 60px;
+  }
+
+  .section-one-inner {
+    flex-direction: column;
+    padding: 0 20px;
+    gap: 20px;
+  }
+
+  .section-one-title {
+    font-size: 2.4rem;
+    line-height: 1.2;
+    margin: 0;
+  }
+
+  .section-one-description {
+    max-width: 100%;
+    font-size: 1rem;
+  }
+
+
+  /* ---------- SECTION TWO ---------- */
+
+  .split-row {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 28px 20px;
+    gap: 14px;
+  }
+
+  .split-row .left,
+  .split-row .right {
+    width: 100%;
+  }
+
+  .split-row .left h2 {
+    font-size: 22px;
+  }
+
+  .split-row .left h2::before {
+    font-size: 18px;
+  }
+
+  .split-row .right p {
+    font-size: 15px;
+    max-width: 100%;
+  }
+
+
+  /* ---------- SECTION THREE (COMMON) ---------- */
+
+  .section-three {
+    padding: 70px 20px;
+  }
+
+  .section-three-title {
+    font-size: 26px;
+    margin-bottom: 40px;
+  }
+
+  .section-three-item h4 {
+    font-size: 18px;
+  }
+
+  .section-three-item p {
+    font-size: 15px;
+  }
+
+
+  /* ---------- SECTION THREE (SERVICE PAGE) ---------- */
+
+  .section-three-service {
+    padding: 70px 20px;
+  }
+
+  .section-three-service .section-three-title {
+    font-size: 28px;
+    margin-bottom: 40px;
+  }
+
+  /* Change 2-column grid → 1 column */
+  .section-three-service .section-three-list {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .section-three-service .section-three-item p {
+    padding-left: 24px;
+  }
+
+  .section-three-service .section-three-item p::before {
+    font-size: 18px;
+  }
+}
+
+
+/* ================== SMALL MOBILE (MAX 480px) ================== */
+@media (max-width: 480px) {
+
+  .section-one-title {
+    font-size: 2rem;
+  }
+
+  .split-row .left h2 {
+    font-size: 20px;
+  }
+
+  .section-three-title {
+    font-size: 24px;
+  }
+
+  .section-three-service .section-three-title {
+    font-size: 24px;
+  }
+
+}

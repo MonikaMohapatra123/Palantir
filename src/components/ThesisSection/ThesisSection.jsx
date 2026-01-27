@@ -1,10 +1,12 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./ThesisSection.css";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 const ThesisSection = ({ thesisData }) => {
   const sliderRef = useRef(null);
   const [activeIndex, setActiveIndex] = useState(0);
+  const navigate = useNavigate();
 
   /* AUTO SLIDE */
   useEffect(() => {
@@ -48,6 +50,7 @@ const ThesisSection = ({ thesisData }) => {
 
       {/* SLIDER */}
       <div className="thesis-slider-wrapper">
+        {/* LEFT ARROW */}
         <button
           className="nav-arrow left"
           onClick={() =>
@@ -59,12 +62,17 @@ const ThesisSection = ({ thesisData }) => {
           <FaChevronLeft />
         </button>
 
+        {/* SLIDES */}
         <div className="thesis-slider" ref={sliderRef}>
           {thesisData.map((item, index) => (
-            <div className="thesis-slide" key={index}>
+            <div
+              className="thesis-slide"
+              key={index}
+              onClick={() => navigate("/services")}
+            >
               <img src={item.image} alt={item.title} />
 
-              {/* ✅ IMPROVED TEXT STRUCTURE */}
+              {/* OVERLAY */}
               <div className="thesis-overlay">
                 <div className="thesis-overlay-content">
                   <span className="thesis-count">{item.count}</span>
@@ -75,6 +83,7 @@ const ThesisSection = ({ thesisData }) => {
           ))}
         </div>
 
+        {/* RIGHT ARROW */}
         <button
           className="nav-arrow right"
           onClick={() =>

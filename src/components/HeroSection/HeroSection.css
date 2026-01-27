@@ -79,7 +79,7 @@
   background: #fff;       /* white tail */
   position: relative;
   margin-bottom: 8px;
-  animation: bounce 2s infinite;
+  animation: bounce 5s infinite;
 }
 
 .scroll-down .arrow::after {

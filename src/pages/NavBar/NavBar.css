@@ -865,53 +865,150 @@ a {
   }
 }
 
+/* ================= GETSTARTED-OVERLAY ================= */
 
-/* ================= GET STARTED ================= */
 .getstarted-overlay {
   position: fixed;
   inset: 0;
   display: flex;
   z-index: 9999;
+  background: #000;
 }
 
+/* LEFT DARK SIDE */
 .getstarted-left {
   flex: 1;
-  background: rgba(0, 0, 0, 0.85);
+  background: rgba(0, 0, 0, 0.9);
 }
 
+/* RIGHT WHITE SIDE */
 .getstarted-right {
   flex: 1;
   background: #fff;
-  padding: 80px;
+  padding: 70px 80px;
+  overflow-y: auto;
   position: relative;
 }
 
-.getstarted-right h2 {
-  font-size: 32px;
-  margin-bottom: 40px;
+/* ================= TOP BAR ================= */
+
+.getstarted-topbar {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  letter-spacing: 1px;
+  margin-bottom: 50px;
+  color: #555;
 }
+
+.investor-link {
+  cursor: pointer;
+}
+
+/* ================= CLOSE BUTTON ================= */
+
+.overlay-close {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  background: none;
+  border: none;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+/* ================= TITLE ================= */
+
+.getstarted-title {
+  font-size: 38px;
+  font-weight: 400;
+  max-width: 520px;
+  margin-bottom: 50px;
+}
+
+/* ================= FORM ================= */
 
 .getstarted-form {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 35px;
+  max-width: 520px;
 }
 
-.getstarted-form input {
+.field {
+  display: flex;
+  flex-direction: column;
+}
+
+.field label {
+  font-size: 11px;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+}
+
+.field input,
+.field select,
+.field textarea {
   border: none;
   border-bottom: 1px solid #000;
   padding: 10px 0;
-  font-size: 16px;
+  font-size: 15px;
+  outline: none;
+  background: transparent;
 }
 
-.getstarted-form button {
-  margin-top: 30px;
+.field textarea {
+  resize: none;
+}
+
+/* ================= BUTTON ================= */
+
+.submit-btn {
+  width: 160px;
   padding: 14px;
   background: #000;
   color: #fff;
   border: none;
   cursor: pointer;
+  margin-top: 20px;
 }
+
+/* ================= CAPTCHA ================= */
+
+.captcha-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid #ccc;
+  padding: 14px;
+  width: 250px;
+}
+
+/* ================= PRIVACY ================= */
+
+.privacy-text {
+  font-size: 13px;
+  color: #444;
+  margin-top: 20px;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 900px) {
+  .getstarted-left {
+    display: none;
+  }
+
+  .getstarted-right {
+    flex: 1;
+    padding: 40px 25px;
+  }
+
+  .getstarted-title {
+    font-size: 28px;
+  }
+}
+
 
 /* ================= SEARCH ================= */
 .search-overlay {

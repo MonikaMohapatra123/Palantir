@@ -237,6 +237,7 @@ a {
   z-index: 9999;
   overflow-y: auto;
   animation: megaBgFade 0.45s ease forwards;
+ 
 }
 
 @keyframes megaBgFade {
@@ -664,14 +665,18 @@ a {
 /* MEGA FOOTER */
 /* ===================== */
 
+/* ===================== */
+/* MEGA FOOTER (UNDER CENTER + RIGHT ONLY) */
+/* ===================== */
+
 .mega-footer {
-  grid-column: 1 / -1;
-  margin-top: 80px;
-  padding-top: 40px;
+  grid-column: 2 / 4;     /* start from 2nd column to 3rd column */
+  margin-top: -200px;
+  padding-top:40px;
   border-top: 1px solid #333;
   display: grid;
   grid-template-columns: 1.4fr 1fr;
-  gap: 60px;
+  gap: 50px;
 }
 
 /* LEFT */
@@ -736,25 +741,129 @@ a {
   transform: translateX(4px);
 }
 
-/* ===================== */
-/* MOBILE */
-/* ===================== */
-@media (max-width: 992px) {
+/* ================================= */
+/* MOBILE MEGA MENU RESPONSIVE FIX */
+/* ================================= */
+
+@media (max-width: 768px) {
+
+  /* Overlay scroll */
+  .mega-overlay {
+    overflow-y: auto;
+   
+  }
+
+  /* Container */
+  .mega-container {
+    grid-template-columns: 1fr;
+    padding: 90px 20px 40px;
+    gap: 40px;
+    
+  }
+
+  /* Close button */
+  .mega-close-btn {
+    top: 18px;
+    right: 18px;
+    font-size: 24px;
+  }
+
+  /* Columns */
+  .mega-col {
+    border-top: none;
+    gap: 14px;
+     border-top: 1px solid white;
+  }
+
+  .mega-col.center {
+    padding: 0;
+  }
+
+  /* Titles */
+  .mega-title {
+    font-size: 12px;
+  }
+
+  /* Main menu items */
+  .mega-item {
+    font-size: 18px;
+  }
+
+  /* Sub items */
+  .mega-sub-item {
+    font-size: 15px;
+  }
+
+  .arrow-icon {
+    font-size: 16px;
+  }
+
+  /* ============ LATEST NEWS ============ */
+
+  .latest-news-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .latest-news-card img {
+    height: 200px;
+    border-radius: 6px;
+  }
+
+  .latest-news-card h3 {
+    font-size: 18px;
+  }
+
+  .latest-news-card p {
+    font-size: 14px;
+  }
+
+  /* ============ OFFERINGS TEXT ============ */
+
+  .offer-desc {
+    font-size: 13px;
+  }
+
+  .learn-more {
+    font-size: 14px;
+  }
+
+  /* ============ FOOTER ============ */
+
   .mega-footer {
+    grid-column: auto;
+    margin-top: 0;
+    padding-top: 30px;
     grid-template-columns: 1fr;
     gap: 40px;
   }
 
   .mega-footer-right {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
+    gap: 28px;
   }
 
   .impact-card img {
     height: 200px;
   }
+
+  .footer-col h6 {
+    font-size: 12px;
+  }
+
+  .footer-col a {
+    font-size: 14px;
+  }
+
+  /* ============ REMOVE HEAVY ANIMATIONS ============ */
+
+  .mega-col,
+  .mega-close-btn {
+    animation: none !important;
+    opacity: 1;
+    transform: none;
+  }
 }
-
-
 
 
 /* ================= GET STARTED ================= */

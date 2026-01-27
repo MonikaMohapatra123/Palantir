@@ -1,22 +1,24 @@
-
 .scroll-container {
   background: #ffffff;
-  padding: 30px 20px 80px; /* ✅ minimal top space */
+  padding: 30px 20px 80px;
+  /* ✅ minimal top space */
 }
 
 /* ======================
-   HERO TEXT
+   HERO TEXTF
 ====================== */
 .hero-text {
   max-width: 1100px;
   margin: 0 auto;
-  padding-top: 10px; /* controlled spacing */
+  padding-top: 10px;
+  /* controlled spacing */
   will-change: transform;
-    transition: transform 0.1s linear;
+  transition: transform 0.1s linear;
 }
 
 .hero-text h1 {
-  margin: 0; /* 🔴 IMPORTANT: removes default browser gap */
+  margin: 0;
+  /* 🔴 IMPORTANT: removes default browser gap */
   font-size: 58px;
   font-weight: 500;
   line-height: 1.15;
@@ -38,7 +40,7 @@
 .products-section {
   max-width: 1100px;
   margin: 0 auto;
- 
+
 }
 
 .product {
@@ -85,7 +87,8 @@
   }
 
   .hero-text {
-    transform: none !important; /* smoother on mobile */
+    transform: none !important;
+    /* smoother on mobile */
   }
 
   .hero-text h1 {
@@ -121,4 +124,90 @@
   .product h2 {
     font-size: 28px;
   }
-}   
+}
+
+/* ======================
+   PRODUCT ROW LAYOUT
+====================== */
+
+.products-section {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.product-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  padding: 40px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.product-info {
+  flex: 1;
+}
+
+.product-row h2 {
+  font-size: 64px;
+  font-weight: 500;
+  margin: 0 0 12px;
+}
+
+.product-row p {
+  margin: 0;
+  font-size: 18px;
+  color: #555;
+  max-width: 520px;
+}
+
+/* ======================
+   HOVER IMAGE
+====================== */
+
+.row-image {
+  width: 320px;
+  height: 200px;
+  overflow: hidden;
+  flex-shrink: 0;
+  animation: fadeUp 0.35s ease;
+}
+
+.row-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ======================
+   MOBILE
+====================== */
+
+@media (max-width: 768px) {
+  .product-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .row-image {
+    width: 100%;
+    height: 220px;
+    margin-top: 16px;
+  }
+
+  .product-row h2 {
+    font-size: 34px;
+  }
+}

@@ -181,17 +181,21 @@
 "products": [
   {
     "title": "Avenue Group",
-    "description": "A professional business portfolio website designed to highlight premium offices and showroom projects. Built using React and Node.js, the platform delivers smooth navigation, interactive project showcases, API-driven content, mobile responsiveness, and SEO optimization to reflect brand credibility and innovation."
+    "image": "./pic-1.jpg",
+    "description": "A professional business portfolio website designed to highlight premium offices and showroom projects..."
   },
   {
     "title": "Priya Infra",
-    "description": "A construction and civil engineering website created to showcase ongoing and completed projects. Developed with React and Node.js, it features a structured layout, dynamic project displays, real-time API updates, mobile responsiveness, and SEO-friendly architecture to support business growth."
+    "image": "./pic-2.jpg",
+    "description": "A construction and civil engineering website created to showcase ongoing and completed projects..."
   },
   {
     "title": "Law Firm",
-    "description": "A comprehensive legal services website designed for law professionals and clients. The platform focuses on clarity, trust, and professionalism with a clean interface, responsive design, optimized performance, and SEO readiness to represent legal excellence."
+    "image": "./pic-3.jpg",
+    "description": "A comprehensive legal services website designed for law professionals and clients..."
   }
 ]
+
 }
 ,
      "joinOurTeam": {

@@ -4,7 +4,11 @@ import "./ScrollTextSection.css";
 const ScrollTextSection = ({ scrollTextData }) => {
   const sectionRef = useRef(null);
   const [offset, setOffset] = useState(0);
+  const [hoveredIndex, setHoveredIndex] = useState(null);
 
+  /* ===========================
+     SCROLL ANIMATION
+  =========================== */
   useEffect(() => {
     const handleScroll = () => {
       if (!sectionRef.current) return;
@@ -12,14 +16,13 @@ const ScrollTextSection = ({ scrollTextData }) => {
       const rect = sectionRef.current.getBoundingClientRect();
       const windowHeight = window.innerHeight;
 
-      // start moving only when section enters viewport
       if (rect.top < windowHeight && rect.bottom > 0) {
         const progress = Math.min(
           Math.max((windowHeight - rect.top) / windowHeight, 0),
           1
         );
 
-        setOffset(progress * 60); // max 60px movement
+        setOffset(progress * 60);
       }
     };
 
@@ -33,7 +36,7 @@ const ScrollTextSection = ({ scrollTextData }) => {
 
   return (
     <section ref={sectionRef} className="scroll-container">
-      {/* HERO TEXT */}
+      {/* ================= HERO TEXT ================= */}
       <div
         className="hero-text"
         style={{
@@ -47,15 +50,29 @@ const ScrollTextSection = ({ scrollTextData }) => {
         </h1>
       </div>
 
-      {/* SPACER */}
       <div className="hero-spacer"></div>
 
-      {/* PRODUCTS */}
+      {/* ================= PRODUCTS ================= */}
       <div className="products-section">
         {scrollTextData.products.map((item, index) => (
-          <div className="product" key={index}>
-            <h2>{item.title}</h2>
-            {item.description && <p>{item.description}</p>}
+          <div
+            className="product-row"
+            key={index}
+            onMouseEnter={() => setHoveredIndex(index)}
+            onMouseLeave={() => setHoveredIndex(null)}
+          >
+            {/* LEFT TEXT */}
+            <div className="product-info">
+              <h2>{item.title}</h2>
+              {item.description && <p>{item.description}</p>}
+            </div>
+
+            {/* RIGHT IMAGE (ONLY THIS ROW) */}
+            {hoveredIndex === index && (
+              <div className="row-image">
+                <img src={item.image} alt={item.title} />
+              </div>
+            )}
           </div>
         ))}
       </div>

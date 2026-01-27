@@ -21,12 +21,12 @@ const ThesisSection = ({ thesisData }) => {
     return () => clearInterval(interval);
   }, [thesisData]);
 
-  /* SCROLL */
+  /* SMOOTH SCROLL */
   useEffect(() => {
     if (!sliderRef.current) return;
 
     sliderRef.current.scrollTo({
-      left: sliderRef.current.offsetWidth * activeIndex,
+      left: sliderRef.current.clientWidth * activeIndex,
       behavior: "smooth",
     });
   }, [activeIndex]);
@@ -48,9 +48,9 @@ const ThesisSection = ({ thesisData }) => {
         ))}
       </div>
 
-      {/* SLIDER */}
+      {/* SLIDER WRAPPER */}
       <div className="thesis-slider-wrapper">
-        {/* LEFT ARROW */}
+        {/* LEFT */}
         <button
           className="nav-arrow left"
           onClick={() =>
@@ -62,7 +62,7 @@ const ThesisSection = ({ thesisData }) => {
           <FaChevronLeft />
         </button>
 
-        {/* SLIDES */}
+        {/* SLIDER */}
         <div className="thesis-slider" ref={sliderRef}>
           {thesisData.map((item, index) => (
             <div
@@ -72,7 +72,6 @@ const ThesisSection = ({ thesisData }) => {
             >
               <img src={item.image} alt={item.title} />
 
-              {/* OVERLAY */}
               <div className="thesis-overlay">
                 <div className="thesis-overlay-content">
                   <span className="thesis-count">{item.count}</span>
@@ -83,7 +82,7 @@ const ThesisSection = ({ thesisData }) => {
           ))}
         </div>
 
-        {/* RIGHT ARROW */}
+        {/* RIGHT */}
         <button
           className="nav-arrow right"
           onClick={() =>

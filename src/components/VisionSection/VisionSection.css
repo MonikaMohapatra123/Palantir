@@ -1,0 +1,33 @@
+/* VisionSection.css */
+
+.vision-section {
+  width: 100%;
+  background: #ffffff;
+  padding: 120px 80px;
+  border-top: 1px solid black;
+ 
+}
+
+.vision-container {
+  max-width: 680px;
+}
+
+/* MAIN TITLE */
+.vision-title {
+  font-family: "Georgia", "Times New Roman", serif;
+  font-size: 44px;
+  font-weight: 500;
+  line-height: 1.25;
+  color: #000000;
+  margin-bottom: 50px;
+}
+
+/* PARAGRAPHS */
+.vision-text {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  line-height: 1.8;
+  color: #111111;
+  margin-bottom: 28px;
+  max-width: 520px;
+}

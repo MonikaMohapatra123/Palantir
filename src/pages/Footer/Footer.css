@@ -80,54 +80,22 @@
   margin-bottom: 14px;
 }
 
-/* DOCUMENT LINKS */
-.pl-footer-col a {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 13px;
-  color: #111827;
-  text-decoration: none;
-  margin-bottom: 8px;
+/* ============================= */
+/* DOCUMENT LINKS + LIST BUTTONS */
+/* ============================= */
 
-  transition:
-    transform 0.25s ease,
-    opacity 0.25s ease,
-    font-size 0.25s ease;
-}
-
-.pl-footer-col a::before {
-  content: "–";
-  opacity: 0;
-  transform: translateX(-6px);
-  transition: opacity 0.25s ease, transform 0.25s ease;
-  color: #6b7280;
-}
-
-.pl-footer-col a:hover {
-  transform: translateX(8px) scale(1.04);
-  opacity: 0.75; /* fade ONLY on hover */
-}
-
-.pl-footer-col a:hover::before {
-  opacity: 1;
-  transform: translateX(0);
-}
-
-/* LIST BUTTONS */
+.pl-footer-col a,
 .footer-btn {
+  position: relative;
+  display: block;
+  padding-left: 14px;        /* space for dash */
   background: none;
   border: none;
-  padding: 0;
-  margin-bottom: 8px;
   font-size: 13px;
   color: #111827;
   text-align: left;
   cursor: pointer;
-
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
+  margin-bottom: 8px;
 
   transition:
     transform 0.25s ease,
@@ -135,19 +103,27 @@
     font-size 0.25s ease;
 }
 
+/* DASH */
+.pl-footer-col a::before,
 .footer-btn::before {
   content: "–";
+  position: absolute;
+  left: 0;
+  top: 0.15em;
   opacity: 0;
   transform: translateX(-6px);
   transition: opacity 0.25s ease, transform 0.25s ease;
   color: #6b7280;
 }
 
+/* HOVER EFFECT */
+.pl-footer-col a:hover,
 .footer-btn:hover {
   transform: translateX(8px) scale(1.04);
-  opacity: 0.75; /* fade ONLY on hover */
+  opacity: 0.75;
 }
 
+.pl-footer-col a:hover::before,
 .footer-btn:hover::before {
   opacity: 1;
   transform: translateX(0);

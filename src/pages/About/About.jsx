@@ -1,9 +1,13 @@
 import React from "react";
-import AllIntroTemplate from "../../components/AllIntroTemplate/AllIntroTemplate";
-import AllSectionHome from "../../components/AllSectionHome/AllSectionHome";
+// import AllIntroTemplate from "../../components/AllIntroTemplate/AllIntroTemplate";
+// import AllSectionHome from "../../components/AllSectionHome/AllSectionHome";
 
 // ✅ IMPORT JSON
 import data from "../../Json/data.json";
+import WhyWeAreHere from "../../components/WhyWeAreHere/WhyWeAreHere";
+import VisionSection from "../../components/VisionSection/VisionSection";
+import WhatWeDo from "../../components/WhatWeDo/WhatWeDo";
+import MissionDriven from "../../components/MissionDriven/MissionDriven";
 
 const About = () => {
   // ✅ Safe access
@@ -17,13 +21,17 @@ const About = () => {
 
   return (
     <div>
+      <WhyWeAreHere/>
+      <VisionSection/>
+      <WhatWeDo/>
+      <MissionDriven/>
       {/* Intro Section */}
-      <AllIntroTemplate
+      {/* <AllIntroTemplate
         title="About Us"
         image="./girl1.jpg"
       />
 
-      {/* About Us Section */}
+     
       <AllSectionHome
         reverse={true}
         subtitle={Data.AboutUssubtitle}
@@ -33,7 +41,7 @@ const About = () => {
         image={Data.AboutUsimage}
       />
 
-      {/* Highlights Section */}
+     
       <AllSectionHome
         reverse={false}
         subtitle={Data.Highlightssubtitle}
@@ -41,7 +49,7 @@ const About = () => {
         highlight={Data.Highlightshighlight}
         description={Data.Highlightsdescription}
         image={Data.Highlightsimage}
-      />
+      /> */}
     </div>
   );
 };

@@ -1,0 +1,55 @@
+.wwd-wrapper {
+  width: 100%;
+  padding: 80px 6%;
+  font-family: "Inter", sans-serif;
+  background: #fff;
+}
+
+.wwd-line {
+  width: 100%;
+  height: 1px;
+  background: #111;
+  margin-bottom: 60px;
+}
+
+.wwd-title {
+  font-size: 64px;
+  font-weight: 500;
+  margin-bottom: 80px;
+  color: #111;
+}
+
+/* CONTENT GRID */
+.wwd-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 120px;
+}
+
+.wwd-left p {
+  font-size: 36px;
+  line-height: 1.3;
+  color: #111;
+}
+
+.wwd-right p {
+  font-size: 18px;
+  line-height: 1.7;
+  color: #333;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .wwd-title {
+    font-size: 42px;
+  }
+
+  .wwd-content {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .wwd-left p {
+    font-size: 26px;
+  }
+}

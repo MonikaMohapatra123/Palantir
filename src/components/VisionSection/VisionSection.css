@@ -4,15 +4,17 @@
   width: 100%;
   background: #ffffff;
   padding: 120px 80px;
-  border-top: 1px solid black;
- 
+  border-top: 1px solid #000;
+  box-sizing: border-box;
 }
 
 .vision-container {
   max-width: 680px;
 }
 
-/* MAIN TITLE */
+/* ===========================
+   TITLE
+=========================== */
 .vision-title {
   font-family: "Georgia", "Times New Roman", serif;
   font-size: 44px;
@@ -22,7 +24,9 @@
   margin-bottom: 50px;
 }
 
-/* PARAGRAPHS */
+/* ===========================
+   PARAGRAPHS
+=========================== */
 .vision-text {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 15px;
@@ -30,4 +34,67 @@
   color: #111111;
   margin-bottom: 28px;
   max-width: 520px;
+}
+
+/* ===========================
+   TABLET RESPONSIVE
+=========================== */
+@media (max-width: 1024px) {
+
+  .vision-section {
+    padding: 100px 50px;
+  }
+
+  .vision-title {
+    font-size: 36px;
+    margin-bottom: 40px;
+  }
+
+  .vision-text {
+    font-size: 14.5px;
+  }
+}
+
+/* ===========================
+   MOBILE RESPONSIVE
+=========================== */
+@media (max-width: 768px) {
+
+  .vision-section {
+    padding: 70px 24px;
+  }
+
+  .vision-container {
+    max-width: 100%;
+  }
+
+  .vision-title {
+    font-size: 28px;
+    line-height: 1.35;
+    margin-bottom: 30px;
+  }
+
+  .vision-text {
+    font-size: 14px;
+    line-height: 1.7;
+    max-width: 100%;
+  }
+}
+
+/* ===========================
+   SMALL MOBILE
+=========================== */
+@media (max-width: 480px) {
+
+  .vision-section {
+    padding: 60px 18px;
+  }
+
+  .vision-title {
+    font-size: 24px;
+  }
+
+  .vision-text {
+    font-size: 13.5px;
+  }
 }

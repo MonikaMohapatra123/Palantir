@@ -3,29 +3,25 @@
   padding: 90px 80px;
   font-family: "Poppins", sans-serif;
 }
-
 .section h1,
 .section h2 {
   font-weight: 600;
   letter-spacing: 0.3px;
 }
-
 .section p {
   font-size: 16px;
   line-height: 1.8;
   max-width: 900px;
 }
-
 /* ================= SECTION ONE ================= */
-
 .section-one {
   width: 100%;
   min-height: 100vh;
   background: inherit; /* 🔥 IMPORTANT */
   display: flex;
   align-items: center;
-}
 
+}
 .section-one-inner {
   width: 100%;
   padding: 0 6rem;
@@ -33,7 +29,6 @@
   justify-content: space-between;
   align-items: flex-start;
 }
-
 .section-one-title {
   font-size: 6rem;
   font-weight: 300;

@@ -1,5 +1,4 @@
 /* VisionSection.css */
-
 .vision-section {
   width: 100%;
   background: #ffffff;
@@ -7,11 +6,9 @@
   border-top: 1px solid #000;
   box-sizing: border-box;
 }
-
 .vision-container {
   max-width: 680px;
 }
-
 /* ===========================
    TITLE
 =========================== */

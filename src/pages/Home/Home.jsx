@@ -18,10 +18,13 @@ const Home = () => {
 
   return (
     <>
-      {/* 🔒 FIXED HERO */}
+      {/* FIXED HERO */}
       <HeroSection heroData={heroData} />
 
-      {/* 🔽 SCROLLING CONTENT (ON TOP OF HERO) */}
+      {/* SPACER FOR SCROLL */}
+      <div className="hero-spacer"></div>
+
+      {/* PAGE CONTENT */}
       <div className="page-content">
         <ThesisSection thesisData={thesisData} />
         <ScrollTextStory scrollTextData={scrollTextData} />
@@ -32,5 +35,6 @@ const Home = () => {
     </>
   );
 };
+
 
 export default Home;

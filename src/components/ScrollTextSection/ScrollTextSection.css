@@ -12,7 +12,7 @@
 .hero-text {
   max-width: 1100px;
   margin: 0 auto;
-  padding-top: 10px;
+  padding-top: 20px;
   will-change: transform;
   transition: transform 0.25s ease-out;
 }

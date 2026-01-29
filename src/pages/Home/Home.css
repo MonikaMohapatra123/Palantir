@@ -1,7 +1,9 @@
-
 .page-content {
   position: relative;
-  z-index: 3;      /* above hero */
-  margin-top: 100vh; /* 🔥 pushes content below fixed hero */
-  background: #fff;
+  z-index: 2;
+  margin-top: 100vh;   /* IMPORTANT */
+  background: #ffffff;
+}
+html {
+  scroll-behavior: smooth;
 }

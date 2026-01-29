@@ -208,3 +208,11 @@
     height: 36px;
   }
 }
+/* ===============================
+   HIDE TABS ON MOBILE
+================================ */
+@media (max-width: 768px) {
+  .thesis-tabs {
+    display: none;
+  }
+}

@@ -59,7 +59,7 @@ const ScrollTextSection = ({ scrollTextData }) => {
         </h1>
       </div>
 
-      <div className="hero-spacer"></div>
+      <div className="hero-spacer1"></div>
 
       {/* ================= PRODUCTS ================= */}
       <div className="products-section">

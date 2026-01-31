@@ -1,5 +1,4 @@
 
-
 import axios from "axios";
 
 const API = "https://palantir-backend-phi.vercel.app/api/pages";

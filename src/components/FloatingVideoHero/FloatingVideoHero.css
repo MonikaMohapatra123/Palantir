@@ -1,0 +1,44 @@
+.fvh-section {
+  min-height: 200vh; /* gives scroll space */
+  background: #0b0d10;
+  color: white;
+  padding: 120px 20px 200px;
+}
+
+/* TEXT ON TOP */
+.fvh-text {
+  max-width: 1100px;
+  margin: 0 auto 80px;
+  text-align: center;
+}
+
+.fvh-text h1 {
+  font-size: clamp(3rem, 7vw, 6.5rem);
+  font-weight: 700;
+  line-height: 1.05;
+}
+
+.fvh-text p {
+  margin-top: 20px;
+  font-size: 1.1rem;
+  color: #cfd3ff;
+}
+
+/* VIDEO BELOW TEXT */
+.fvh-video-box {
+  width: 80%;
+  max-width: 1200px;
+  margin: 0 auto;
+  transform: scale(0.6); /* starts smaller */
+  transform-origin: top center;
+  transition: transform 0.05s linear;
+  will-change: transform;
+}
+
+.fvh-video-box video {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+}
+

@@ -1,0 +1,67 @@
+.projectdetails-banner {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+.projectdetails-bg {
+  position: absolute;
+  inset: 0;
+  background-image: url("../../../public/P-1.jpg");
+  background-size: cover;
+  background-position: center;
+  filter: brightness(0.55);
+  z-index: 1;
+}
+
+.projectdetails-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.75));
+  z-index: 2;
+}
+
+.projectdetails-content {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 30px;
+}
+
+.projectdetails-title {
+  width: 100%;
+  text-align: center;
+  font-size: clamp(4rem, 18vw, 18rem);
+  font-weight: 800;
+  letter-spacing: 1vw;
+  color: rgba(255,255,255,0.9);
+  text-transform: uppercase;
+  line-height: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  pointer-events: none;
+}
+
+.projectdetails-subtitle {
+  display: none;
+}
+
+@media (max-width: 1024px) {
+  .projectdetails-title {
+    font-size: clamp(3rem, 20vw, 14rem);
+    letter-spacing: 0.8vw;
+  }
+}
+
+@media (max-width: 768px) {
+  .projectdetails-title {
+    font-size: clamp(2.5rem, 22vw, 10rem);
+    letter-spacing: 0.6vw;
+  }
+}

@@ -5,7 +5,7 @@ const HoverCard = () => {
   return (
     <div className="hover-card">
       {/* LEFT CONTENT */}
-      <div className="card-content">
+      <div className="card-content-hover">
         <div>
           <h2>Explore Defense Solutions</h2>
 

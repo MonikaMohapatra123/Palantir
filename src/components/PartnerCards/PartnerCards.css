@@ -29,17 +29,15 @@
 }
 
 /* ===============================
-   MOVING TRACK (DESKTOP)
+   MOVING TRACK
 ================================ */
 .partner-track {
   display: flex;
   gap: 28px;
   width: max-content;
   animation: scroll 35s linear infinite;
-  will-change: transform;
 }
 
-/* Pause animation on hover */
 .partner-track:hover {
   animation-play-state: paused;
 }
@@ -52,10 +50,11 @@
   height: 360px;
   background: #f5f5f5;
   padding: 38px;
-  position: relative;
   cursor: pointer;
   flex-shrink: 0;
-  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
 
   clip-path: polygon(
     0 0,
@@ -73,19 +72,31 @@
   font-size: 14px;
   letter-spacing: 1px;
   font-weight: 500;
-  margin-bottom: 20px;
   color: #111;
 }
 
 /* ===============================
-   TEXT CONTAINER
+   CONTENT (BELOW TITLE)
 ================================ */
 .card-content {
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  transition: all 0.6s ease;
+  margin-top: 22px;
+
+  transform: translateY(20px);
+  opacity: 0;
+
+  transition: 
+    transform 0.45s ease,
+    opacity 0.4s ease;
+}
+
+/* ===============================
+   HOVER SHOW CONTENT
+================================ */
+@media (hover: hover) {
+  .partner-card:hover .card-content {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 /* ===============================
@@ -94,28 +105,12 @@
 .card-text {
   font-size: 18px;
   line-height: 1.6;
-  color: hsl(0, 3%, 7%);
+  color: #111;
   margin-bottom: 14px;
-  margin-top: 20px;
-  transition: font-size 0.4s ease;
 }
 
 /* ===============================
-   HOVER SHOW MORE TEXT
-================================ */
-@media (hover: hover) {
-  .partner-card:hover .card-content {
-    -webkit-line-clamp: unset;
-    max-height: 320px;
-  }
-
-  .partner-card:hover .card-text {
-    font-size: 14px;
-  }
-}
-
-/* ===============================
-   INFINITE SCROLL KEYFRAMES
+   INFINITE SCROLL
 ================================ */
 @keyframes scroll {
   from {
@@ -137,6 +132,7 @@
   .partner-card {
     width: 260px;
     height: 320px;
+    padding: 28px;
   }
 
   .card-text {
@@ -148,42 +144,39 @@
    MOBILE SLIDER MODE
 ================================ */
 @media (max-width: 768px) {
-
   .partner-heading {
     font-size: 30px;
     white-space: normal;
     width: 100%;
   }
 
-  /* Horizontal swipe */
   .partner-scroll {
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
   }
 
-  /* Stop animation */
   .partner-track {
     animation: none;
     width: auto;
     gap: 16px;
   }
 
-  /* One card per screen */
   .partner-card {
     width: 85vw;
-    height: 240px;
+    height: auto;
     padding: 22px;
     scroll-snap-align: start;
   }
 
+  /* Always show content on mobile */
   .card-content {
-    -webkit-line-clamp: 4;
+    transform: none;
+    opacity: 1;
   }
 
   .card-text {
     font-size: 14px;
-    margin-top: 10px;
   }
 }
 
@@ -197,7 +190,6 @@
 
   .partner-card {
     width: 90vw;
-    height: 220px;
   }
 
   .card-text {
@@ -211,29 +203,7 @@
 .partner-scroll::-webkit-scrollbar {
   display: none;
 }
+
 .partner-scroll {
   scrollbar-width: none;
-}
-/* ===============================
-   MOBILE CARD DESIGN UPGRADE
-================================ */
-@media (max-width: 768px) {
-
-  .partner-card {
-    background: linear-gradient(135deg, #ffffff, #f2f2f2);
-    border-radius: 20px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.12);
-  }
-
-  .card-title {
-    font-size: 12px;
-    letter-spacing: 1.2px;
-    color: #666;
-  }
-
-  .card-text {
-    font-size: 14px;
-    line-height: 1.6;
-    color: #222;
-  }
 }

@@ -4,6 +4,8 @@ import FloatingVideoHero from "../../components/FloatingVideoHero/FloatingVideoH
 import ProjectBanner from "../../components/ProjectBanner/ProjectBanner";
 import HoverCard from "../../components/HoverCard/HoverCard";
 import KillChainSection from "../../components/KillChainSection/KillChainSection";
+import QuoteShowcase from "../../components/QuoteShowcase/QuoteShowcase";
+import ReadyHero from "../../components/ReadyHero/ReadyHero";
 
 
 const ProjectDetails = ({ page }) => {
@@ -13,6 +15,8 @@ const ProjectDetails = ({ page }) => {
       <FloatingVideoHero />
       <HoverCard/>
       <KillChainSection/>
+      <QuoteShowcase/>
+      <ReadyHero/>
       
     </div>
   );

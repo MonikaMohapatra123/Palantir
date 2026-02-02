@@ -1,0 +1,61 @@
+.quote-showcase-wrap {
+  width: 100%;
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 80px 6%;
+  box-sizing: border-box;
+  background: #ffffff;
+  gap: 40px;
+}
+
+/* LEFT CARD */
+.quote-showcase-card {
+  max-width: 720px;
+  background: linear-gradient(180deg, #1c1f22, #14171a);
+  border-radius: 14px;
+  padding: 60px 56px;
+  box-sizing: border-box;
+}
+
+/* TEXT */
+.quote-showcase-text {
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 44px;
+  line-height: 1.25;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+}
+
+/* RIGHT SIDE LABELS */
+.quote-showcase-labels {
+  display: flex;
+  gap: 60px;
+  align-self: flex-start;
+  margin-top: 20px;
+}
+
+.quote-showcase-labels span {
+  font-size: 14px;
+  letter-spacing: 0.2em;
+  color: #000;
+  font-weight: 500;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .quote-showcase-wrap {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .quote-showcase-text {
+    font-size: 32px;
+  }
+
+  .quote-showcase-labels {
+    margin-top: 30px;
+    gap: 30px;
+  }
+}

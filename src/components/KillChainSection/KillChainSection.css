@@ -1,0 +1,85 @@
+.kc-wrapper {
+  width: 100%;
+  background: #fff;
+  padding: 120px 0;
+}
+
+.kc-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 60px;
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 80px;
+}
+
+/* LEFT: STICKY HEADING ONLY */
+.kc-left {
+  position: sticky;
+  top: 120px;
+  align-self: flex-start;
+}
+
+.kc-index {
+  display: block;
+  font-size: 14px;
+  color: #999;
+  margin-bottom: 20px;
+}
+
+.kc-title {
+  font-size: 64px;
+  line-height: 1.05;
+  font-weight: 500;
+  color: #111;
+}
+
+/* RIGHT: SCROLLING CONTENT */
+.kc-right {
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+}
+
+.kc-content p {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #555;
+  max-width: 520px;
+  margin-bottom: 20px;
+}
+
+.kc-buttons {
+  display: flex;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.kc-btn {
+  padding: 10px 18px;
+  border-radius: 999px;
+  border: 1px solid #ccc;
+  background: transparent;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.kc-btn.primary {
+  background: #111;
+  color: #fff;
+  border-color: #111;
+}
+
+/* IMAGE BELOW TEXT */
+.kc-media {
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+}
+
+.kc-media img {
+  width: 100%;
+  height: auto;
+  display: block;
+}

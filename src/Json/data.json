@@ -268,34 +268,80 @@
     "Highlightsimage": "/pic-3.jpg"
   }
   ,
+  
   "3": {
-  "page": "ProjectsHome",
+    "page": "ProjectsHome",
 
-  "FloatingVideoSection": {
-    "items": [
-      {
-        "id": 1,
-        "title": "Your software is the weapons system",
-        "subtitle": "Operating System for Global Decision-Making",
-        "video": "/video2.mp4"
-      },
-      {
-        "id": 2,
-        "title": "Intelligence at Machine Speed",
-        "subtitle": "Turn complex data into real-time actions",
-        "video": "/video3.mp4"
-      },
-      {
-      "id": 3,
-      "title": "Orchestrate combat power",
-      "subtitle": "Build once. Scale forever.",
-      "video": "/video11.mp4"
+    "FloatingVideoSection": {
+      "items": [
+        {
+          "id": 1,
+          "title": "Your software is the weapons system",
+          "subtitle": "Operating System for Global Decision-Making",
+          "video": "/video2.mp4"
+        },
+        {
+          "id": 2,
+          "title": "Intelligence at Machine Speed",
+          "subtitle": "Turn complex data into real-time actions",
+          "video": "/video3.mp4"
+        },
+        {
+          "id": 3,
+          "title": "Orchestrate combat power",
+          "subtitle": "Build once. Scale forever.",
+          "video": "/video11.mp4"
+        }
+      ]
+    },
+
+    "KillChainSection": {
+      "items": [
+        {
+          "id": 1,
+          "index": "[01]",
+          "title": "Powering the Kill Chain",
+          "content": [
+            "Gotham’s targeting offering supports soldiers with an AI-powered kill chain, seamlessly and responsibly integrating target identification and target effector pairing.",
+            "Operators experience enhanced situational awareness and effectiveness as Gotham streamlines critical decision-making in the modern battlespace."
+          ],
+          "buttons": [
+            { "text": "VIDEO", "type": "primary" },
+            { "text": "DETAILS", "type": "default" }
+          ],
+          "image": "/pic-5.jpg"
+        },
+        {
+          "id": 2,
+          "index": "[02]",
+          "title": "Advanced Targeting AI",
+          "content": [
+            "The AI engine identifies threats faster than conventional systems, providing real-time recommendations for operational commanders.",
+            "Integrating predictive analytics ensures precision and reduces collateral risks on the battlefield."
+          ],
+          "buttons": [
+            { "text": "VIDEO", "type": "primary" },
+            { "text": "DETAILS", "type": "default" }
+          ],
+          "image": "/pic-4.jpg"
+        },
+        {
+          "id": 3,
+          "index": "[03]",
+          "title": "Seamless Mission Integration",
+          "content": [
+            "Gotham connects multiple operational layers into a unified kill chain, enhancing coordination across air, land, and sea domains.",
+            "This integration provides a clear operational picture and accelerates mission execution with minimal errors."
+          ],
+          "buttons": [
+            { "text": "VIDEO", "type": "primary" },
+            { "text": "DETAILS", "type": "default" }
+          ],
+          "image": "/pic-1.jpg"
+        }
+      ]
     }
-
-    ]
   }
-}
-
 
 
 

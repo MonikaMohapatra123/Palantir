@@ -3,6 +3,7 @@ import "./ProjectDetails.css";
 import FloatingVideoHero from "../../components/FloatingVideoHero/FloatingVideoHero";
 import ProjectBanner from "../../components/ProjectBanner/ProjectBanner";
 import HoverCard from "../../components/HoverCard/HoverCard";
+import KillChainSection from "../../components/KillChainSection/KillChainSection";
 
 
 const ProjectDetails = ({ page }) => {
@@ -11,6 +12,7 @@ const ProjectDetails = ({ page }) => {
       <ProjectBanner page={page} />
       <FloatingVideoHero />
       <HoverCard/>
+      <KillChainSection/>
       
     </div>
   );

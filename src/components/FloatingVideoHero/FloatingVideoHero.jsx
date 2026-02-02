@@ -1,60 +1,96 @@
 import React, { useEffect, useRef } from "react";
 import "./FloatingVideoHero.css";
+import data from "../../Json/data.json";   // adjust path if needed
 
 const FloatingVideoHero = () => {
+
+  // get items from JSON
+  const items = data["3"].FloatingVideoSection.items;
+
   const sectionRef = useRef(null);
-  const videoBoxRef = useRef(null);
+  const videoRefs = useRef([]);
 
   useEffect(() => {
-    const videoBox = videoBoxRef.current;
+
     const section = sectionRef.current;
-    if (!videoBox || !section) return;
+    if (!section) return;
 
-    // Current state
-    let currentWidth = 30;  // start width %
-    let currentScale = 0.7; // start scale
+    // initial animation state for each video
+    let states = items.map(() => ({
+      width: 30,
+      scale: 0.7
+    }));
 
-    const lerp = (start, end, factor) => start + (end - start) * factor;
+    const lerp = (a, b, t) => a + (b - a) * t;
 
     const animate = () => {
+
       const rect = section.getBoundingClientRect();
-      const windowH = window.innerHeight;
+      const winH = window.innerHeight;
 
-      // Start and end of scroll animation
-      const start = windowH * 0.8;
-      const end = windowH * 0.1;
+      const start = winH * 0.8;
+      const end = winH * 0.1;
 
-      // Progress between 0 and 1
       let progress = (start - rect.top) / (start - end);
       progress = Math.min(Math.max(progress, 0), 1);
 
-      // Target width and scale
-      const targetWidth = 30 + progress * (100 - 30);  // 30% -> 100%
-      const targetScale = 0.7 + progress * (1 - 0.7);  // 0.7 -> 1
+      const targetWidth = 30 + progress * 70; // 30% → 100%
+      const targetScale = 0.7 + progress * 0.3; // 0.7 → 1
 
-      // Smooth interpolation (slow, reversible)
-      currentWidth = lerp(currentWidth, targetWidth, 0.02);  // smaller factor = slower
-      currentScale = lerp(currentScale, targetScale, 0.02);
+      videoRefs.current.forEach((videoBox, index) => {
+        if (!videoBox) return;
 
-      videoBox.style.width = `${currentWidth}%`;
-      videoBox.style.transform = `scale(${currentScale})`;
+        states[index].width = lerp(
+          states[index].width,
+          targetWidth,
+          0.03
+        );
+
+        states[index].scale = lerp(
+          states[index].scale,
+          targetScale,
+          0.03
+        );
+
+        videoBox.style.width = `${states[index].width}%`;
+        videoBox.style.transform = `scale(${states[index].scale})`;
+      });
 
       requestAnimationFrame(animate);
     };
 
     animate();
-  }, []);
+  }, [items]);
 
   return (
     <section className="fvh-section" ref={sectionRef}>
-      <div className="fvh-text">
-        <h1>Your software is the weapons system</h1>
-        <p>Operating System for Global Decision-Making</p>
-      </div>
 
-      <div className="fvh-video-box" ref={videoBoxRef}>
-        <video src="/video2.mp4" autoPlay muted loop playsInline />
-      </div>
+      {items.map((item, index) => (
+        <div className="fvh-block" key={item.id}>
+
+          {/* TEXT */}
+          <div className="fvh-text">
+            <h1>{item.title}</h1>
+            <p>{item.subtitle}</p>
+          </div>
+
+          {/* VIDEO */}
+          <div
+            className="fvh-video-box"
+            ref={(el) => (videoRefs.current[index] = el)}
+          >
+            <video
+              src={item.video}
+              autoPlay
+              muted
+              loop
+              playsInline
+            />
+          </div>
+
+        </div>
+      ))}
+
     </section>
   );
 };

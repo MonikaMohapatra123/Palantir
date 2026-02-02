@@ -267,6 +267,35 @@
     "Highlightsdescription": "With years of experience, skilled professionals, and a commitment to excellence, we ensure timely delivery and superior project execution.",
     "Highlightsimage": "/pic-3.jpg"
   }
+  ,
+  "3": {
+  "page": "ProjectsHome",
+
+  "FloatingVideoSection": {
+    "items": [
+      {
+        "id": 1,
+        "title": "Your software is the weapons system",
+        "subtitle": "Operating System for Global Decision-Making",
+        "video": "/video2.mp4"
+      },
+      {
+        "id": 2,
+        "title": "Intelligence at Machine Speed",
+        "subtitle": "Turn complex data into real-time actions",
+        "video": "/video3.mp4"
+      },
+      {
+      "id": 3,
+      "title": "Orchestrate combat power",
+      "subtitle": "Build once. Scale forever.",
+      "video": "/video11.mp4"
+    }
+
+    ]
+  }
+}
+
 
 
 

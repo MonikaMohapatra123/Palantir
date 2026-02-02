@@ -1,0 +1,138 @@
+* {
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.hover-card {
+  width: 100%;
+  max-width: 1210px;
+  height:460px;
+  margin: 0 auto;          /* 👈 centers horizontally */
+  display: flex;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  background: #f4f4f4;
+  transition: background 0.5s ease;
+  position: relative;
+  margin-top:70px;
+  margin-bottom: 70px;
+}
+
+
+/* LEFT CONTENT */
+.card-content {
+  width: 50%;
+  padding: 32px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card-content h2 {
+  font-size: 24px;
+  font-weight: 500;
+  margin: 0 0 12px 0;
+  color: #111;
+  transition: color 0.4s ease;
+}
+
+.card-content p {
+  font-size: 15px;
+  line-height: 1.8;
+  color: #9a9a9a;
+  max-width: 460px;
+  transition: color 0.4s ease;
+  padding-top: 190px;
+}
+
+/* EXPLORE ROW */
+.explore-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  letter-spacing: 2px;
+  color: #111;
+  transition: color 0.4s ease;
+}
+
+/* ARROW */
+.card-arrow {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: #e6e6e6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  overflow: hidden;
+  transition: background 0.4s ease;
+}
+
+.card-arrow span {
+  position: absolute;
+  transition: all 0.4s ease;
+}
+
+.arrow-hover {
+  opacity: 0;
+  transform: translate(6px, 6px);
+}
+
+/* RIGHT IMAGE */
+.card-image {
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s ease;
+}
+
+/* ===================== */
+/* HOVER EFFECTS */
+/* ===================== */
+
+.hover-card:hover {
+  background: #1f2426;
+}
+
+.hover-card:hover .card-content h2 {
+  color: #ffffff;
+}
+
+.hover-card:hover .card-content p {
+  color: #bfbfbf;
+}
+
+.hover-card:hover .explore-row {
+  color: #ffffff;
+}
+
+.hover-card:hover .card-image img {
+  transform: scale(1.05);
+}
+
+.hover-card:hover .card-arrow {
+  background: #6f6f6f;
+}
+
+/* Arrow swap */
+.hover-card:hover .arrow-default {
+  opacity: 0;
+  transform: translate(-6px, -6px);
+}
+
+.hover-card:hover .arrow-hover {
+  opacity: 1;
+  transform: translate(0, 0);
+}

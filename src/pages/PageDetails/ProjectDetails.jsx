@@ -13,7 +13,7 @@ const ProjectDetails = ({ page }) => {
     <div className="projectdetails-wrapper">
       <ProjectBanner page={page} />
       <FloatingVideoHero />
-      <HoverCard/>
+      {/* <HoverCard/> */}
       <KillChainSection/>
       <QuoteShowcase/>
       <ReadyHero/>

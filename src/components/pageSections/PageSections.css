@@ -14,35 +14,119 @@
   max-width: 900px;
 }
 /* ================= SECTION ONE ================= */
+/* MAIN SECTION */
+/* ===============================
+   SECTION ONE – HERO LAYOUT
+================================ */
+
 .section-one {
   width: 100%;
   min-height: 100vh;
-  background: inherit; /* 🔥 IMPORTANT */
+  background: #ffffff;
   display: flex;
   align-items: center;
-
 }
+
+/* INNER WRAPPER */
 .section-one-inner {
   width: 100%;
   padding: 0 6rem;
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
-}
-.section-one-title {
-  font-size: 6rem;
-  font-weight: 300;
-  color: inherit; /* 🔥 */
-  margin: 10px;
+  align-items: center;
 }
 
-.section-one-description {
-  max-width: 420px;
-  font-size: 1.3rem;
-  line-height: 1.6;
-  color: inherit; /* 🔥 */
-  margin-top: 1rem;
+/* LEFT BIG TITLE */
+.section-one-title {
+  font-size: 5.2rem;
+  font-weight: 300;
+  line-height: 1.1;
+  color: #111;
+  max-width: 650px;
+  margin: 0;
 }
+
+/* RIGHT COLUMN */
+.section-one-right {
+  max-width: 420px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 320px;
+}
+
+/* RIGHT TEXT */
+.section-one-description {
+  font-size: 1.15rem;
+  line-height: 1.6;
+  color: #111;
+  margin: 0;
+}
+
+/* GET STARTED LINK */
+.section-one-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #111;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #111;
+  cursor: pointer;
+}
+
+.section-one-link span {
+  font-size: 1.2rem;
+  transition: transform 0.3s ease;
+}
+
+.section-one-link:hover span {
+  transform: translateX(6px);
+}
+
+/* ===============================
+   RESPONSIVE
+================================ */
+
+@media (max-width: 1024px) {
+  .section-one-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 3rem;
+  }
+
+  .section-one-title {
+    font-size: 4rem;
+  }
+
+  .section-one-right {
+    width: 100%;
+    height: auto;
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .section-one-inner {
+    padding: 0 1.5rem;
+  }
+
+  .section-one-title {
+    font-size: 2.6rem;
+  }
+
+  .section-one-description {
+    font-size: 1rem;
+  }
+
+  .section-one-link {
+    font-size: 0.95rem;
+  }
+}
+
+
 
 /* ================= SECTION TWO ================= */
 

@@ -11,6 +11,7 @@ import PalantirForm from "../../components/PalantirForm/PalantirForm";
 
 import ProjectDetails from "./ProjectDetails";
 import IndustriesDetails from "./IndustriesDetails";
+import OneApproach from "../../components/OneApproach/OneApproach";
 
 const PageDetails = () => {
   const { pageType, category } = useParams();
@@ -63,7 +64,7 @@ const PageDetails = () => {
       style={{ marginTop: "80px" }}
     >
       <SectionOne data={page.section1} isService={isServicePage} />
-
+      {isServicePage && <OneApproach/>}
       {isServicePage && <AMLInAction />}
 
       <SectionTwo data={page.section2} isService={isServicePage} />

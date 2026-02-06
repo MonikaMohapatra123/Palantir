@@ -12,6 +12,9 @@ import PageDetails from "./pages/PageDetails/PageDetails";
 import ServicePage from "./pages/ServicePage/ServicePage";
 import Blog from "./pages/Blog/Blog";
 import CaseStudies from "./pages/CaseStudies/CaseStudies";
+import ProjectsPage from "./pages/ProjectPage/ProjectPage";
+import IndustriesPage from "./pages/IndustriesPage/IndustriesPage";
+import TechnologyPage from "./pages/TechnologyPage/TechnologyPage";
 
 
 const App = () => {
@@ -24,24 +27,28 @@ const App = () => {
     <>
       {!isAdminRoute && <NavBar />}
 
-      <Routes>
-        {/* Public Routes */}
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-         <Route path="/:pageType/:category" element={<PageDetails/>} />
-         <Route path="/services" element={ <ServicePage/>}/>
-         <Route path="/blog" element={ <Blog/>}></Route>
-          <Route path="/case-studies" element={<CaseStudies/>}></Route>
-        
-        
-        {/* Admin Layout Route */}
-        
-         <Route path="/admin" element={<Admin/>}>
-        <Route path="pages" element={<AdminPages/>} />
-        <Route path="add" element={<AddPage/>} />
-        <Route path="edit/:id" element={<EditPage/>} />
-      </Route>
-      </Routes>
+    <Routes>
+  {/* Public Routes */}
+  <Route path="/" element={<Home />} />
+  <Route path="/about" element={<About />} />
+  <Route path="/:pageType/:category" element={<PageDetails />} />
+
+  <Route path="/services" element={<ServicePage />} />
+  <Route path="/projects" element={<ProjectsPage />} />
+  <Route path="/industries" element={<IndustriesPage />} />
+  <Route path="/technologies" element={<TechnologyPage />} />
+
+  <Route path="/blog" element={<Blog />} />
+  <Route path="/case-studies" element={<CaseStudies />} />
+
+  {/* Admin Routes */}
+  <Route path="/admin" element={<Admin />}>
+    <Route path="pages" element={<AdminPages />} />
+    <Route path="add" element={<AddPage />} />
+    <Route path="edit/:id" element={<EditPage />} />
+  </Route>
+</Routes>
+
 
       {!isAdminRoute && <Footer />}
     </>

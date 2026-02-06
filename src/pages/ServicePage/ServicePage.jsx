@@ -19,6 +19,31 @@ const ServicePage = () => {
       description:
         "Grow your brand with data-driven marketing strategies.",
     },
+    {
+      title: "UI/UX Design",
+      description:
+        "Craft intuitive and engaging user interfaces that enhance user experience.",
+    },
+    {
+      title: "E-Commerce Solutions",
+      description:
+        "Build powerful online stores with secure payment and smooth checkout.",
+    },
+    {
+      title: "Cloud Services",
+      description:
+        "Deploy, manage, and scale applications using reliable cloud platforms.",
+    },
+    {
+      title: "SEO Optimization",
+      description:
+        "Improve your website ranking and visibility on search engines.",
+    },
+    {
+      title: "Maintenance & Support",
+      description:
+        "Ongoing monitoring, updates, and support to keep your systems running smoothly.",
+    },
   ];
 
   return (

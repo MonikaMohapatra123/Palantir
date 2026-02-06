@@ -3,6 +3,8 @@ import "./ThesisSection.css";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 
+const GAP = 30; // must match CSS gap
+
 const ThesisSection = ({ thesisData }) => {
   const sliderRef = useRef(null);
   const [activeIndex, setActiveIndex] = useState(0);
@@ -21,12 +23,17 @@ const ThesisSection = ({ thesisData }) => {
     return () => clearInterval(interval);
   }, [thesisData]);
 
-  /* SMOOTH SCROLL */
+  /* SLIDE WHEN INDEX CHANGES */
   useEffect(() => {
     if (!sliderRef.current) return;
 
+    const slide = sliderRef.current.querySelector(".thesis-slide");
+    if (!slide) return;
+
+    const slideWidth = slide.offsetWidth + GAP;
+
     sliderRef.current.scrollTo({
-      left: sliderRef.current.clientWidth * activeIndex,
+      left: slideWidth * activeIndex,
       behavior: "smooth",
     });
   }, [activeIndex]);
@@ -50,7 +57,8 @@ const ThesisSection = ({ thesisData }) => {
 
       {/* SLIDER WRAPPER */}
       <div className="thesis-slider-wrapper">
-        {/* LEFT */}
+
+        {/* LEFT ARROW */}
         <button
           className="nav-arrow left"
           onClick={() =>
@@ -82,7 +90,7 @@ const ThesisSection = ({ thesisData }) => {
           ))}
         </div>
 
-        {/* RIGHT */}
+        {/* RIGHT ARROW */}
         <button
           className="nav-arrow right"
           onClick={() =>

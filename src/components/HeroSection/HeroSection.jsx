@@ -6,6 +6,7 @@ const HeroSection = ({ heroData }) => {
 
   return (
     <section className="hero-container">
+
       {/* Background Video */}
       <video
         className="hero-video"
@@ -19,16 +20,21 @@ const HeroSection = ({ heroData }) => {
       {/* Overlay */}
       <div className="hero-overlay0"></div>
 
-      {/* Hero Content */}
-      <div className="hero-content">
-        <h1>{heroData.heading}</h1>
-      </div>
+      {/* CONTENT WRAPPER */}
+      <div className="hero-inner">
 
-      {/* Scroll Arrow & Text */}
-      <div className="scroll-down">
-  <div className="arrow"></div>
-  <span className="scroll-text">Scroll to Explore</span>
-</div>
+        {/* Hero Content */}
+        <div className="hero-content">
+          <h1>{heroData.heading}</h1>
+        </div>
+
+        {/* Scroll Down */}
+        <div className="scroll-down">
+          <div className="arrow"></div>
+          <span className="scroll-text">Scroll to Explore</span>
+        </div>
+
+      </div>
 
     </section>
   );

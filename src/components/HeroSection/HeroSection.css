@@ -10,7 +10,7 @@
 }
 
 /* ===============================
-   FIXED BACKGROUND VIDEO
+   BACKGROUND VIDEO
 ================================ */
 
 .hero-video {
@@ -29,8 +29,26 @@
 .hero-overlay0 {
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.35);
+  background: rgba(0, 0, 0, 0.35);
   z-index: -1;
+}
+
+/* ===============================
+   INNER WRAPPER
+================================ */
+
+.hero-inner {
+  position: relative;
+  z-index: 1;
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+  padding: 40px 20px;
 }
 
 /* ===============================
@@ -38,18 +56,9 @@
 ================================ */
 
 .hero-content {
-  position: relative;
-  z-index: 1;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 30px;
-  color: #ffffff;
+  max-width: 1100px;
+  margin: 0 auto;
 }
-
-/* TEXT */
 
 .hero-content h1 {
   font-family: "Inter", sans-serif;
@@ -57,28 +66,27 @@
   font-weight: 400;
   letter-spacing: -0.03em;
   line-height: 1.12;
-  max-width: 1100px;
-  margin: 0 auto;
   color: #ffffff;
+  margin: 0;
 }
 
 /* ===============================
-   SCROLL DOWN INDICATOR
+   SCROLL DOWN
 ================================ */
 
 .scroll-down {
   position: absolute;
-  bottom: 40px;   /* 🔥 less space from bottom */
+  bottom: 40px;
   left: 50%;
   transform: translateX(-50%);
+
   display: flex;
   flex-direction: column;
   align-items: center;
-
   gap: 4px;
-  z-index: 5;
-  cursor: pointer;
+
   color: #ffffff;
+  cursor: pointer;
 }
 
 /* LINE */
@@ -122,8 +130,6 @@
   letter-spacing: 2px;
   text-transform: uppercase;
   opacity: 0.85;
-  line-height: 1;
-  margin: 0;
 }
 
 /* ===============================
@@ -131,9 +137,15 @@
 ================================ */
 
 @keyframes bounce {
-  0%   { transform: translateY(0); }
-  50%  { transform: translateY(-8px); }
-  100% { transform: translateY(0); }
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
 
 /* ===============================
@@ -146,6 +158,6 @@
   }
 
   .scroll-down {
-    bottom: 8px;
+    bottom: 15px;
   }
 }

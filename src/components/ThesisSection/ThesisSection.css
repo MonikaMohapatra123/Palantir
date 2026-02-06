@@ -69,6 +69,8 @@
 ================================ */
 .thesis-slider {
   display: flex;
+  gap: 30px;
+  padding: 0 10%;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
@@ -83,10 +85,11 @@
    SLIDE
 ================================ */
 .thesis-slide {
-  flex: 0 0 100%;
+  flex: 0 0 90%;
   height: 520px;
+  margin: 0 auto;
   position: relative;
-  scroll-snap-align: start;
+  scroll-snap-align: center;
   cursor: grab;
 }
 
@@ -100,6 +103,7 @@
   height: 100%;
   object-fit: cover;
   display: block;
+  border-radius: 6px;
 }
 
 /* ===============================
@@ -114,17 +118,17 @@
   padding: 0 80px;
   background: linear-gradient(
     to right,
-    rgba(0, 0, 0, 0.6),
-    rgba(0, 0, 0, 0.25),
-    rgba(0, 0, 0, 0)
+    rgba(0,0,0,0.6),
+    rgba(0,0,0,0.25),
+    rgba(0,0,0,0)
   );
+  border-radius: 6px;
 }
 
 .thesis-overlay-content {
   max-width: 580px;
 }
 
-/* COUNT */
 .thesis-count {
   font-size: 14px;
   letter-spacing: 1px;
@@ -134,7 +138,6 @@
   margin-bottom: 12px;
 }
 
-/* TITLE */
 .thesis-overlay h2 {
   font-size: 42px;
   line-height: 1.2;
@@ -152,35 +155,29 @@
   transform: translateY(-50%);
   width: 64px;
   height: 44px;
-  border: 1px solid rgba(255, 255, 255, 0.6);
-  background: transparent;
+  border: 1px solid rgba(255,255,255,0.6);
+  background: rgba(0,0,0,0.3);
   color: white;
   cursor: pointer;
   z-index: 5;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 2px;
-  transition: background 0.3s ease, color 0.3s ease;
 }
 
-.nav-arrow.left {
-  left: 20px;
-}
-
-.nav-arrow.right {
-  right: 20px;
-}
+.nav-arrow.left { left: 20px; }
+.nav-arrow.right { right: 20px; }
 
 .nav-arrow:hover {
   background: #ffffff;
-  color: #000000;
+  color: #000;
 }
 
 /* ===============================
    RESPONSIVE
 ================================ */
 @media (max-width: 992px) {
+
   .thesis-overlay {
     padding: 0 40px;
   }
@@ -188,11 +185,37 @@
   .thesis-overlay h2 {
     font-size: 32px;
   }
+
+  .thesis-slide {
+    height: 420px;
+  }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
+
+  .thesis-tabs {
+    display: none;
+  }
+
+  .thesis-slider {
+    gap: 20px;
+    padding: 0 5%;
+  }
+
   .thesis-slide {
-    height: 360px;
+    flex: 0 0 90%;
+    height: 380px;
+  }
+
+  .thesis-overlay h2 {
+    font-size: 26px;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .thesis-slide {
+    height: 320px;
   }
 
   .thesis-overlay {
@@ -200,19 +223,11 @@
   }
 
   .thesis-overlay h2 {
-    font-size: 24px;
+    font-size: 22px;
   }
 
   .nav-arrow {
     width: 46px;
     height: 36px;
-  }
-}
-/* ===============================
-   HIDE TABS ON MOBILE
-================================ */
-@media (max-width: 768px) {
-  .thesis-tabs {
-    display: none;
   }
 }

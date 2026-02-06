@@ -3,8 +3,6 @@ import "./ThesisSection.css";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 
-const GAP = 30; // must match CSS gap
-
 const ThesisSection = ({ thesisData }) => {
   const sliderRef = useRef(null);
   const [activeIndex, setActiveIndex] = useState(0);
@@ -23,17 +21,12 @@ const ThesisSection = ({ thesisData }) => {
     return () => clearInterval(interval);
   }, [thesisData]);
 
-  /* SLIDE WHEN INDEX CHANGES */
+  /* SMOOTH SCROLL */
   useEffect(() => {
     if (!sliderRef.current) return;
 
-    const slide = sliderRef.current.querySelector(".thesis-slide");
-    if (!slide) return;
-
-    const slideWidth = slide.offsetWidth + GAP;
-
     sliderRef.current.scrollTo({
-      left: slideWidth * activeIndex,
+      left: sliderRef.current.clientWidth * activeIndex,
       behavior: "smooth",
     });
   }, [activeIndex]);
@@ -42,6 +35,7 @@ const ThesisSection = ({ thesisData }) => {
 
   return (
     <section className="thesis-section">
+
       {/* TABS */}
       <div className="thesis-tabs">
         {thesisData.map((item, index) => (
@@ -73,17 +67,25 @@ const ThesisSection = ({ thesisData }) => {
         {/* SLIDER */}
         <div className="thesis-slider" ref={sliderRef}>
           {thesisData.map((item, index) => (
-            <div
-              className="thesis-slide"
-              key={index}
-              onClick={() => navigate("/services")}
-            >
+            <div className="thesis-slide" key={index}>
+
               <img src={item.image} alt={item.title} />
 
               <div className="thesis-overlay">
                 <div className="thesis-overlay-content">
+
                   <span className="thesis-count">{item.count}</span>
+
                   <h2>{item.title}</h2>
+
+                  {/* VIEW MORE */}
+                  <span
+                    className="view-more"
+                    onClick={() => navigate("/services")}
+                  >
+                    View More
+                  </span>
+
                 </div>
               </div>
             </div>
@@ -101,6 +103,7 @@ const ThesisSection = ({ thesisData }) => {
         >
           <FaChevronRight />
         </button>
+
       </div>
     </section>
   );

@@ -4,6 +4,10 @@
   width: 100%;
 }
 
+/* ================================
+   ROW
+================================ */
+
 .service-row {
   display: flex;
   align-items: center;
@@ -16,6 +20,10 @@
   border-bottom: 1px solid rgba(255, 255, 255, 0.15);
 }
 
+/* ================================
+   LEFT SIDE
+================================ */
+
 .service-left {
   display: flex;
   align-items: center;
@@ -27,12 +35,22 @@
   font-size: 34px;
   font-weight: 500;
   line-height: 1.2;
+
+  /* Animation */
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeUp 0.8s ease forwards;
+  animation-delay: 0.2s;
 }
 
 .arrow {
   font-size: 22px;
   opacity: 0.8;
 }
+
+/* ================================
+   RIGHT SIDE
+================================ */
 
 .service-right {
   width: 45%;
@@ -42,9 +60,33 @@
   font-size: 18px;
   line-height: 1.6;
   color: #d1d5db;
+
+  /* Animation */
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeUp 0.8s ease forwards;
+  animation-delay: 0.7s;
 }
 
-/* Responsive */
+/* ================================
+   ANIMATION
+================================ */
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ================================
+   RESPONSIVE
+================================ */
+
 @media (max-width: 768px) {
   .service-row {
     flex-direction: column;

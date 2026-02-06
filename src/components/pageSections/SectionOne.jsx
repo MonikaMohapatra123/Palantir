@@ -1,4 +1,5 @@
 import "./PageSections.css";
+
 const SectionOne = ({ data, isService }) => {
   if (!data) return null;
 
@@ -7,10 +8,12 @@ const SectionOne = ({ data, isService }) => {
       <div className="section-one-inner">
 
         {/* LEFT BIG TITLE */}
-        <h1 className="section-one-title">{data.heading}</h1>
+        <h1 className="section-one-title fade-title">
+          {data.heading}
+        </h1>
 
         {/* RIGHT CONTENT */}
-        <div className="section-one-right">
+        <div className="section-one-right fade-right">
           <p className="section-one-description">
             {data.description}
           </p>

@@ -125,6 +125,39 @@
     font-size: 0.95rem;
   }
 }
+/* ===============================
+   ANIMATIONS
+================================ */
+
+/* TITLE ANIMATION */
+.fade-title {
+  opacity: 0;
+  transform: translateY(40px);
+  animation: titleFade 1.2s ease forwards;
+}
+
+/* RIGHT SIDE ANIMATION */
+.fade-right {
+  opacity: 0;
+  transform: translateY(40px);
+  animation: rightFade 1.2s ease forwards;
+  animation-delay: 0.6s;   /* delay so it comes after title */
+}
+
+/* KEYFRAMES */
+@keyframes titleFade {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes rightFade {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
 
 

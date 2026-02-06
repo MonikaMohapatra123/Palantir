@@ -7,7 +7,7 @@ import FeaturedPosts from '../../components/FeaturedPosts/FeaturedPosts'
 const Blog = () => {
   return (
     <div>
-     <InsightIndex/>
+      <InsightIndex/>
       <FeaturedPosts/>
       <EditorsPickSlider/>
     

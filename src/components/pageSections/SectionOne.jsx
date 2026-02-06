@@ -1,5 +1,4 @@
 import "./PageSections.css";
-
 const SectionOne = ({ data, isService }) => {
   if (!data) return null;
 

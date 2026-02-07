@@ -1,0 +1,17 @@
+.loader-wrapper {
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loader-logo {
+  width: 80px;
+  animation: spin 1.5s linear infinite;
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}

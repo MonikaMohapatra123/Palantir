@@ -7,21 +7,23 @@ const PartnerCards = ({ partnerData }) => {
   return (
     <section className="partner-section">
       <h2 className="partner-heading">
-        {partnerData.heading.line1} <br />
-        {partnerData.heading.line2}
+        {partnerData.heading.line1}
       </h2>
 
       <div className="partner-scroll">
         <div className="partner-track">
           {[...partnerData.cards, ...partnerData.cards].map((item, index) => (
             <div className="partner-card" key={index}>
+              
+              {/* NAME */}
               <h4 className="card-title">{item.name}</h4>
 
-              <div className="card-content">
-                {item.mid && <p className="card-text">{item.mid}</p>}
-                {item.bottom && <p className="card-text">{item.bottom}</p>}
-                {item.extra && <p className="card-text">{item.extra}</p>}
+              {/* BODY */}
+              <div className="card-body">
+                <p className="card-description">{item.description}</p>
+                <p className="card-designation">{item.designation}</p>
               </div>
+
             </div>
           ))}
         </div>

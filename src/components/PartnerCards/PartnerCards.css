@@ -38,9 +38,7 @@
   animation: scroll 35s linear infinite;
 }
 
-.partner-track:hover {
-  animation-play-state: paused;
-}
+/* ❌ REMOVED pause on hover — movement continues */
 
 /* ===============================
    CARD
@@ -56,10 +54,11 @@
   display: flex;
   flex-direction: column;
 
+  /* UPDATED CORNER CUT */
   clip-path: polygon(
     0 0,
-    92% 0,
-    100% 8%,
+    85% 0,
+    100% 15%,
     100% 100%,
     0 100%
   );
@@ -69,44 +68,56 @@
    TITLE
 ================================ */
 .card-title {
-  font-size: 14px;
-  letter-spacing: 1px;
+  font-size: 16px;
+  letter-spacing: 1.8px;
   font-weight: 500;
-  color: #111;
+  color: rgba(0, 0, 0, 0.7);
+  text-transform: uppercase;
+  margin-bottom: 8px;
 }
 
 /* ===============================
-   CONTENT (BELOW TITLE)
+   BODY
 ================================ */
-.card-content {
+.card-body {
   margin-top: 22px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+/* ===============================
+   DESCRIPTION (HOVER)
+================================ */
+.card-description {
+  font-size: 17px;
+  line-height: 1.6;
+  color: #111;
 
   transform: translateY(20px);
   opacity: 0;
 
-  transition: 
-    transform 0.45s ease,
-    opacity 0.4s ease;
+  transition: transform 0.45s ease, opacity 0.4s ease;
 }
 
 /* ===============================
-   HOVER SHOW CONTENT
+   DESIGNATION
+================================ */
+.card-designation {
+  font-size: 13px;
+  letter-spacing: 0.5px;
+  color: #666;
+  margin-top: auto;
+}
+
+/* ===============================
+   HOVER EFFECT (DESKTOP)
 ================================ */
 @media (hover: hover) {
-  .partner-card:hover .card-content {
+  .partner-card:hover .card-description {
     transform: translateY(0);
     opacity: 1;
   }
-}
-
-/* ===============================
-   TEXT
-================================ */
-.card-text {
-  font-size: 18px;
-  line-height: 1.6;
-  color: #111;
-  margin-bottom: 14px;
 }
 
 /* ===============================
@@ -135,8 +146,12 @@
     padding: 28px;
   }
 
-  .card-text {
+  .card-description {
     font-size: 16px;
+  }
+
+  .card-title {
+    font-size: 15px;
   }
 }
 
@@ -169,13 +184,14 @@
     scroll-snap-align: start;
   }
 
-  /* Always show content on mobile */
-  .card-content {
+  /* Always show description on mobile */
+  .card-description {
     transform: none;
     opacity: 1;
+    font-size: 14px;
   }
 
-  .card-text {
+  .card-title {
     font-size: 14px;
   }
 }
@@ -192,7 +208,11 @@
     width: 90vw;
   }
 
-  .card-text {
+  .card-title {
+    font-size: 13px;
+  }
+
+  .card-description {
     font-size: 13px;
   }
 }

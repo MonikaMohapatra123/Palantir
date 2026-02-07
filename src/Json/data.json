@@ -197,43 +197,34 @@
 
 }
 ,
-     "joinOurTeam": {
-      "image": "/girl.jpg",
-      "imageAlt": "Team discussion",
-      "title": "There is so much left to build",
-      "description": "Palantirians deliver mission-critical outcomes for the West's most important institutions.",
-      "button": {
-        "text": "LEARN MORE",
-        "link": "/about"
-      }
-    },
- "partnerSection": {
+   "partnerSection": {
   "heading": {
     "line1": "Our Partner Testimonials"
   },
   "cards": [
     {
-      "name": "Samantha Patel — Head of Engineering",
-      "mid": "Despite the time zone differences, working with Axiomos was seamless. Their team was incredibly responsive, transparent, and committed to delivering excellence.",
-      "bottom": "The custom CRM "
+      "name": "Samantha Patel",
+      "designation": "Head of Engineering",
+      "description": "Despite time zone differences, working with Axiomos was seamless. The team was responsive, transparent, and committed to excellence."
     },
     {
-      "name": "Meera Shah — Senior Product Manager",
-      "mid": "Axiomos has an impressive grasp of emerging technologies and an adaptive work ethic that allowed our project to scale seamlessly.",
-      "bottom": "Their proactive approach, coupled with outstanding technical expertise, ensured a smooth and efficient development process. Highly recommend for innovative solutions! (Bangalore, India)"
+      "name": "Meera Shah",
+      "designation": "Senior Product Manager · Bangalore, India",
+      "description": "Axiomos showed strong technical expertise and an adaptive mindset that helped our product scale smoothly."
     },
     {
-      "name": "Rajiv Malhotra — Director of IT",
-      "mid": "Axiomos has played a crucial role in our digital transformation journey.",
-      "bottom": "Their deep understanding of system architecture and automation has helped streamline our business processes, making our operations far more efficient and data-driven. (London, UK)"
+      "name": "Rajiv Malhotra",
+      "designation": "Director of IT · London, UK",
+      "description": "Their deep understanding of system architecture helped streamline our digital operations efficiently."
     },
     {
-      "name": "Alok Kumar Pandey — Partner, Prathnide Law Firm",
-      "mid": "Due to their responsiveness & patience, the collaboration progressed smoothly from start to finish, resulting in a high-quality product & ensuring their continued engagement.",
-      "bottom": "Axiomos’ skill set was precisely what was needed, and despite an irregular request towards the end stages of the project, communications never suffered. (Supreme Court, New Delhi, India)"
+      "name": "Alok Kumar Pandey",
+      "designation": "Partner, Prathnide Law Firm · Supreme Court, New Delhi",
+      "description": "The collaboration was smooth and professional, resulting in a high-quality product and continued engagement."
     }
   ]
 }
+
 ,
         "buttonGroup": {
       "buttons": [

@@ -1,17 +1,19 @@
 import React from "react";
 import "./ProjectDetails.css";
 import FloatingVideoHero from "../../components/FloatingVideoHero/FloatingVideoHero";
-import ProjectBanner from "../../components/ProjectBanner/ProjectBanner";
+
 import KillChainSection from "../../components/KillChainSection/KillChainSection";
 import QuoteShowcase from "../../components/QuoteShowcase/QuoteShowcase";
 import ReadyHero from "../../components/ReadyHero/ReadyHero";
 import DefenseHoverShowcase from "../../components/DefenseHoverShowcase/DefenseHoverShowcase";
+import GothamSection from "../../components/GothamSection/GothamSection";
 
 
 const ProjectDetails = ({ page }) => {
   return (
     <div className="projectdetails-wrapper">
-      <ProjectBanner page={page} />
+   
+       <GothamSection page={page} />
       <FloatingVideoHero />
        <DefenseHoverShowcase/>
       <KillChainSection/>

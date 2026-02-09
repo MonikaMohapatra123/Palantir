@@ -15,7 +15,7 @@ const TechnologyPage = lazy(() => import("./pages/TechnologyPage/TechnologyPage"
 const Blog = lazy(() => import("./pages/Blog/Blog"));
 const CaseStudies = lazy(() => import("./pages/CaseStudies/CaseStudies"));
 
-// Admin
+// Admin pages
 const Admin = lazy(() => import("./pages/Admin/Admin"));
 const AdminPages = lazy(() => import("./pages/AdminPages/AdminPages"));
 const AddPage = lazy(() => import("./pages/AddPage/AddPage"));
@@ -26,36 +26,35 @@ const App = () => {
   const isAdminRoute = location.pathname.startsWith("/admin");
 
   return (
-    <>
+    <Suspense fallback={<Loader />}>
+      {/* Navbar - hidden on admin */}
       {!isAdminRoute && <NavBar />}
 
-      {/* 🔥 Loader shows here */}
-      <Suspense fallback={<Loader />}>
-        <Routes>
-          {/* Public Routes */}
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/:pageType/:category" element={<PageDetails />} />
+      <Routes>
+        {/* Public Routes */}
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/:pageType/:category" element={<PageDetails />} />
 
-          <Route path="/services" element={<ServicePage />} />
-          <Route path="/projects" element={<ProjectsPage />} />
-          <Route path="/industries" element={<IndustriesPage />} />
-          <Route path="/technologies" element={<TechnologyPage />} />
+        <Route path="/services" element={<ServicePage />} />
+        <Route path="/projects" element={<ProjectsPage />} />
+        <Route path="/industries" element={<IndustriesPage />} />
+        <Route path="/technologies" element={<TechnologyPage />} />
 
-          <Route path="/blog" element={<Blog />} />
-          <Route path="/case-studies" element={<CaseStudies />} />
+        <Route path="/blog" element={<Blog />} />
+        <Route path="/case-studies" element={<CaseStudies />} />
 
-          {/* Admin Routes */}
-          <Route path="/admin" element={<Admin />}>
-            <Route path="pages" element={<AdminPages />} />
-            <Route path="add" element={<AddPage />} />
-            <Route path="edit/:id" element={<EditPage />} />
-          </Route>
-        </Routes>
-      </Suspense>
+        {/* Admin Routes */}
+        <Route path="/admin" element={<Admin />}>
+          <Route path="pages" element={<AdminPages />} />
+          <Route path="add" element={<AddPage />} />
+          <Route path="edit/:id" element={<EditPage />} />
+        </Route>
+      </Routes>
 
+      {/* Footer - hidden on admin */}
       {!isAdminRoute && <Footer />}
-    </>
+    </Suspense>
   );
 };
 

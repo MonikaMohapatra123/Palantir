@@ -1,9 +1,15 @@
+/* =========================
+   WRAPPER
+========================= */
 .kc-wrapper {
   width: 100%;
   background: #fff;
   padding: 120px 0;
 }
 
+/* =========================
+   CONTAINER
+========================= */
 .kc-container {
   max-width: 1400px;
   margin: 0 auto;
@@ -13,7 +19,9 @@
   gap: 80px;
 }
 
-/* LEFT: STICKY HEADING ONLY */
+/* =========================
+   LEFT (STICKY)
+========================= */
 .kc-left {
   position: sticky;
   top: 120px;
@@ -34,7 +42,9 @@
   color: #111;
 }
 
-/* RIGHT: SCROLLING CONTENT */
+/* =========================
+   RIGHT CONTENT
+========================= */
 .kc-right {
   display: flex;
   flex-direction: column;
@@ -49,6 +59,9 @@
   margin-bottom: 20px;
 }
 
+/* =========================
+   BUTTONS
+========================= */
 .kc-buttons {
   display: flex;
   gap: 12px;
@@ -60,19 +73,50 @@
   border-radius: 999px;
   border: 1px solid #ccc;
   background: transparent;
+  color: #111;
   cursor: pointer;
   font-size: 12px;
+  transition: all 0.25s ease;
 }
 
+/* Hover → WHITE */
+.kc-btn:hover {
+  background: #fff;
+  color: #111;
+  border-color: #111;
+}
+
+/* Click → DARK */
+.kc-btn:active {
+  background: #111;
+  color: #fff;
+  border-color: #111;
+}
+
+/* Primary */
 .kc-btn.primary {
   background: #111;
   color: #fff;
   border-color: #111;
 }
 
-/* IMAGE BELOW TEXT */
+.kc-btn.primary:hover {
+  background: #fff;
+  color: #111;
+}
+
+.kc-btn.primary:active {
+  background: #111;
+  color: #fff;
+}
+
+/* =========================
+   IMAGE (FIXED SIZE – NEVER CHANGES)
+========================= */
 .kc-media {
   width: 100%;
+  height: 100%;
+  margin-top: 40px;
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
@@ -80,14 +124,51 @@
 
 .kc-media img {
   width: 100%;
-  height: auto;
+  height:95vh;
+  object-fit: cover;
   display: block;
 }
-/* =========================
-   RESPONSIVE (TABLET & MOBILE)
-========================= */
 
-/* Tablets */
+/* =========================
+   DETAILS CARD
+========================= */
+.kc-details-card {
+  margin-top: 40px;
+  background: #1c1f22;
+  color: #cfcfcf;
+  padding: 32px;
+  border-radius: 12px;
+  max-width: 560px;
+}
+
+.kc-details-card h3 {
+  font-size: 22px;
+  color: #fff;
+  margin-bottom: 16px;
+}
+
+.kc-details-card h4 {
+  font-size: 16px;
+  color: #fff;
+  margin-top: 24px;
+  margin-bottom: 8px;
+}
+
+.kc-details-card p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #b5b5b5;
+}
+
+.kc-details-card hr {
+  border: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin: 24px 0;
+}
+
+/* =========================
+   RESPONSIVE (NO IMAGE CHANGE)
+========================= */
 @media (max-width: 1024px) {
   .kc-container {
     grid-template-columns: 1fr;
@@ -96,7 +177,7 @@
   }
 
   .kc-left {
-    position: relative; /* remove sticky on smaller screens */
+    position: relative;
     top: auto;
   }
 
@@ -109,7 +190,6 @@
   }
 }
 
-/* Mobile */
 @media (max-width: 600px) {
   .kc-wrapper {
     padding: 60px 0;
@@ -147,9 +227,5 @@
   .kc-btn {
     font-size: 12px;
     padding: 8px 14px;
-  }
-
-  .kc-media {
-    border-radius: 10px;
   }
 }

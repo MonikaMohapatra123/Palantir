@@ -1,0 +1,90 @@
+.palantir-section {
+  background: #fff;
+  padding: 80px 8%;
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
+}
+
+/* Card Layout */
+.palantir-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 80px;
+}
+
+/* Image */
+.palantir-image {
+  flex: 1;
+}
+
+.palantir-image img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+/* Content */
+.palantir-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.palantir-title {
+  font-size: 48px;
+  font-weight: 400;
+  color: #1a1a1a;
+  line-height: 1.2;
+}
+
+.palantir-description {
+  font-size: 22px;
+  color: #333;
+  max-width: 600px;
+  line-height: 1.6;
+}
+
+/* Button */
+.palantir-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 20px;
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+  position: relative;
+  width: fit-content;
+  padding-bottom: 6px;
+  border-bottom: 1px solid #000;
+  transition: all 0.3s ease;
+}
+
+.palantir-button .arrow {
+  transition: transform 0.3s ease;
+}
+
+.palantir-button:hover .arrow {
+  transform: translateX(6px);
+}
+@media (max-width: 1024px) {
+  .palantir-card {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .palantir-title {
+    font-size: 32px;
+  }
+
+  .palantir-description {
+    font-size: 18px;
+  }
+
+  .palantir-image img {
+    height: 300px;
+  }
+}

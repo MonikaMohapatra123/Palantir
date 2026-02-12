@@ -1,6 +1,4 @@
 import React from "react";
-// import AllIntroTemplate from "../../components/AllIntroTemplate/AllIntroTemplate";
-// import AllSectionHome from "../../components/AllSectionHome/AllSectionHome";
 
 // ✅ IMPORT JSON
 import data from "../../Json/data.json";
@@ -8,6 +6,7 @@ import WhyWeAreHere from "../../components/WhyWeAreHere/WhyWeAreHere";
 import VisionSection from "../../components/VisionSection/VisionSection";
 import WhatWeDo from "../../components/WhatWeDo/WhatWeDo";
 import MissionDriven from "../../components/MissionDriven/MissionDriven";
+import PalantirExplained from "../../components/PalantirExplained/PalantirExplained";
 
 const About = () => {
   // ✅ Safe access
@@ -25,31 +24,7 @@ const About = () => {
       <VisionSection/>
       <WhatWeDo/>
       <MissionDriven/>
-      {/* Intro Section */}
-      {/* <AllIntroTemplate
-        title="About Us"
-        image="./girl1.jpg"
-      />
-
-     
-      <AllSectionHome
-        reverse={true}
-        subtitle={Data.AboutUssubtitle}
-        title={Data.AboutUstitle}
-        highlight={Data.AboutUshighlight}
-        description={Data.AboutUsdescription}
-        image={Data.AboutUsimage}
-      />
-
-     
-      <AllSectionHome
-        reverse={false}
-        subtitle={Data.Highlightssubtitle}
-        title={Data.Highlightstitle}
-        highlight={Data.Highlightshighlight}
-        description={Data.Highlightsdescription}
-        image={Data.Highlightsimage}
-      /> */}
+       <PalantirExplained/>
     </div>
   );
 };

@@ -1,10 +1,10 @@
-
 import React, { useEffect, useState } from "react";
 import "./NavBar.css";
-import MegaMenu from "./MegaMenu";
+import MegaMenu from "../NavBar/MegaMenu/MegaMenu";
 import GetStartedOverlay from "./GetStartedOverlay";
 import SearchOverlay from "./SearchOverlay";
 import { FiSearch } from "react-icons/fi";
+import { Link } from "react-router-dom";
 import axios from "axios";
 import data from "../../Json/data.json";
 
@@ -17,12 +17,14 @@ const NavBar = () => {
   const [openSearch, setOpenSearch] = useState(false);
   const [dropdownData, setDropdownData] = useState({});
 
+  // Scroll effect
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 80);
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  // Fetch dropdown data
   useEffect(() => {
     axios
       .get("https://palantir-backend-phi.vercel.app/api/pages")
@@ -33,29 +35,45 @@ const NavBar = () => {
           grouped[item.pageType].push(item.category);
         });
         setDropdownData(grouped);
+      })
+      .catch((err) => {
+        console.log("Error fetching dropdown:", err);
       });
   }, []);
 
   return (
     <>
-      <header className={`pal-navbar-wrapper ${scrolled ? "pal-navbar-wrapper--scrolled" : ""}`}>
+      <header
+        className={`pal-navbar-wrapper ${
+          scrolled ? "pal-navbar-wrapper--scrolled" : ""
+        }`}
+      >
         <div className="pal-navbar">
-          {/* LEFT */}
+          {/* LEFT SECTION */}
           <div className="pal-navbar-left">
-            <img src={navbar.logo} alt="" className="pal-navbar-logo" />
-            <span className="pal-navbar-company">{navbar.company}</span>
+            <Link to="/" className="pal-navbar-home-link">
+              <img
+                src={navbar.logo}
+                alt="logo"
+                className="pal-navbar-logo"
+              />
+              <span className="pal-navbar-company">
+                {navbar.company}
+              </span>
+            </Link>
           </div>
 
-          {/* RIGHT */}
+          {/* RIGHT SECTION */}
           <div className="pal-navbar-right">
             <button
               className="pal-navbar-contact-btn"
               onClick={() => setOpenGetStarted(true)}
             >
-              Get Started
+              {navbar.contact?.text}
             </button>
 
             <div className="pal-navbar-icon-group">
+              {/* Search Button */}
               <button
                 className="pal-navbar-icon-btn"
                 onClick={() => setOpenSearch(true)}
@@ -63,6 +81,7 @@ const NavBar = () => {
                 <FiSearch />
               </button>
 
+              {/* Menu Button */}
               <button
                 className="pal-navbar-icon-btn pal-navbar-menu-btn"
                 onClick={() => setOpenMenu(true)}
@@ -74,6 +93,7 @@ const NavBar = () => {
         </div>
       </header>
 
+      {/* Mega Menu */}
       {openMenu && (
         <MegaMenu
           menu={navbar.menu}
@@ -82,10 +102,12 @@ const NavBar = () => {
         />
       )}
 
+      {/* Get Started Overlay */}
       {openGetStarted && (
         <GetStartedOverlay close={() => setOpenGetStarted(false)} />
       )}
 
+      {/* Search Overlay */}
       {openSearch && (
         <SearchOverlay close={() => setOpenSearch(false)} />
       )}

@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./NavBar.css";
+import "./MegaMenu.css";
 
 const MegaMenu = ({ menu, dropdownData, close }) => {
   const formatForURL = (text) =>

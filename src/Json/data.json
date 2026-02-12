@@ -334,34 +334,35 @@
 
   },
   
-  "palantirExplained": {
-    "sectionTitle": "Palantir Explained",
-    "items": [
-      {
-        "id": 1,
-        "title": "Palantir Is Not a Data Company (Palantir Explained, #1)",
-        "description": "Debunking common rumors about our business and clarifications about how we operate.",
-        "image": "/pic-1.jpg",
-        "buttonText": "Read Palantir Explained, Part One"
-      },
-      {
-        "id": 2,
-        "title": "Powering the Modern Enterprise (Palantir Explained, #2)",
-        "description": "How organizations use Palantir to transform fragmented systems into operational advantage.",
-        "image": "./pic-2.jpg",
-        "buttonText": "Read Palantir Explained, Part Two"
-      },
-      {
-        "id": 3,
-        "title": "AI in Real-World Operations (Palantir Explained, #3)",
-        "description": "Understanding how AI integrates into mission-critical systems responsibly.",
-        "image": "./pic-3.jpg",
-        "buttonText": "Read Palantir Explained, Part Three"
-      }
-    ]
-  }
+ "palantirExplained": {
+  "sectionTitle": "Palantir Explained",
+  "items": [
+    {
+      "id": 1,
+      "title": "Palantir Is Not a Data Company (Palantir Explained, #1)",
+      "description": "Debunking common rumors about our business and clarifications about how we operate.",
+      "image": "/pic-1.jpg",
+      "buttonText": "Read Palantir Explained, Part One"
+    },
+    {
+      "id": 2,
+      "title": "Powering the Modern Enterprise (Palantir Explained, #2)",
+      "description": "How organizations use Palantir to transform fragmented systems into operational advantage.",
+      "image": "/pic-2.jpg",
+      "buttonText": "Read Palantir Explained, Part Two"
+    },
+    {
+      "id": 3,
+      "title": "AI in Real-World Operations (Palantir Explained, #3)",
+      "description": "Understanding how AI integrates into mission-critical systems responsibly.",
+      "image": "/pic-3.jpg",
+      "buttonText": "Read Palantir Explained, Part Three"
+    }
+  ]
+}
 
-  
+
+
 
 
 

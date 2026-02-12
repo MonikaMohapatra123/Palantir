@@ -180,3 +180,6 @@
     letter-spacing: 0.5px;
   }
 }
+#palantir-form {
+  scroll-margin-top: 100px;
+}

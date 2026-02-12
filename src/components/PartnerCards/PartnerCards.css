@@ -119,7 +119,7 @@
 
 .partner-card:hover .card-designation {
   opacity: 1;
-  transform: translateY(0);
+  transform: translateY();
 }
 
 /* ===============================
@@ -130,7 +130,7 @@
     transform: translateX(0);
   }
   to {
-    transform: translateX(-50%);
+    transform: translateX(-70%);
   }
 }
 

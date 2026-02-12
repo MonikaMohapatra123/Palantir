@@ -3,7 +3,7 @@ import "./PalantirForm.css";
 
 const PalantirForm = () => {
   return (
-    <section className="palantir-wrapper">
+    <section id="palantir-form" className="palantir-wrapper">
       <div className="palantir-left">
         <h1>
           Get more out of <br />
@@ -42,6 +42,7 @@ const PalantirForm = () => {
             TELL US ABOUT YOUR PROJECT. A BIT OF CONTEXT WILL ALLOW US TO CONNECT
             YOU TO THE RIGHT TEAM FASTER.
           </label>
+
           <textarea rows="4"></textarea>
 
           <button type="submit" className="palantir-submit-btn">

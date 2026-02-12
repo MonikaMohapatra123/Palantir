@@ -8,144 +8,120 @@ const MegaMenu = ({ menu, dropdownData, close }) => {
 
   
   return (
-    <div className="mega-overlay">
-      <div className="mega-container">
+   <div className="mega-overlay">
+  <div className="mega-container">
 
-        {/* CLOSE BUTTON */}
-        <button className="mega-close-btn" onClick={close}>✕</button>
+    {/* CLOSE BUTTON */}
+    <button className="mega-close-btn" onClick={close}>✕</button>
 
-        {/* ================= LEFT COLUMN ================= */}
-        <div className="mega-col mega-anim mega-delay-1">
-          <h5 className="mega-title">NAVIGATION</h5>
+    {/* ===== MAIN ROW ===== */}
+    <div className="mega-main">
 
-          {menu.map((item, index) => (
-            <div key={index} className="mega-item-block">
+      {/* ================= LEFT COLUMN ================= */}
+      <div className="mega-col mega-left mega-anim mega-delay-1">
+        <h5 className="mega-title">NAVIGATION</h5>
 
-              {/* SIMPLE LINK (About, Blog, Career) */}
-              {!item.dropdown && item.link && (
+        {menu.map((item, index) => (
+          <div key={index} className="mega-item-block">
+            {!item.dropdown && item.link && (
+              <Link to={item.link} className="mega-item mega-link" onClick={close}>
+                {item.name}
+              </Link>
+            )}
+
+            {item.dropdown && (
+              <>
                 <Link
                   to={item.link}
-                  className="mega-item mega-link"
+                  className="mega-item mega-link mega-main-link"
                   onClick={close}
                 >
                   {item.name}
                 </Link>
-              )}
 
-              {/* DROPDOWN + CLICKABLE TITLE */}
-              {item.dropdown && (
-                <>
-                  {/* MAIN CLICKABLE TITLE */}
-                  <Link
-                    to={item.link}
-                    className="mega-item mega-link mega-main-link"
-                    onClick={close}
-                  >
-                    {item.name}
-                  </Link>
+                <div className="mega-sub">
+                  {(dropdownData[item.pageType] || []).map((cat, i) => (
+                    <Link
+                      key={i}
+                      to={`${item.link}/${formatForURL(cat)}`}
+                      className="mega-sub-item"
+                      onClick={close}
+                    >
+                      <span className="arrow-icon">↳</span>
+                      {cat}
+                    </Link>
+                  ))}
+                </div>
+              </>
+            )}
+          </div>
+        ))}
+      </div>
 
-                  {/* SUB MENU */}
-                  <div className="mega-sub">
-                    {(dropdownData[item.pageType] || []).map((cat, i) => (
-                      <Link
-                        key={i}
-                        to={`${item.link}/${formatForURL(cat)}`}
-                        className="mega-sub-item"
-                        onClick={close}
-                      >
-                        <span className="arrow-icon">↳</span>
-                        {cat}
-                      </Link>
-                    ))}
-                  </div>
-                </>
-              )}
+      {/* ================= RIGHT AREA (CENTER + RIGHT) ================= */}
+      <div className="mega-right-area">
+
+        {/* ===== TOP ROW: CENTER + RIGHT ===== */}
+        <div className="mega-top-row">
+
+          {/* ================= CENTER COLUMN (NEWS) ================= */}
+          <div className="mega-col mega-center mega-anim mega-delay-2">
+            <div className="news-header">
+              <h5 className="mega-title">LATEST NEWS</h5>
+              <Link to="/newsroom" className="newsroom-link" onClick={close}>
+                NEWSROOM ↗
+              </Link>
             </div>
-          ))}
-        </div>
 
-        {/* ================= CENTER COLUMN ================= */}
-        <div className="mega-col center mega-anim mega-delay-2">
+            <div className="latest-news-grid">
+              <div className="latest-news-card">
+                <span className="news-meta">CNBC, FEBRUARY 19, 2025</span>
+                <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e" alt="news" />
+                 <p>
+                Palantir's AI-fueled TITAN trucks are rolling into
+                <br />
+                <strong> U.S. Army hands</strong>
+                </p>
+                <p>
+                  Palantir CEO Alex Karp spoke about his new book and the role of
+                  software in national power.
+                </p>
+              </div>
 
-          <div className="news-header">
-            <h5 className="mega-title">LATEST NEWS</h5>
-            <Link to="/newsroom" className="newsroom-link" onClick={close}>
-              NEWSROOM ↗
+              <div className="latest-news-card">
+                <span className="news-meta">AXIOS, MARCH 12, 2025</span>
+                <img src="https://images.unsplash.com/photo-1600267185393-e158a98703de" alt="news" />
+                <p>
+                  Palantir's AI-fueled TITAN trucks enter
+                  <strong> U.S. Army hands</strong>
+                </p>
+                <p>
+                  Tactical Intelligence Targeting Access Nodes promise to
+                  streamline battlefield intelligence operations.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* ================= RIGHT COLUMN (OFFERINGS) ================= */}
+          <div className="mega-col mega-offer mega-anim mega-delay-3">
+            <h5 className="mega-title">OFFERINGS</h5>
+
+
+            <h3 className="offer-desc">
+              Our platforms are used throughout the public, private, and
+              non-profit sectors to solve the hardest problems.
+            </h3>
+
+            <Link className="learn-more" to="/about" onClick={close}>
+              ↳ Learn more about AIP
             </Link>
           </div>
 
-          <div className="latest-news-grid">
-
-            <div className="latest-news-card">
-              <span className="news-meta">CNBC, FEBRUARY 19, 2025</span>
-              <img
-                src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e"
-                alt="news"
-              />
-              <h3>
-                Alex Karp talks US software dominance,
-                <strong> The Technological Republic</strong>
-              </h3>
-              <p>
-                Palantir CEO Alex Karp spoke about his new book and the role of
-                software in national power.
-              </p>
-            </div>
-
-            <div className="latest-news-card">
-              <span className="news-meta">AXIOS, MARCH 12, 2025</span>
-              <img
-                src="https://images.unsplash.com/photo-1600267185393-e158a98703de"
-                alt="news"
-              />
-              <h3>
-                Palantir's AI-fueled TITAN trucks enter
-                <strong> U.S. Army hands</strong>
-              </h3>
-              <p>
-                Tactical Intelligence Targeting Access Nodes promise to
-                streamline battlefield intelligence operations.
-              </p>
-            </div>
-
-          </div>
         </div>
 
-        {/* ================= RIGHT COLUMN ================= */}
-        <div className="mega-col mega-anim mega-delay-3">
-          <h5 className="mega-title">OFFERINGS</h5>
-
-          <div className="mega-item">Services</div>
-
-          <div className="mega-sub">
-            {["Defense", "Healthcare", "Energy", "Manufacturing"].map(
-              (item, i) => (
-                <Link
-                  key={i}
-                  to={`/services/${formatForURL(item)}`}
-                  className="mega-sub-item"
-                  onClick={close}
-                >
-                  <span className="arrow-icon">↳</span>
-                  {item}
-                </Link>
-              )
-            )}
-          </div>
-
-          <p className="offer-desc">
-            Our platforms are used throughout the public, private, and
-            non-profit sectors to solve the hardest problems.
-          </p>
-
-          <Link className="learn-more" to="/about" onClick={close}>
-            → Learn more about AIP
-          </Link>
-        </div>
-
-        {/* ================= BOTTOM FOOTER ================= */}
+        {/* ===== FOOTER UNDER CENTER + RIGHT ===== */}
         <div className="mega-footer mega-anim mega-delay-3">
-
           <div className="mega-footer-left">
             <span className="footer-label">LATEST IMPACT</span>
 
@@ -156,7 +132,6 @@ const MegaMenu = ({ menu, dropdownData, close }) => {
           </div>
 
           <div className="mega-footer-right">
-
             <div className="footer-col">
               <h6>About Palantir</h6>
               <Link to="/about" onClick={close}>About Palantir</Link>
@@ -178,12 +153,13 @@ const MegaMenu = ({ menu, dropdownData, close }) => {
               <Link to="/contact" onClick={close}>Contact</Link>
               <Link to="/support" onClick={close}>Support</Link>
             </div>
-
           </div>
         </div>
 
       </div>
     </div>
+  </div>
+</div>
   );
 };
 

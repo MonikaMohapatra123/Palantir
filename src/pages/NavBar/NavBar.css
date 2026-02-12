@@ -229,6 +229,17 @@ a {
 /* ===================== */
 /* MEGA MENU OVERLAY */
 /* ===================== */
+/* ========================================= */
+/* GLOBAL FIX */
+/* ========================================= */
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* ========================================= */
+/* OVERLAY */
+/* ========================================= */
 
 .mega-overlay {
   position: fixed;
@@ -236,27 +247,21 @@ a {
   background: rgba(0, 0, 0, 0);
   z-index: 9999;
   overflow-y: auto;
-  animation: megaBgFade 0.45s ease forwards;
- 
+  animation: megaBgFade 0.4s ease forwards;
 }
 
 @keyframes megaBgFade {
-  from {
-    background: rgba(0, 0, 0, 0);
-  }
-
-  to {
-    background: rgba(0, 0, 0, 1);
-  }
+  from { background: rgba(0, 0, 0, 0); }
+  to { background: rgba(0, 0, 0, 1); }
 }
 
-/* ===================== */
+/* ========================================= */
 /* CONTAINER */
-/* ===================== */
+/* ========================================= */
 
 .mega-container {
-  min-height: 100vh;
-  padding: 60px 80px;
+  min-height: 100dvh; /* mobile safe height */
+  padding: 70px 80px;
   display: grid;
   grid-template-columns: 1fr 1.2fr 1fr;
   gap: 60px;
@@ -264,12 +269,13 @@ a {
   position: relative;
 }
 
-/* ===================== */
+/* ========================================= */
 /* CLOSE BUTTON */
-/* ===================== */
+/* ========================================= */
+
 .mega-close-btn {
   position: fixed;
-  top: 30px;
+  top: 28px;
   right: 40px;
   z-index: 10000;
   background: none;
@@ -277,27 +283,19 @@ a {
   font-size: 28px;
   color: #ffffff;
   cursor: pointer;
-
   opacity: 0;
   animation: closeFadeIn 0.3s ease forwards;
   animation-delay: 0.35s;
- 
 }
 
 @keyframes closeFadeIn {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
-
-/* ===================== */
-/* COLUMN BASE */
-/* ===================== */
+/* ========================================= */
+/* COLUMNS */
+/* ========================================= */
 
 .mega-col {
   display: flex;
@@ -305,70 +303,62 @@ a {
   gap: 18px;
   border-top: 1px solid #ffffff;
   opacity: 0;
-  transform: translateY(45px);
-  animation: megaColumnIn 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  transform: translateY(40px);
+  animation: megaColumnIn 0.6s ease forwards;
 }
 
-/* CENTER COLUMN */
 .mega-col.center {
   padding: 0 30px;
 }
 
-/* ===================== */
-/* STAGGER DELAYS */
-/* ===================== */
-
-.mega-delay-1 {
-  animation-delay: 0.25s;
-}
-
-.mega-delay-2 {
-  animation-delay: 0.55s;
-}
-
-.mega-delay-3 {
-  animation-delay: 0.85s;
-}
-
-/* ===================== */
-/* COLUMN ANIMATION */
-/* ===================== */
-
 @keyframes megaColumnIn {
   from {
     opacity: 0;
-    transform: translateY(45px) scale(0.97);
+    transform: translateY(40px) scale(0.98);
   }
-
   to {
     opacity: 1;
     transform: translateY(0) scale(1);
   }
 }
 
-/* ===================== */
+/* Animation delay */
+.mega-delay-1 { animation-delay: 0.2s; }
+.mega-delay-2 { animation-delay: 0.45s; }
+.mega-delay-3 { animation-delay: 0.7s; }
+
+/* ========================================= */
 /* TITLES */
-/* ===================== */
+/* ========================================= */
 
 .mega-title {
-  font-size: 13px;
+  font-size: 12px;
   color: #9a9a9a;
   letter-spacing: 1px;
   margin-top: 10px;
 }
 
-/* ===================== */
+/* ========================================= */
 /* NAV ITEMS */
-/* ===================== */
+/* ========================================= */
 
 .mega-item {
   font-size: 20px;
   font-weight: 600;
 }
 
-/* ===================== */
+.mega-link {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.mega-link:hover {
+  text-decoration: underline;
+}
+
+/* ========================================= */
 /* SUB MENU */
-/* ===================== */
+/* ========================================= */
 
 .mega-sub {
   display: flex;
@@ -383,23 +373,23 @@ a {
   display: flex;
   align-items: center;
   gap: 10px;
-  transition: 0.3s ease;
+  text-decoration: none;
+  transition: 0.25s ease;
 }
 
 .mega-sub-item:hover {
   color: #ffffff;
-  transform: translateX(6px);
+  transform: translateX(5px);
 }
 
-
 .arrow-icon {
-  font-size: 18px;
+  font-size: 16px;
   color: #ffffff;
 }
 
-/* ===================== */
+/* ========================================= */
 /* LATEST NEWS */
-/* ===================== */
+/* ========================================= */
 
 .news-header {
   display: flex;
@@ -458,228 +448,42 @@ a {
   text-decoration: underline;
 }
 
-/* ===================== */
+/* ========================================= */
 /* OFFERINGS */
-/* ===================== */
+/* ========================================= */
 
 .offer-desc {
   font-size: 14px;
   color: #aaaaaa;
+  margin-top: 10px;
 }
 
 .learn-more {
   color: #ffffff;
   margin-top: 10px;
-}
-
-/* ===================== */
-/* RESPONSIVE */
-/* ===================== */
-
-@media (max-width: 992px) {
-  .mega-container {
-    grid-template-columns: 1fr;
-    padding: 40px 24px;
-  }
-
-  .mega-col.center {
-    padding: 0;
-    border: none;
-  }
-
-  .latest-news-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .latest-news-card img {
-    height: 220px;
-  }
-
-  .mega-close-btn {
-    top: 20px;
-    right: 20px;
-  }
-}
-
-
-
-
-/* ARROW */
-.arrow-icon {
-  color: #fff;
-  font-size: 18px;
-
-}
-
-/* ===================== */
-/* LATEST NEWS – EXACT UI */
-/* ===================== */
-
-.news-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 24px;
-}
-
-.newsroom-link {
-  font-size: 12px;
-  color: #fff;
-  letter-spacing: 1px;
-  text-decoration: underline;
-}
-
-/* GRID */
-.latest-news-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 40px;
-}
-
-/* CARD */
-.latest-news-card {
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-}
-
-/* SOURCE + DATE */
-.news-meta {
-  font-size: 12px;
-  color: #9a9a9a;
-  letter-spacing: 0.4px;
-}
-
-/* IMAGE */
-.latest-news-card img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-}
-
-/* HEADLINE */
-.latest-news-card h3 {
-  font-size: 22px;
-  line-height: 1.3;
-  font-weight: 400;
-  color: #fff;
-}
-
-.latest-news-card h3 strong {
-  font-weight: 600;
-}
-
-/* DESCRIPTION */
-.latest-news-card p {
-  font-size: 15px;
-  line-height: 1.6;
-  color: #cfcfcf;
-}
-
-/* HOVER */
-.latest-news-card:hover h3 {
-  text-decoration: underline;
-}
-
-/* ===================== */
-/* MOBILE */
-/* ===================== */
-@media (max-width: 992px) {
-  .latest-news-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .latest-news-card img {
-    height: 220px;
-  }
-}
-
-
-/* ===================== */
-/* MOBILE FIX */
-/* ===================== */
-@media (max-width: 992px) {
-  .latest-news-item {
-    flex-direction: column;
-  }
-
-  .latest-news-item img {
-    width: 100%;
-    height: 220px;
-  }
-}
-
-
-.news-card p {
-  margin: 4px 0;
-  font-size: 15px;
-}
-
-.news-card span {
-  font-size: 13px;
-  color: #aaa;
-}
-
-/* OFFERINGS */
-.offer-desc {
-  font-size: 14px;
-  color: #aaa;
-  margin-top: 10px;
-}
-
-.learn-more {
-  margin-top: 10px;
-  color: #fff;
   text-decoration: none;
 }
 
-/* ===================== */
-/* RESPONSIVE */
-/* ===================== */
-@media (max-width: 992px) {
-  .mega-container {
-    grid-template-columns: 1fr;
-    padding: 40px 25px;
-  }
-
-  .mega-col.center {
-    border: none;
-    padding: 0;
-  }
-
-  .mega-close-btn {
-    top: 20px;
-    right: 20px;
-  }
-
-  .mega-sub-item {
-    font-size: 18px;
-  }
-
-  .arrow-icon {
-    font-size: 20px;
-  }
+.learn-more:hover {
+  text-decoration: underline;
 }
 
-/* ===================== */
+/* ========================================= */
 /* MEGA FOOTER */
-/* ===================== */
-
-/* ===================== */
-/* MEGA FOOTER (UNDER CENTER + RIGHT ONLY) */
-/* ===================== */
+/* ========================================= */
 
 .mega-footer {
-  grid-column: 2 / 4;     /* start from 2nd column to 3rd column */
-  margin-top: -200px;
-  padding-top:40px;
+  grid-column: 2 / 4;
+  margin-top:-70px;
+  padding-top: 40px;
   border-top: 1px solid #333;
   display: grid;
   grid-template-columns: 1.4fr 1fr;
   gap: 50px;
 }
 
-/* LEFT */
+/* Footer Left */
+
 .mega-footer-left {
   display: flex;
   flex-direction: column;
@@ -695,6 +499,7 @@ a {
 .impact-card {
   display: block;
   color: #fff;
+  text-decoration: none;
 }
 
 .impact-card img {
@@ -714,7 +519,8 @@ a {
   text-decoration: underline;
 }
 
-/* RIGHT */
+/* Footer Right */
+
 .mega-footer-right {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -724,7 +530,6 @@ a {
 .footer-col h6 {
   font-size: 12px;
   color: #9a9a9a;
-  letter-spacing: 1px;
   margin-bottom: 12px;
 }
 
@@ -733,81 +538,84 @@ a {
   font-size: 15px;
   color: #cfcfcf;
   margin-bottom: 8px;
+  text-decoration: none;
   transition: 0.25s ease;
 }
 
 .footer-col a:hover {
-  color: #fff;
+  color: #ffffff;
   transform: translateX(4px);
 }
 
-/* ================================= */
-/* MOBILE MEGA MENU RESPONSIVE FIX */
-/* ================================= */
+/* ========================================= */
+/* 1200px - SMALL LAPTOP */
+/* ========================================= */
+
+@media (max-width: 1200px) {
+  .mega-container {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .mega-footer {
+    grid-column: 1 / -1;
+  }
+}
+
+/* ========================================= */
+/* TABLET */
+/* ========================================= */
+
+@media (max-width: 992px) {
+  .mega-container {
+    grid-template-columns: 1fr;
+    padding: 60px 30px;
+  }
+
+  .mega-col.center {
+    padding: 0;
+    border: none;
+  }
+
+  .latest-news-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .mega-footer {
+    grid-column: auto;
+    grid-template-columns: 1fr;
+  }
+
+  .mega-footer-right {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ========================================= */
+/* MOBILE */
+/* ========================================= */
 
 @media (max-width: 768px) {
 
-  /* Overlay scroll */
-  .mega-overlay {
-    overflow-y: auto;
-   
-  }
-
-  /* Container */
   .mega-container {
-    grid-template-columns: 1fr;
     padding: 90px 20px 40px;
     gap: 40px;
-    
   }
 
-  /* Close button */
   .mega-close-btn {
     top: 18px;
     right: 18px;
     font-size: 24px;
   }
 
-  /* Columns */
   .mega-col {
-    border-top: none;
-    gap: 14px;
-     border-top: 1px solid white;
-  }
-
-  .mega-col.center {
-    padding: 0;
-  }
-
-  /* Titles */
-  .mega-title {
-    font-size: 12px;
-  }
-
-  /* Main menu items */
-  .mega-item {
-    font-size: 18px;
-  }
-
-  /* Sub items */
-  .mega-sub-item {
-    font-size: 15px;
-  }
-
-  .arrow-icon {
-    font-size: 16px;
-  }
-
-  /* ============ LATEST NEWS ============ */
-
-  .latest-news-grid {
-    grid-template-columns: 1fr;
-    gap: 28px;
+    border-top: 1px solid #ffffff;
+    animation: none;
+    opacity: 1;
+    transform: none;
   }
 
   .latest-news-card img {
     height: 200px;
-    border-radius: 6px;
   }
 
   .latest-news-card h3 {
@@ -817,53 +625,8 @@ a {
   .latest-news-card p {
     font-size: 14px;
   }
-
-  /* ============ OFFERINGS TEXT ============ */
-
-  .offer-desc {
-    font-size: 13px;
-  }
-
-  .learn-more {
-    font-size: 14px;
-  }
-
-  /* ============ FOOTER ============ */
-
-  .mega-footer {
-    grid-column: auto;
-    margin-top: 0;
-    padding-top: 30px;
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
-
-  .mega-footer-right {
-    grid-template-columns: 1fr;
-    gap: 28px;
-  }
-
-  .impact-card img {
-    height: 200px;
-  }
-
-  .footer-col h6 {
-    font-size: 12px;
-  }
-
-  .footer-col a {
-    font-size: 14px;
-  }
-
-  /* ============ REMOVE HEAVY ANIMATIONS ============ */
-
-  .mega-col,
-  .mega-close-btn {
-    animation: none !important;
-    opacity: 1;
-    transform: none;
-  }
 }
+
 
 /* ================= GETSTARTED-OVERLAY ================= */
 

@@ -38,8 +38,6 @@
   animation: scroll 35s linear infinite;
 }
 
-/* ❌ REMOVED pause on hover — movement continues */
-
 /* ===============================
    CARD
 ================================ */
@@ -53,8 +51,8 @@
 
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
 
-  /* UPDATED CORNER CUT */
   clip-path: polygon(
     0 0,
     85% 0,
@@ -62,6 +60,8 @@
     100% 100%,
     0 100%
   );
+
+  transition: background 0.3s ease;
 }
 
 /* ===============================
@@ -73,51 +73,53 @@
   font-weight: 500;
   color: rgba(0, 0, 0, 0.7);
   text-transform: uppercase;
-  margin-bottom: 8px;
+  margin-bottom: 20px;
 }
 
 /* ===============================
-   BODY
+   CONTENT WRAPPER
 ================================ */
-.card-body {
-  margin-top: 22px;
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
+.card-content {
+  margin-top: auto;
+  min-height: 120px;
+  position: relative;
 }
 
 /* ===============================
-   DESCRIPTION (HOVER)
+   DESCRIPTION (Visible Default)
 ================================ */
 .card-description {
   font-size: 17px;
   line-height: 1.6;
   color: #111;
 
-  transform: translateY(20px);
-  opacity: 0;
-
-  transition: transform 0.45s ease, opacity 0.4s ease;
+  transition: transform 0.4s ease;
 }
 
 /* ===============================
-   DESIGNATION
+   DESIGNATION (Hidden Initially)
 ================================ */
 .card-designation {
   font-size: 13px;
   letter-spacing: 0.5px;
   color: #666;
-  margin-top: auto;
+  margin-top: 10px;
+
+  opacity: 0;
+  transform: translateY(25px);
+  transition: all 0.4s ease;
 }
 
 /* ===============================
-   HOVER EFFECT (DESKTOP)
+   HOVER EFFECT
 ================================ */
-@media (hover: hover) {
-  .partner-card:hover .card-description {
-    transform: translateY(0);
-    opacity: 1;
-  }
+.partner-card:hover .card-description {
+  transform: translateY(-25px);
+}
+
+.partner-card:hover .card-designation {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* ===============================
@@ -149,14 +151,10 @@
   .card-description {
     font-size: 16px;
   }
-
-  .card-title {
-    font-size: 15px;
-  }
 }
 
 /* ===============================
-   MOBILE SLIDER MODE
+   MOBILE
 ================================ */
 @media (max-width: 768px) {
   .partner-heading {
@@ -168,7 +166,6 @@
   .partner-scroll {
     overflow-x: auto;
     scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
   }
 
   .partner-track {
@@ -184,15 +181,13 @@
     scroll-snap-align: start;
   }
 
-  /* Always show description on mobile */
   .card-description {
     transform: none;
-    opacity: 1;
-    font-size: 14px;
   }
 
-  .card-title {
-    font-size: 14px;
+  .card-designation {
+    opacity: 1;
+    transform: none;
   }
 }
 
@@ -208,12 +203,8 @@
     width: 90vw;
   }
 
-  .card-title {
-    font-size: 13px;
-  }
-
   .card-description {
-    font-size: 13px;
+    font-size: 14px;
   }
 }
 

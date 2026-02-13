@@ -28,7 +28,8 @@ const App = () => {
   return (
     <Suspense fallback={<Loader />}>
       {/* Navbar - hidden on admin */}
-      {!isAdminRoute && <NavBar />}
+      {!isAdminRoute && <NavBar />
+}
 
       <Routes>
         {/* Public Routes */}

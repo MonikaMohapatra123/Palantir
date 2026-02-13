@@ -17,7 +17,7 @@ const NavBar = () => {
   const [openSearch, setOpenSearch] = useState(false);
   const [dropdownData, setDropdownData] = useState({});
 
-  // Scroll effect
+  // Scroll effect to detect background change
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 80);
     window.addEventListener("scroll", onScroll);
@@ -41,6 +41,9 @@ const NavBar = () => {
       });
   }, []);
 
+  // Check if current page is homepage
+  const isHome = window.location.pathname === "/";
+
   return (
     <>
       <header
@@ -53,11 +56,15 @@ const NavBar = () => {
           <div className="pal-navbar-left">
             <Link to="/" className="pal-navbar-home-link">
               <img
-                src={navbar.logo}
+                src={isHome && navbar.logoWhite ? navbar.logoWhite : navbar.logo}
                 alt="logo"
                 className="pal-navbar-logo"
               />
-              <span className="pal-navbar-company">
+              <span
+                className={`pal-navbar-company ${
+                  isHome ? "white-text" : scrolled ? "white-text" : "black-text"
+                }`}
+              >
                 {navbar.company}
               </span>
             </Link>
@@ -108,9 +115,7 @@ const NavBar = () => {
       )}
 
       {/* Search Overlay */}
-      {openSearch && (
-        <SearchOverlay close={() => setOpenSearch(false)} />
-      )}
+      {openSearch && <SearchOverlay close={() => setOpenSearch(false)} />}
     </>
   );
 };

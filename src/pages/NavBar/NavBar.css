@@ -1,3 +1,4 @@
+
 /* ================= RESET ================= */
 * {
   margin: 0;
@@ -229,7 +230,9 @@ background: rgba(192, 187, 187, 0.01);
   color: inherit;
 }
 
-
+.pal-navbar-icon-group{
+  border: 1px solid black;
+}
 
 /* ===================== */
 /* MEGA MENU STYLES */
@@ -446,7 +449,7 @@ background: rgba(192, 187, 187, 0.01);
 }
 .search-tag {
   background: none;
-  border: none;
+  border: 1px solid black;
   color: #fff;
   cursor: pointer;
   font-size: 14px;
@@ -455,4 +458,20 @@ background: rgba(192, 187, 187, 0.01);
 
 .search-tag:hover {
   text-decoration: underline;
+}
+
+/* Default colors */
+.pal-navbar-company {
+  font-size: 17px;
+  font-weight: 600;
+}
+
+/* White text for dark background */
+.white-text {
+  color: #ffffff;
+}
+
+/* Black text for light background */
+.black-text {
+  color: #000000;
 }

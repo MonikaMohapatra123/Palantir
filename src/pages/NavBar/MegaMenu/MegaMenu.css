@@ -83,16 +83,17 @@
   gap: 60px;
 }
 
-/* CENTER */
+/* CENTER - Decreased width */
 .mega-center {
-  flex: 1.4;
+  flex: 1.2;        /* was 1.4 */
   padding-right: 30px;
 }
 
-/* RIGHT */
+/* RIGHT - Increased width */
 .mega-offer {
-  flex: 1;
+  flex: 1.2;      /* was 1 */
 }
+
 
 /* ========================================= */
 /* COLUMNS */
@@ -128,7 +129,7 @@
 /* ========================================= */
 
 .mega-title {
-  font-size: 12px;
+  font-size: 11px;
   color: #9a9a9a;
   letter-spacing: 1px;
   margin-top: 10px;
@@ -193,7 +194,7 @@
 }
 
 .newsroom-link {
-  font-size: 12px;
+  font-size: 11px;
   letter-spacing: 1.2px;
   color: #ffffff;
   text-decoration: underline;
@@ -241,6 +242,7 @@
   font-size: 18px;
   color: #fff;
   margin-top: 10px;
+  width:105%;
 }
 
 .learn-more {

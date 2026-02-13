@@ -29,7 +29,8 @@ a {
   width: 100%;
   max-width: 1400px;
   height: 72px;
-  background: rgba(0, 0, 0, 0.35);
+background: rgba(192, 187, 187, 0.01);
+
   backdrop-filter: blur(32px);
   border-radius: 18px;
   border: 1px solid rgba(255, 255, 255, 0.08);

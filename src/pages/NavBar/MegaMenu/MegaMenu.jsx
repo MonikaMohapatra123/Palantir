@@ -108,10 +108,10 @@ const MegaMenu = ({ menu, dropdownData, close }) => {
             <h5 className="mega-title">OFFERINGS</h5>
 
 
-            <h3 className="offer-desc">
+            <h4 className="offer-desc">
               Our platforms are used throughout the public, private, and
               non-profit sectors to solve the hardest problems.
-            </h3>
+            </h4>
 
             <Link className="learn-more" to="/about" onClick={close}>
               ↳ Learn more about AIP

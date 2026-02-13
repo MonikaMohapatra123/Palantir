@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./EditorsPickSlider.css";
 
 const EditorsPickSlider = () => {
@@ -34,7 +35,8 @@ const EditorsPickSlider = () => {
       </div>
 
       <div className="engineering-footer">
-        <a href="/">See all Engineering & Tech posts →</a>
+        {/* Use Link to navigate to Case Studies page */}
+        <Link to="/case-studies">See all Engineering & Tech posts →</Link>
       </div>
     </section>
   );

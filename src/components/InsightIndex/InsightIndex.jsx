@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom"; // Import Link
 import "./InsightIndex.css";
 
 const links = [
@@ -15,7 +16,6 @@ const InsightIndex = () => {
       {/* LEFT */}
       <div className="left-section">
         <h1>Palantir Blog</h1>
-
         <p>
           Palantir is a software company that builds the world’s leading platforms
           for data-driven operations and decision-making. We develop long-term
@@ -27,10 +27,10 @@ const InsightIndex = () => {
       {/* RIGHT */}
       <div className="right-section">
         {links.map((item, i) => (
-          <button key={i} className="row-link">
+          <Link key={i} to="/about" className="row-link">
             <span>{item}</span>
             <span className="arrow">→</span>
-          </button>
+          </Link>
         ))}
       </div>
     </section>

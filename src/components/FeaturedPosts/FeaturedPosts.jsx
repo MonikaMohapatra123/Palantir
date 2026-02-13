@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom"; // Import Link
 import "./FeaturedPosts.css";
 
 const FeaturedPosts = () => {
@@ -26,9 +27,10 @@ const FeaturedPosts = () => {
             integrate, manage, and analyze their data securely and responsibly.
           </p>
 
-          <a href="/" className="read-more">
+          {/* Updated Link */}
+          <Link to="/about" className="read-more">
             Read More <span>→</span>
-          </a>
+          </Link>
         </div>
       </div>
 

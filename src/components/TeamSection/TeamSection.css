@@ -1,0 +1,93 @@
+.team-section {
+  width: 100%;
+  padding: 80px 6%;
+  box-sizing: border-box;
+  background: #fff;
+}
+
+.team-title {
+  text-align: center;
+  font-size: 38px;
+  font-weight: 700;
+  margin-bottom: 50px;
+  color: #0b2545;
+}
+
+/* Main Layout */
+.team-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+}
+
+/* Left Side */
+.team-left {
+  flex: 1;
+}
+
+.team-left h3 {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  color: #0b2545;
+}
+
+.team-left p {
+  font-size: 15px;
+  line-height: 1.7;
+  color: #4a5a6a;
+  margin-bottom: 24px;
+  max-width: 520px;
+}
+
+/* Cement + Black Button */
+.team-btn {
+  background: linear-gradient(135deg, #d6d6d6, #bcbcbc); /* cement look */
+  color: #000;
+  border: 1px solid #111;
+  padding: 12px 26px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+ 
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.team-btn:hover {
+  background: linear-gradient(135deg, #c9c9c9, #a9a9a9);
+  border-color: #000;
+  transform: translateY(-1px);
+}
+
+.team-btn:active {
+  transform: translateY(0);
+}
+
+/* Right Side */
+.team-right {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.team-right img {
+  width: 100%;
+  max-width: 520px;
+  border-radius: 14px;
+  object-fit: cover;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .team-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .team-left p {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

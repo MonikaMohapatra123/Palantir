@@ -3,10 +3,14 @@ import React from "react";
 // ✅ IMPORT JSON
 import data from "../../Json/data.json";
 import WhyWeAreHere from "../../components/WhyWeAreHere/WhyWeAreHere";
-import VisionSection from "../../components/VisionSection/VisionSection";
-import WhatWeDo from "../../components/WhatWeDo/WhatWeDo";
-import MissionDriven from "../../components/MissionDriven/MissionDriven";
-import PalantirExplained from "../../components/PalantirExplained/PalantirExplained";
+// import VisionSection from "../../components/VisionSection/VisionSection";
+// import WhatWeDo from "../../components/WhatWeDo/WhatWeDo";
+// import MissionDriven from "../../components/MissionDriven/MissionDriven";
+// import PalantirExplained from "../../components/PalantirExplained/PalantirExplained";
+import ValuesMissions from "../../components/ValuesMissions/ValuesMissions";
+import OurValues from "../../components/OurValues/OurValues";
+import YearsGallery from "../../components/YearsGallery/YearsGallery";
+import TeamSection from "../../components/TeamSection/TeamSection";
 
 const About = () => {
   // ✅ Safe access
@@ -21,10 +25,14 @@ const About = () => {
   return (
     <div>
       <WhyWeAreHere/>
-      <VisionSection/>
+      <ValuesMissions/>
+      <OurValues/>
+      <YearsGallery/>
+      <TeamSection/>
+      {/* <VisionSection/>
       <WhatWeDo/>
       <MissionDriven/>
-       <PalantirExplained/>
+       <PalantirExplained/> */}
     </div>
   );
 };

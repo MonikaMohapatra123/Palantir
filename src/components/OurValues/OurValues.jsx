@@ -1,44 +1,50 @@
 import React from "react";
+import { FiMonitor, FiGrid, FiGlobe, FiActivity } from "react-icons/fi";
 import "./OurValues.css";
 
 const OurValues = () => {
   return (
     <section className="values-section">
-      <div className="values-container">
-        <h2 className="values-title">Our Values</h2>
+      <div className="values-wrapper">
+
+        <h2 className="values-main-title">
+          The impact extends beyond migration
+        </h2>
 
         <div className="values-grid">
+
           <div className="value-card">
-            <span className="value-tag">KEEP LEARNING, KEEP GROWING</span>
+            <FiMonitor className="value-icon" />
+            <h3>Build Hybrid Applications</h3>
             <p>
-              We stay curious, challenge ourselves, and never settle for "good
-              enough."
+              That leverage legacy and target systems simultaneously during migration
             </p>
           </div>
 
           <div className="value-card">
-            <span className="value-tag">WELL-BEING MATTERS</span>
+            <FiGrid className="value-icon" />
+            <h3>Enable Business Continuity</h3>
             <p>
-              A clear mind and a healthy body lead to better work. We respect
-              balance.
+              With real-time operations across old and new environments
             </p>
           </div>
 
           <div className="value-card">
-            <span className="value-tag">CHALLENGE, THEN IMPROVE</span>
+            <FiGlobe className="value-icon" />
+            <h3>Capture Immediate Value</h3>
             <p>
-              We embrace tough conversations and debates to find the best
-              solutions.
+              Before legacy decommissioning completes
             </p>
           </div>
 
           <div className="value-card">
-            <span className="value-tag">OWN YOUR WORK</span>
+            <FiActivity className="value-icon" />
+            <h3>Gain Operational Intelligence</h3>
             <p>
-              We take full responsibility for our work, ensuring quality and
-              continuous improvement in everything we do.
+              With real-time business metrics, AI-driven recommendations, and impact modeling before execution
             </p>
           </div>
+
         </div>
       </div>
     </section>

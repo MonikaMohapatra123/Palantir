@@ -29,7 +29,7 @@
   border-radius: 12px;
   padding: 30px;
   width: 100%;
-  max-width: 520px;                 /* ⬅️ keeps card small */
+  max-width: 520px;                
   display: flex;
   align-items: center;              /* vertically center content */
   gap: 20px;
@@ -56,10 +56,10 @@
 
 /* Image */
 .image-content {
-  width: 180px;          /* ⬅️ fixed image width like screenshot */
-  height: 140px;         /* ⬅️ fixed height to avoid tall cards */
+  width: 280px;          /* ⬅️ fixed image width like screenshot */
+  height: 160px;         /* ⬅️ fixed height to avoid tall cards */
   flex-shrink: 0;
-  border-radius: 10px;
+  border-radius: 5px;
   overflow: hidden;
 }
 

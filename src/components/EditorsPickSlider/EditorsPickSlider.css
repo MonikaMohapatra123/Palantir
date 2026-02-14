@@ -1,23 +1,33 @@
-.engineering {
-  padding: 70px 6%;
+/* Wrapper for spacing between rows */
+.engineering-wrapper {
   background: #ffffff;
-  color: #000;
 }
 
+/* Section */
+.engineering {
+  padding: 70px 6%;
+  color: #000;
+  border-bottom: 1px solid #eee;
+}
+
+/* Title */
 .engineering-title {
   font-size: 2.4rem;
   font-weight: 500;
   margin-bottom: 32px;
 }
 
+/* Grid */
 .engineering-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 24px;
 }
 
+/* Card */
 .engineering-card {
   cursor: pointer;
+  transition: transform 0.3s ease;
 }
 
 .engineering-card img {
@@ -39,6 +49,7 @@
   color: #111;
 }
 
+/* Footer link */
 .engineering-footer {
   display: flex;
   justify-content: flex-end;
@@ -51,19 +62,27 @@
   text-decoration: none;
   border-bottom: 1px solid #000;
   padding-bottom: 2px;
+  transition: 0.3s ease;
 }
 
 .engineering-footer a:hover {
   opacity: 0.7;
 }
+
+/* Tablet */
 @media (max-width: 1024px) {
   .engineering-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
+/* Mobile */
 @media (max-width: 600px) {
   .engineering-grid {
     grid-template-columns: 1fr;
+  }
+
+  .engineering-title {
+    font-size: 1.8rem;
   }
 }

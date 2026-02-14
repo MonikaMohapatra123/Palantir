@@ -2,43 +2,54 @@ import { Link } from "react-router-dom";
 import "./EditorsPickSlider.css";
 
 const EditorsPickSlider = () => {
-  const picks = [
+  const sections = [
     {
-      title: "Building with Palantir AIP",
-      image: "/pic-5.jpg",
+      sectionTitle: "Engineering & Technology",
+      link: "/case-studies",
+      cards: [
+        { title: "Building with Palantir AIP", image: "/pic-5.jpg" },
+        { title: "Machine Learning for Search", image: "/pic-4.jpg" },
+        { title: "Ontology: Meaning in Data", image: "/pic-3.jpg" },
+        { title: "Drone Navigation Systems", image: "/pic-2.jpg" },
+      ],
     },
     {
-      title: "User-Centered Machine Learning for Visual Search",
-      image: "/pic-4.jpg",
-    },
-    {
-      title: "Ontology: Finding meaning in data",
-      image: "/pic-3.jpg",
-    },
-    {
-      title: "The Future of Drone Navigation",
-      image: "/pic-2.jpg",
+      sectionTitle: "AI & Innovation",
+      link: "/case-studies",
+      cards: [
+        { title: "AI in Healthcare", image: "/p-1.jpg" },
+        { title: "Future of Robotics", image: "/p-2.jpg" },
+        { title: "Smart Automation", image: "/p-3.jpg" },
+        { title: "Advanced AI Models", image: "/pic-5.jpg" },
+      ],
     },
   ];
 
   return (
-    <section className="engineering">
-      <h2 className="engineering-title">Engineering & Technology</h2>
+    <div className="engineering-wrapper">
+      {sections.map((section, index) => (
+        <section className="engineering" key={index}>
+          <h2 className="engineering-title">
+            {section.sectionTitle}
+          </h2>
 
-      <div className="engineering-grid">
-        {picks.map((item, index) => (
-          <div className="engineering-card" key={index}>
-            <img src={item.image} alt={item.title} />
-            <p>{item.title}</p>
+          <div className="engineering-grid">
+            {section.cards.map((card, i) => (
+              <div className="engineering-card" key={i}>
+                <img src={card.image} alt={card.title} />
+                <p>{card.title}</p>
+              </div>
+            ))}
           </div>
-        ))}
-      </div>
 
-      <div className="engineering-footer">
-        {/* Use Link to navigate to Case Studies page */}
-        <Link to="/case-studies">See all Engineering & Tech posts →</Link>
-      </div>
-    </section>
+          <div className="engineering-footer">
+            <Link to={section.link}>
+              See all {section.sectionTitle} posts →
+            </Link>
+          </div>
+        </section>
+      ))}
+    </div>
   );
 };
 

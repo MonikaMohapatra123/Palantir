@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./PalantirExplained.css";
 import data from "../../Json/data.json";
 
@@ -8,27 +9,36 @@ const PalantirExplained = () => {
   return (
     <section className="palantir-section">
       {items.map((item) => (
-        <div key={item.id} className="palantir-card">
-          
-          {/* LEFT IMAGE */}
-          <div className="palantir-image">
-            <img src={item.image} alt={item.title} />
-          </div>
+        
+        <Link 
+          to="/case-studies" 
+          key={item.id} 
+          className="palantir-card-link"
+        >
+          <div className="palantir-card">
 
-          {/* RIGHT CONTENT */}
-          <div className="palantir-content">
-            <h2 className="palantir-title">{item.title}</h2>
-            <p className="palantir-description">
-              {item.description}
-            </p>
-
-            <div className="palantir-button">
-              <span>{item.buttonText}</span>
-              <span className="arrow">→</span>
+            {/* LEFT IMAGE */}
+            <div className="palantir-image">
+              <img src={item.image} alt={item.title} />
             </div>
-          </div>
 
-        </div>
+            {/* RIGHT CONTENT */}
+            <div className="palantir-content">
+              <h2 className="palantir-title">{item.title}</h2>
+
+              <p className="palantir-description">
+                {item.description}
+              </p>
+
+              <div className="palantir-button">
+                <span>{item.buttonText}</span>
+                <span className="arrow">→</span>
+              </div>
+            </div>
+
+          </div>
+        </Link>
+
       ))}
     </section>
   );

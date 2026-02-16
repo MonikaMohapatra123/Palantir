@@ -1,13 +1,22 @@
+/* Important */
+* {
+  box-sizing: border-box;
+}
+
 .extra-section {
   background-color: #000;
   color: #fff;
   padding: 100px 20px;
+  overflow-x: hidden; /* prevents horizontal scroll */
 }
 
 .extra-container {
   max-width: 1100px;
   margin: auto;
+  width: 100%;
 }
+
+/* ================= TITLE ================= */
 
 .extra-title {
   font-size: 34px;
@@ -15,18 +24,23 @@
   margin-bottom: 10px;
   border-left: 4px solid #fff;
   padding-left: 15px;
+  word-break: break-word;
 }
 
 .extra-subtitle {
   font-size: 16px;
   color: #aaa;
   margin-bottom: 50px;
+  word-break: break-word;
 }
+
+/* ================= CONTENT BOX ================= */
 
 .extra-content-box {
   background-color: #111;
   padding: 50px;
   border: 1px solid #333;
+  width: 100%;
 }
 
 .extra-main-text {
@@ -34,13 +48,17 @@
   line-height: 1.9;
   color: #ccc;
   margin-bottom: 50px;
+  word-break: break-word;
 }
 
-/* Grid layout */
+/* ================= GRID ================= */
+
+/* Default → Mobile first (1 column always safe) */
 .extra-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: 1fr;
   gap: 30px;
+  width: 100%;
 }
 
 .extra-card {
@@ -48,6 +66,8 @@
   padding: 30px;
   border: 1px solid #333;
   transition: all 0.3s ease;
+  width: 100%;
+  word-break: break-word;
 }
 
 .extra-card h3 {
@@ -61,6 +81,7 @@
   color: #aaa;
 }
 
+/* Hover */
 .extra-card:hover {
   background-color: #fff;
   color: #000;
@@ -68,4 +89,82 @@
 
 .extra-card:hover p {
   color: #333;
+}
+
+/* ================= TABLET ================= */
+
+@media (min-width: 600px) {
+  .extra-section {
+    padding: 80px 20px;
+  }
+
+  .extra-title {
+    font-size: 28px;
+  }
+
+  .extra-content-box {
+    padding: 35px;
+  }
+
+  .extra-main-text {
+    font-size: 17px;
+  }
+
+  .extra-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ================= DESKTOP ================= */
+
+@media (min-width: 992px) {
+  .extra-section {
+    padding: 100px 20px;
+  }
+
+  .extra-title {
+    font-size: 34px;
+  }
+
+  .extra-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* ================= VERY SMALL DEVICES (147px etc) ================= */
+
+@media (max-width: 320px) {
+  .extra-section {
+    padding: 40px 10px;
+  }
+
+  .extra-title {
+    font-size: 18px;
+  }
+
+  .extra-subtitle {
+    font-size: 13px;
+    margin-bottom: 25px;
+  }
+
+  .extra-content-box {
+    padding: 20px 15px;
+  }
+
+  .extra-main-text {
+    font-size: 14px;
+    margin-bottom: 30px;
+  }
+
+  .extra-card {
+    padding: 18px;
+  }
+
+  .extra-card h3 {
+    font-size: 16px;
+  }
+
+  .extra-card p {
+    font-size: 13px;
+  }
 }

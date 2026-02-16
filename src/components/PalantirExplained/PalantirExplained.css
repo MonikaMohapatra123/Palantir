@@ -88,3 +88,8 @@
     height: 300px;
   }
 }
+.palantir-card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}

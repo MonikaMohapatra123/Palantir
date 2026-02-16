@@ -21,6 +21,7 @@ import AdminPages from "./pages/AdminPages/AdminPages";
 import AddPage from "./pages/AddPage/AddPage";
 import EditPage from "./pages/EditPage/EditPage";
 import PostDetails from "./components/PostDetails/PostDetails";
+import MissionDetails from "./pages/MissionDetails/MissionDetails";
 
 const App = () => {
   const location = useLocation();
@@ -43,6 +44,7 @@ const App = () => {
         <Route path="/blog" element={<Blog />} />
         <Route path="/case-studies" element={<CaseStudies />} />
         <Route path="/post/:id" element={<PostDetails />} />
+        <Route path="/mission/:id" element={<MissionDetails />} />
 
         {/* Admin Routes */}
         <Route path="/admin" element={<Admin />}>

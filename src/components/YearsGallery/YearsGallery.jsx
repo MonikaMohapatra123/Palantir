@@ -6,60 +6,70 @@ const yearsData = [
     id: "year1",
     year: "2020",
     title: "Our Beginning",
-    content: "In 2020, we started our journey with small but meaningful steps.",
-    image: "/pic-5.jpg"
+    content:
+      "In 2020, we started our journey with small but meaningful steps.",
+    image: "/pic-5.jpg",
   },
   {
     id: "year2",
     year: "2021",
     title: "Growing Strong",
-    content: "In 2021, we expanded our team and launched new projects.",
-    image: "/pic-4.jpg"
+    content:
+      "In 2021, we expanded our team and launched new projects.",
+    image: "/pic-4.jpg",
   },
   {
     id: "year3",
     year: "2022",
     title: "Going Global",
-    content: "In 2022, we reached international clients and scaled up operations.",
-    image: "/pic-3.jpg"
-  }
+    content:
+      "In 2022, we reached international clients and scaled up operations.",
+    image: "/pic-3.jpg",
+  },
 ];
 
 export default function YearsGallery() {
-  const [activeYear, setActiveYear] = useState(yearsData[0]);
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [currentIndex, setCurrentIndex] = useState(0);
 
+  const activeYear = yearsData[currentIndex];
+
+  // When clicking image → go to next year
   const handleImageClick = () => {
-    setCurrentImageIndex((prevIndex) => (prevIndex + 1) % yearsData.length);
-    setActiveYear(yearsData[(currentImageIndex + 1) % yearsData.length]);
+    setCurrentIndex((prevIndex) =>
+      (prevIndex + 1) % yearsData.length
+    );
+  };
+
+  // When clicking year from left side
+  const handleYearClick = (index) => {
+    setCurrentIndex(index);
   };
 
   return (
     <section className="years-wrapper">
-      {/* LEFT: Year list */}
+      
+      {/* LEFT SIDE */}
       <div className="years-left">
         <h2>Our Timeline</h2>
 
         <ul className="years-list">
-          {yearsData.map((year) => (
+          {yearsData.map((item, index) => (
             <li
-              key={year.id}
-              className={activeYear.id === year.id ? "active" : ""}
-              onClick={() => {
-                setActiveYear(year);
-                setCurrentImageIndex(yearsData.indexOf(year));
-              }}
+              key={item.id}
+              className={currentIndex === index ? "active" : ""}
+              onClick={() => handleYearClick(index)}
             >
-              <span className="year">{year.year}</span>
-              <span className="year-title">{year.title}</span>
+              <span className="year">{item.year}</span>
+              <span className="year-title">{item.title}</span>
             </li>
           ))}
         </ul>
       </div>
 
-      {/* RIGHT: Content + Image in one row */}
+      {/* RIGHT SIDE */}
       <div className="years-right">
         <div className="year-row">
+          
           {/* TEXT */}
           <div className="year-text">
             <span className="year-meta">{activeYear.year}</span>
@@ -68,16 +78,23 @@ export default function YearsGallery() {
           </div>
 
           {/* IMAGE */}
-          <div className="year-image-wrapper" onClick={handleImageClick}>
+          <div
+            className="year-image-wrapper"
+            onClick={handleImageClick}
+          >
             <img
               src={activeYear.image}
               alt={activeYear.title}
               className="year-image"
             />
-            <span className="click-tip">Click image</span>
+            <span className="click-tip">
+              Click image to view next
+            </span>
           </div>
+
         </div>
       </div>
+
     </section>
   );
 }

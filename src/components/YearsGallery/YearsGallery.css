@@ -1,17 +1,19 @@
 .years-wrapper {
   display: grid;
-  grid-template-columns: 30% 70%;
-  padding: 80px 100px;
+  grid-template-columns: 320px 1fr;
+  padding: 80px 6%;
   gap: 60px;
   background: #fff;
   font-family: "Inter", sans-serif;
+  max-width: 1400px;
+  margin: auto;
 }
 
 /* LEFT */
 .years-left h2 {
-  font-size: 42px;
+  font-size: 38px;
   font-weight: 500;
-  margin-bottom: 80px;
+  margin-bottom: 60px;
 }
 
 .years-list {
@@ -24,11 +26,11 @@
   display: flex;
   align-items: center;
   gap: 14px;
-  padding: 14px 0;
+  padding: 16px 0;
   cursor: pointer;
   border-bottom: 1px solid #e5e5e5;
   color: #8a8a8a;
-  transition: color 0.3s ease, background 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .years-list li:hover {
@@ -37,6 +39,7 @@
 
 .years-list li.active {
   color: #000;
+  font-weight: 500;
 }
 
 .year {
@@ -44,22 +47,25 @@
 }
 
 .year-title {
-  font-size: 16px;
+  font-size: 15px;
 }
 
 /* RIGHT */
 .years-right {
-  max-width: 720px;
+  width: 100%;
 }
 
 .year-row {
   display: flex;
-  gap: 40px;
-  align-items: flex-start;
+  gap: 50px;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 .year-text {
-  flex: 2;
+  flex: 1;
+  min-width: 280px;
 }
 
 .year-meta {
@@ -69,7 +75,7 @@
 }
 
 .year-text h3 {
-  font-size: 32px;
+  font-size: 30px;
   font-weight: 500;
   margin: 16px 0 20px;
 }
@@ -83,15 +89,17 @@
 /* IMAGE */
 .year-image-wrapper {
   flex: 1;
+  min-width: 280px;
+  max-width: 450px;
   position: relative;
   cursor: pointer;
 }
 
 .year-image {
   width: 100%;
-  height: 350px; /* increased height */
+  height: 380px;
   object-fit: cover;
-  border-radius: 10px;
+  border-radius: 12px;
   transition: transform 0.3s ease;
 }
 
@@ -101,25 +109,46 @@
 
 .click-tip {
   position: absolute;
-  bottom: 8px;
+  bottom: 12px;
   right: 12px;
   font-size: 12px;
   color: #fff;
-  background: rgba(0,0,0,0.5);
-  padding: 2px 6px;
+  background: rgba(0,0,0,0.6);
+  padding: 4px 8px;
   border-radius: 4px;
 }
 
-/* MOBILE RESPONSIVE */
+/* -------------------- */
+/* TABLET */
+/* -------------------- */
+@media (max-width: 1024px) {
+  .years-wrapper {
+    grid-template-columns: 260px 1fr;
+    gap: 40px;
+    padding: 60px 5%;
+  }
+
+  .year-image {
+    height: 300px;
+  }
+
+  .year-text h3 {
+    font-size: 26px;
+  }
+}
+
+/* -------------------- */
+/* MOBILE */
+/* -------------------- */
 @media (max-width: 768px) {
   .years-wrapper {
     grid-template-columns: 1fr;
-    padding: 40px 20px;
     gap: 40px;
+    padding: 50px 20px;
   }
 
   .years-left h2 {
-    font-size: 28px;
+    font-size: 26px;
     margin-bottom: 24px;
   }
 
@@ -138,7 +167,7 @@
     flex-direction: column;
     align-items: flex-start;
     gap: 4px;
-    padding: 12px 14px;
+    padding: 12px 16px;
     border: 1px solid #e5e5e5;
     border-radius: 10px;
     min-width: 120px;
@@ -151,41 +180,37 @@
     border-color: #000;
   }
 
+  .year-row {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .year-image-wrapper {
+    max-width: 100%;
+  }
+
+  .year-image {
+    height: 240px;
+  }
+
   .year-text h3 {
     font-size: 22px;
-    margin: 10px 0 14px;
   }
 
   .year-text p {
     font-size: 14px;
-    line-height: 1.6;
-  }
-
-  .year-image {
-    height: 220px; /* increased height for tablet */
-  }
-
-  .year-row {
-    flex-direction: column;
-    gap: 20px;
   }
 }
 
+/* -------------------- */
+/* SMALL MOBILE */
+/* -------------------- */
 @media (max-width: 480px) {
-  .years-left h2 {
-    font-size: 24px;
-  }
-
-  .years-list li {
-    min-width: 105px;
-    padding: 10px 12px;
+  .year-image {
+    height: 200px;
   }
 
   .year-text h3 {
     font-size: 20px;
-  }
-
-  .year-image {
-    height: 180px; /* increased height for mobile */
   }
 }

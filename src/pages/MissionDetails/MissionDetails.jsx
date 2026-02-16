@@ -2,7 +2,6 @@ import { useParams } from "react-router-dom";
 import HeroPostDetails from "../../components/PostDetails/HeroPostDetails/HeroPostDetails";
 import ContentSection from "../../components/PostDetails/ContentSection/ContentSection";
 import ExtraSection from "../../components/PostDetails/ExtraSection/ExtraSection";
-import ValuesMissions from "../../components/ValuesMissions/ValuesMissions";
 import VisionSection from "../../components/VisionSection/VisionSection";
 import WhatWeDo from "../../components/WhatWeDo/WhatWeDo";
 import MissionDriven from "../../components/MissionDriven/MissionDriven";

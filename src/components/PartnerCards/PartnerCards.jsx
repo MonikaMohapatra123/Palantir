@@ -4,7 +4,11 @@ import "./PartnerCards.css";
 const PartnerCards = ({ partnerData }) => {
   if (!partnerData || !partnerData.cards) return null;
 
-  const duplicatedCards = [...partnerData.cards, ...partnerData.cards];
+  const duplicatedCards = [
+    ...partnerData.cards,
+    ...partnerData.cards,
+    ...partnerData.cards,
+  ];
 
   return (
     <section className="partner-section">
@@ -16,7 +20,6 @@ const PartnerCards = ({ partnerData }) => {
         <div className="partner-track">
           {duplicatedCards.map((item, index) => (
             <div className="partner-card" key={`${item.name}-${index}`}>
-              
               <h4 className="card-title">{item.name}</h4>
 
               <div className="card-content">
@@ -28,7 +31,6 @@ const PartnerCards = ({ partnerData }) => {
                   {item.designation}
                 </p>
               </div>
-
             </div>
           ))}
         </div>

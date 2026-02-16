@@ -23,17 +23,16 @@
    SCROLL CONTAINER
 ================================ */
 .partner-scroll {
-  overflow: hidden;
   width: 100%;
+  overflow: hidden;
   position: relative;
 }
 
 /* ===============================
-   MOVING TRACK
+   TRACK
 ================================ */
 .partner-track {
   display: flex;
-  gap: 28px;
   width: max-content;
   animation: scroll 35s linear infinite;
 }
@@ -46,8 +45,9 @@
   height: 360px;
   background: #f5f5f5;
   padding: 38px;
-  cursor: pointer;
   flex-shrink: 0;
+  margin-right: 28px;
+  cursor: pointer;
 
   display: flex;
   flex-direction: column;
@@ -60,8 +60,6 @@
     100% 100%,
     0 100%
   );
-
-  transition: background 0.3s ease;
 }
 
 /* ===============================
@@ -92,7 +90,6 @@
   font-size: 17px;
   line-height: 1.6;
   color: #111;
-
   transition: transform 0.4s ease;
 }
 
@@ -111,7 +108,7 @@
 }
 
 /* ===============================
-   HOVER EFFECT
+   ORIGINAL HOVER EFFECT
 ================================ */
 .partner-card:hover .card-description {
   transform: translateY(-25px);
@@ -119,18 +116,18 @@
 
 .partner-card:hover .card-designation {
   opacity: 1;
-  transform: translateY();
+  transform: translateY(0);
 }
 
 /* ===============================
-   INFINITE SCROLL
+   PERFECT CONTINUOUS SCROLL
 ================================ */
 @keyframes scroll {
-  from {
+  0% {
     transform: translateX(0);
   }
-  to {
-    transform: translateX(-70%);
+  100% {
+    transform: translateX(-33.333%);
   }
 }
 
@@ -138,6 +135,10 @@
    TABLET
 ================================ */
 @media (max-width: 1024px) {
+  .partner-section {
+    padding: 60px 40px;
+  }
+
   .partner-heading {
     font-size: 42px;
   }
@@ -146,10 +147,7 @@
     width: 260px;
     height: 320px;
     padding: 28px;
-  }
-
-  .card-description {
-    font-size: 16px;
+    margin-right: 20px;
   }
 }
 
@@ -157,32 +155,28 @@
    MOBILE
 ================================ */
 @media (max-width: 768px) {
+  .partner-section {
+    padding: 40px 20px;
+  }
+
   .partner-heading {
     font-size: 30px;
     white-space: normal;
     width: 100%;
   }
 
-  .partner-scroll {
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-  }
-
   .partner-track {
     animation: none;
-    width: auto;
-    gap: 16px;
+  }
+
+  .partner-scroll {
+    overflow-x: auto;
   }
 
   .partner-card {
     width: 85vw;
     height: auto;
-    padding: 22px;
-    scroll-snap-align: start;
-  }
-
-  .card-description {
-    transform: none;
+    margin-right: 16px;
   }
 
   .card-designation {

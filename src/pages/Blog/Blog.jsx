@@ -11,7 +11,6 @@ const Blog = () => {
       <FeaturedPosts/>
       <EditorsPickSlider/>
     
-    
     </div>
   )
 }

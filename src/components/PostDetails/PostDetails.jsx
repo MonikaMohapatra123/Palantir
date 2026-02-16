@@ -22,6 +22,31 @@ const PostDetails = () => {
       title: "AI in Healthcare",
       content: "Full details about AI Healthcare...",
       extra: "Extra information about medical AI systems."
+    },
+    "4": {
+      title: "Cloud Computing Revolution",
+      content: "Full details about cloud platforms, scalability, and distributed systems...",
+      extra: "Extra information about AWS, Azure, and Google Cloud services."
+    },
+    "5": {
+      title: "Cybersecurity in Modern Applications",
+      content: "Full details about application security, encryption, and secure authentication...",
+      extra: "Extra information about firewalls, zero-trust models, and threat detection."
+    },
+    "6": {
+      title: "Data Engineering Pipelines",
+      content: "Full details about ETL processes, big data tools, and streaming architectures...",
+      extra: "Extra information about Kafka, Spark, and real-time processing."
+    },
+    "7": {
+      title: "Generative AI and LLMs",
+      content: "Full details about generative AI models, transformers, and large language models...",
+      extra: "Extra information about prompt engineering and AI ethics."
+    },
+    "8": {
+      title: "IoT and Smart Infrastructure",
+      content: "Full details about IoT devices, sensors, and smart city systems...",
+      extra: "Extra information about edge computing and connected ecosystems."
     }
   };
 
@@ -32,9 +57,8 @@ const PostDetails = () => {
   }
 
   return (
-    <div >
+    <div>
       <HeroPostDetails title={post.title} />
-    
       <ContentSection text={post.content} />
       <ExtraSection text={post.extra} />
     </div>

@@ -1,23 +1,27 @@
 /* ========================================= */
+/* GLOBAL RESPONSIVE TYPOGRAPHY */
+/* ========================================= */
+
+html {
+  font-size: clamp(14px, 0.9vw, 16px);
+}
+
+/* ========================================= */
 /* OVERLAY */
 /* ========================================= */
 
 .mega-overlay {
   position: fixed;
   inset: 0;
-  background: #1a1d23; /* Dark grey like reference */
+  background: #1a1d23;
   z-index: 9999;
   overflow-y: auto;
   animation: megaBgFade 0.4s ease forwards;
 }
 
 @keyframes megaBgFade {
-  from {
-    background: rgba(26, 29, 35, 0); /* #1a1d23 transparent */
-  }
-  to {
-    background: rgba(26, 29, 35, 1); /* #1a1d23 solid */
-  }
+  from { background: rgba(26, 29, 35, 0); }
+  to { background: rgba(26, 29, 35, 1); }
 }
 
 /* ========================================= */
@@ -26,7 +30,7 @@
 
 .mega-container {
   min-height: 100dvh;
-  padding: 80px 80px;
+  padding: clamp(60px, 6vw, 90px) clamp(20px, 6vw, 80px);
   color: #ffffff;
   position: relative;
 }
@@ -42,7 +46,7 @@
   z-index: 10000;
   background: none;
   border: none;
-  font-size: 28px;
+  font-size: clamp(22px, 2vw, 28px);
   color: #ffffff;
   cursor: pointer;
   opacity: 0;
@@ -61,39 +65,37 @@
 
 .mega-main {
   display: flex;
-  gap: 60px;
+  gap: clamp(30px, 4vw, 60px);
+  flex-wrap: wrap;
 }
 
-/* LEFT COLUMN */
 .mega-left {
   flex: 0 0 260px;
+  min-width: 220px;
 }
 
-/* RIGHT AREA */
 .mega-right-area {
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 60px;
+  gap: clamp(40px, 5vw, 60px);
 }
 
-/* TOP ROW */
 .mega-top-row {
   display: flex;
-  gap: 60px;
+  gap: clamp(30px, 4vw, 60px);
+  flex-wrap: wrap;
 }
 
-/* CENTER - Decreased width */
 .mega-center {
-  flex: 1.2;        /* was 1.4 */
-  padding-right: 30px;
+  flex: 1.2;
+  min-width: 280px;
 }
 
-/* RIGHT - Increased width */
 .mega-offer {
-  flex: 1.2;      /* was 1 */
+  flex: 1.2;
+  min-width: 260px;
 }
-
 
 /* ========================================= */
 /* COLUMNS */
@@ -129,7 +131,7 @@
 /* ========================================= */
 
 .mega-title {
-  font-size: 11px;
+  font-size: clamp(10px, 0.8vw, 12px);
   color: #9a9a9a;
   letter-spacing: 1px;
   margin-top: 10px;
@@ -140,17 +142,18 @@
 /* ========================================= */
 
 .mega-item {
-  font-size: 20px;
+  font-size: clamp(18px, 1.5vw, 22px);
   font-weight: 600;
 }
 
 .mega-link {
   color: #ffffff;
   text-decoration: none;
+  transition: 0.25s ease;
 }
 
 .mega-link:hover {
-  text-decoration: underline;
+  opacity: 0.8;
 }
 
 /* SUB MENU */
@@ -163,7 +166,7 @@
 }
 
 .mega-sub-item {
-  font-size: 16px;
+  font-size: clamp(14px, 1.1vw, 17px);
   color: #cfcfcf;
   display: flex;
   align-items: center;
@@ -178,7 +181,7 @@
 }
 
 .arrow-icon {
-  font-size: 16px;
+  font-size: clamp(14px, 1vw, 16px);
   color: #ffffff;
 }
 
@@ -194,7 +197,7 @@
 }
 
 .newsroom-link {
-  font-size: 11px;
+  font-size: clamp(10px, 0.9vw, 12px);
   letter-spacing: 1.2px;
   color: #ffffff;
   text-decoration: underline;
@@ -203,8 +206,8 @@
 
 .latest-news-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 48px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: clamp(25px, 3vw, 48px);
 }
 
 .latest-news-card {
@@ -214,7 +217,7 @@
 }
 
 .news-meta {
-  font-size: 11px;
+  font-size: clamp(10px, 0.8vw, 12px);
   letter-spacing: 1.4px;
   text-transform: uppercase;
   color: #9a9a9a;
@@ -227,11 +230,10 @@
 }
 
 .latest-news-card p {
-  font-size: 15px;
+  font-size: clamp(14px, 1.1vw, 16px);
   line-height: 1.6;
   color: #cfcfcf;
   margin: 0;
-  max-width: 95%;
 }
 
 /* ========================================= */
@@ -239,20 +241,21 @@
 /* ========================================= */
 
 .offer-desc {
-  font-size: 18px;
+  font-size: clamp(16px, 1.4vw, 20px);
   color: #fff;
   margin-top: 10px;
-  width:105%;
+  line-height: 1.6;
 }
 
 .learn-more {
   color: #ffffff;
   margin-top: 10px;
   text-decoration: none;
+  transition: 0.2s ease;
 }
 
 .learn-more:hover {
-  text-decoration: underline;
+  opacity: 0.8;
 }
 
 /* ========================================= */
@@ -261,10 +264,9 @@
 
 .mega-footer {
   padding-top: 40px;
-  /* border-top: 1px solid #333; */
   display: grid;
   grid-template-columns: 1.4fr 1fr;
-  gap: 50px;
+  gap: clamp(30px, 4vw, 50px);
 }
 
 .mega-footer-left {
@@ -272,11 +274,10 @@
   flex-direction: column;
   gap: 16px;
   border-top: 1px solid #fff;
- 
 }
 
 .footer-label {
-  font-size: 12px;
+  font-size: clamp(10px, 0.8vw, 12px);
   color: #9a9a9a;
   letter-spacing: 1px;
   margin: 15px;
@@ -290,26 +291,28 @@
 
 .mega-footer-right {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   gap: 40px;
   border-top: 1px solid #fff;
 }
-.footer-col{
-    margin: 15px;
+
+.footer-col {
+  margin: 15px;
 }
+
 .footer-col h6 {
-  font-size: 12px;
+  font-size: clamp(10px, 0.8vw, 12px);
   color: #9a9a9a;
   margin-bottom: 12px;
 }
 
 .footer-col a {
   display: block;
-  font-size: 15px;
+  font-size: clamp(13px, 1vw, 15px);
   color: #cfcfcf;
   margin-bottom: 8px;
   text-decoration: none;
- 
+  transition: 0.2s ease;
 }
 
 .footer-col a:hover {
@@ -318,74 +321,29 @@
 }
 
 /* ========================================= */
-/* TABLET */
-/* ========================================= */
-
-@media (max-width: 1200px) and (min-width: 769px) {
-  .mega-container {
-    padding: 60px 40px;
-  }
-
-  .mega-main,
-  .mega-top-row {
-    gap: 40px;
-  }
-
-  .latest-news-grid {
-    gap: 32px;
-  }
-
-  .mega-left {
-    flex: 0 0 220px;
-  }
-
-  .mega-center {
-    padding-right: 20px;
-  }
-}
-
-/* ========================================= */
 /* MOBILE */
 /* ========================================= */
 
 @media (max-width: 768px) {
-  .mega-container {
-    padding: 90px 20px 40px;
-  }
 
   .mega-main {
     flex-direction: column;
-    gap: 40px;
   }
 
   .mega-top-row {
     flex-direction: column;
-    gap: 40px;
-  }
-
-  .latest-news-grid {
-    grid-template-columns: 1fr;
   }
 
   .mega-footer {
     grid-template-columns: 1fr;
   }
 
-  .mega-footer-right {
-    grid-template-columns: 1fr;
-  }
-
   .mega-close-btn {
     top: 18px;
     right: 18px;
-    font-size: 24px;
   }
 
   .latest-news-card img {
     height: 200px;
-  }
-
-  .latest-news-card p {
-    font-size: 14px;
   }
 }

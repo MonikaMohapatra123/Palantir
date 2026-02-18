@@ -1,39 +1,43 @@
 /* ========================================= */
-/* GLOBAL TYPOGRAPHY */
-/* ========================================= */
-
-html {
-  font-size: 16px; /* Keep exact same design */
-}
-
-/* ========================================= */
 /* OVERLAY */
 /* ========================================= */
-
 .mega-overlay {
   position: fixed;
   inset: 0;
   background: #1a1d23;
   z-index: 9999;
-  overflow-y: auto;
-  animation: megaBgFade 0.4s ease forwards;
+  overflow-y: auto;   /* ✅ scroll allowed inside */
+  overscroll-behavior: contain;
 }
 
+.mega-container {
+  min-height: 100vh;  /* ✅ flexible */
+  padding: 80px 80px;
+}
+
+.offer-desc {
+  width: 100%;   /* ✅ remove 105% overflow */
+}
+.below{
+  color: #fff;
+}
+
+
+
 @keyframes megaBgFade {
-  from { background: rgba(26, 29, 35, 0); }
-  to { background: rgba(26, 29, 35, 1); }
+  from {
+    background: rgba(26, 29, 35, 0); /* #1a1d23 transparent */
+  }
+  to {
+    background: rgba(26, 29, 35, 1); /* #1a1d23 solid */
+  }
 }
 
 /* ========================================= */
 /* CONTAINER */
 /* ========================================= */
 
-.mega-container {
-  min-height: 100dvh;
-  padding: 80px 80px; /* EXACT same as original */
-  color: #ffffff;
-  position: relative;
-}
+
 
 /* ========================================= */
 /* CLOSE BUTTON */
@@ -68,10 +72,12 @@ html {
   gap: 60px;
 }
 
+/* LEFT COLUMN */
 .mega-left {
   flex: 0 0 260px;
 }
 
+/* RIGHT AREA */
 .mega-right-area {
   flex: 1;
   display: flex;
@@ -79,19 +85,23 @@ html {
   gap: 60px;
 }
 
+/* TOP ROW */
 .mega-top-row {
   display: flex;
   gap: 60px;
 }
 
+/* CENTER - Decreased width */
 .mega-center {
-  flex: 1.2;
+  flex: 1.2;        /* was 1.4 */
   padding-right: 30px;
 }
 
+/* RIGHT - Increased width */
 .mega-offer {
-  flex: 1.2;
+  flex: 1.2;      /* was 1 */
 }
+
 
 /* ========================================= */
 /* COLUMNS */
@@ -145,12 +155,13 @@ html {
 .mega-link {
   color: #ffffff;
   text-decoration: none;
-  transition: 0.25s ease;
 }
 
 .mega-link:hover {
   text-decoration: underline;
 }
+
+/* SUB MENU */
 
 .mega-sub {
   display: flex;
@@ -200,7 +211,7 @@ html {
 
 .latest-news-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* EXACT same */
+  grid-template-columns: repeat(2, 1fr);
   gap: 48px;
 }
 
@@ -239,7 +250,7 @@ html {
   font-size: 18px;
   color: #fff;
   margin-top: 10px;
-  line-height: 1.6;
+  width:105%;
 }
 
 .learn-more {
@@ -258,6 +269,7 @@ html {
 
 .mega-footer {
   padding-top: 40px;
+  /* border-top: 1px solid #333; */
   display: grid;
   grid-template-columns: 1.4fr 1fr;
   gap: 50px;
@@ -268,6 +280,7 @@ html {
   flex-direction: column;
   gap: 16px;
   border-top: 1px solid #fff;
+ 
 }
 
 .footer-label {
@@ -289,11 +302,9 @@ html {
   gap: 40px;
   border-top: 1px solid #fff;
 }
-
-.footer-col {
-  margin: 15px;
+.footer-col{
+    margin: 15px;
 }
-
 .footer-col h6 {
   font-size: 12px;
   color: #9a9a9a;
@@ -306,64 +317,76 @@ html {
   color: #cfcfcf;
   margin-bottom: 8px;
   text-decoration: none;
-  transition: 0.2s ease;
+ 
 }
 
 .footer-col a:hover {
   color: #ffffff;
   transform: translateX(4px);
 }
+/* ========================================= */
+/* MOBILE FIX - CLEAN RESET */
+/* ========================================= */
+
+
+
 
 /* ========================================= */
-/* TABLET */
-/* ========================================= */
-
-@media (max-width: 1200px) {
-
-  .mega-container {
-    padding: 60px 40px;
-  }
-
-  .mega-main,
-  .mega-top-row {
-    gap: 40px;
-  }
-
-  .latest-news-grid {
-    gap: 32px;
-  }
-
-  .mega-left {
-    flex: 0 0 220px;
-  }
-
-  .mega-center {
-    padding-right: 20px;
-  }
-}
-
-/* ========================================= */
-/* MOBILE */
+/* MOBILE CORRECT FIX */
 /* ========================================= */
 
 @media (max-width: 768px) {
 
   .mega-container {
-    padding: 90px 20px 40px;
+    padding: 80px 20px 40px;
   }
 
-  .mega-main,
+  /* Main becomes vertical */
+  .mega-main {
+    flex-direction: column;
+    gap: 50px;
+  }
+
+  /* Remove fixed left column width */
+  .mega-left {
+    flex: none !important;
+    width: 100% !important;
+  }
+
+  /* Right area vertical */
+  .mega-right-area {
+    flex-direction: column;
+    gap: 50px;
+  }
+
+  /* BREAK center + offer row */
   .mega-top-row {
     flex-direction: column;
-    gap: 40px;
+    gap: 50px;
   }
 
+  /* Remove desktop flex sizing */
+  .mega-center,
+  .mega-offer {
+    flex: none !important;
+    width: 100% !important;
+    padding-right: 0 !important;
+  }
+
+  /* Fix 105% overflow problem */
+  .offer-desc {
+    width: 100% !important;
+  }
+
+  /* Latest news single column */
   .latest-news-grid {
     grid-template-columns: 1fr;
   }
 
+  /* Footer stacking */
   .mega-footer {
     grid-template-columns: 1fr;
+    gap: 40px;
   }
 
   .mega-footer-right {
@@ -374,42 +397,6 @@ html {
     top: 18px;
     right: 18px;
     font-size: 24px;
-  }
-
-  .latest-news-card img {
-    height: 200px;
-  }
-
-  .latest-news-card p {
-    font-size: 14px;
-  }
-}
-
-
-/* ========================================= */
-/* SMALL LAPTOP FIX (1054px issue fix) */
-/* ========================================= */
-
-@media (max-width: 1100px) {
-
-  .mega-item {
-    font-size: 18px;   /* was 20px */
-  }
-
-  .mega-sub-item {
-    font-size: 15px;   /* was 16px */
-  }
-
-  .offer-desc {
-    font-size: 16px;   /* was 18px */
-  }
-
-  .latest-news-card p {
-    font-size: 14px;   /* was 15px */
-  }
-
-  .footer-col a {
-    font-size: 14px;   /* was 15px */
   }
 
 }

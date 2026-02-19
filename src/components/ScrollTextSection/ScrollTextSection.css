@@ -3,7 +3,8 @@
 ====================== */
 .scroll-container {
   background: #ffffff;
-  padding: 30px 20px 80px;
+  padding: clamp(20px, 4vw, 40px) clamp(16px, 5vw, 40px)
+    clamp(60px, 8vw, 100px);
 }
 
 /* ======================
@@ -12,16 +13,16 @@
 .hero-text {
   max-width: 1100px;
   margin: 0 auto;
-  padding-top: 20px;
+  padding-top: clamp(20px, 4vw, 40px);
   will-change: transform;
   transition: transform 0.25s ease-out;
 }
 
 .hero-text h1 {
   margin: 0;
-  font-size: 58px;
+  font-size: clamp(26px, 5vw, 60px); /* fully responsive */
   font-weight: 500;
-  line-height: 1.15;
+  line-height: 1.2;
   color: #1f1f1f;
 }
 
@@ -31,7 +32,7 @@
 
 /* Spacer */
 .hero-spacer1 {
-  height: 150px;
+  height: clamp(80px, 12vw, 160px);
 }
 
 /* ======================
@@ -46,8 +47,8 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 40px;
-  padding: 40px 0;
+  gap: clamp(20px, 4vw, 50px);
+  padding: clamp(30px, 5vw, 60px) 0;
   border-bottom: 1px solid #eee;
 }
 
@@ -57,42 +58,39 @@
 }
 
 .product-info.text-hovered {
-  transform: translateX(-12px); /* slight slide left */
+  transform: translateX(-12px);
 }
 
 .product-row h2 {
-  font-size: 64px;
+  font-size: clamp(28px, 6vw, 64px); /* fluid title */
   font-weight: 500;
-  margin: 0 0 12px;
+  margin: 0 0 clamp(10px, 2vw, 16px);
 }
 
 .product-row p {
   margin: 0;
-  font-size: 18px;
+  font-size: clamp(14px, 2.2vw, 18px);
   color: #555;
   max-width: 520px;
+  line-height: 1.6;
 }
 
 /* ======================
    HOVER IMAGE
 ====================== */
 .row-image-wrapper {
-  width: 320px;
-  height: 200px;
+  width: clamp(220px, 30vw, 360px);
+  height: clamp(120px, 20vw, 220px);
   flex-shrink: 0;
   position: relative;
 }
 
 .row-image {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  inset: 0;
   opacity: 0;
   transform: translateY(12px);
   transition: opacity 0.35s ease, transform 0.35s ease;
-  
   overflow: hidden;
 }
 
@@ -108,41 +106,11 @@
 }
 
 /* ======================
-   TABLET
-====================== */
-@media (max-width: 1024px) {
-  .hero-text h1 {
-    font-size: 46px;
-  }
-
-  .hero-spacer {
-    height: 140px;
-  }
-
-  .product-row h2 {
-    font-size: 48px;
-  }
-}
-
-/* ======================
-   MOBILE
+   MOBILE LAYOUT
 ====================== */
 @media (max-width: 768px) {
-  .scroll-container {
-    padding: 24px 16px 60px;
-  }
-
   .hero-text {
     transform: none !important;
-  }
-
-  .hero-text h1 {
-    font-size: 32px;
-    line-height: 1.35;
-  }
-
-  .hero-spacer {
-    height: 100px;
   }
 
   .product-row {
@@ -156,69 +124,34 @@
     margin-top: 16px;
   }
 
-  .product-row h2 {
-    font-size: 34px;
-  }
-
-  .product-row p {
-    font-size: 16px;
-  }
-
   .product-info.text-hovered {
-    transform: translateX(0); /* no slide on mobile */
-  }
-}
-
-/* ======================
-   SMALL MOBILE
-====================== */
-@media (max-width: 480px) {
-  .hero-text h1 {
-    font-size: 28px;
-  }
-
-  .product-row h2 {
-    font-size: 28px;
+    transform: none;
   }
 }
 @media (max-width: 768px) {
-  .scroll-container {
-    padding: 24px 16px 60px;
-  }
-
   .hero-text {
     transform: none !important;
-  }
-
-  .hero-text h1 {
-    font-size: 32px;
-    line-height: 1.35;
-  }
-
-  .hero-spacer {
-    height: 100px;
   }
 
   .product-row {
     flex-direction: column;
     align-items: flex-start;
+    gap: 16px; /* space between text & image */
+    padding: 30px 0;
   }
 
-  /* ✅ HIDE IMAGE ON MOBILE */
+  /* Add spacing between rows */
+  .product-row:not(:last-child) {
+    margin-bottom: 30px;
+  }
+
   .row-image-wrapper {
-    display: none;
-  }
-
-  .product-row h2 {
-    font-size: 34px;
-  }
-
-  .product-row p {
-    font-size: 16px;
+    width: 100%;
+    height: 220px;
+    margin-top: 10px;
   }
 
   .product-info.text-hovered {
-    transform: translateX(0);
+    transform: none;
   }
 }
-

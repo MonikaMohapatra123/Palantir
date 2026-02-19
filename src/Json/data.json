@@ -231,7 +231,7 @@
         {
           "text": "Request a Demo",
           "variant": "cta-light",
-          "link": "/demo",
+          "link": "/about",
           "external": false
         },
         {

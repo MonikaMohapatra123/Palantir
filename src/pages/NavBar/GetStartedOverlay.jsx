@@ -18,7 +18,7 @@ const GetStartedOverlay = ({ close }) => {
         </div>
 
         {/* CLOSE */}
-        <button className="overlay-close" onClick={close}>✕</button>
+        <button className="getstarted-overlay-close" onClick={close}>✕</button>
 
         {/* HEADING */}
         <h1 className="getstarted-title">

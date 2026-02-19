@@ -289,7 +289,7 @@ background: rgba(192, 187, 187, 0.01);
 
 /* ================= CLOSE BUTTON ================= */
 
-.overlay-close {
+.getstarted-overlay-close {
   position: absolute;
   top: 30px;
   left: 30px;

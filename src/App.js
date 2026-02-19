@@ -22,6 +22,7 @@ import AddPage from "./pages/AddPage/AddPage";
 import EditPage from "./pages/EditPage/EditPage";
 import PostDetails from "./components/PostDetails/PostDetails";
 import MissionDetails from "./pages/MissionDetails/MissionDetails";
+import GetStartedOverlay from "./pages/NavBar/GetStartedOverlay";
 
 const App = () => {
   const location = useLocation();
@@ -45,6 +46,8 @@ const App = () => {
         <Route path="/case-studies" element={<CaseStudies />} />
         <Route path="/post/:id" element={<PostDetails />} />
         <Route path="/mission/:id" element={<MissionDetails />} />
+         <Route path="/get-started" element={ <GetStartedOverlay/>} />
+       
 
         {/* Admin Routes */}
         <Route path="/admin" element={<Admin />}>

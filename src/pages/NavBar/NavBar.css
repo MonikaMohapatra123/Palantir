@@ -399,66 +399,119 @@ background: rgba(192, 187, 187, 0.01);
   background: #0b0b0b;
   z-index: 9999;
   color: #fff;
+  overflow-y: auto;
+  padding: 20px;
 }
 
+/* ================= CONTENT ================= */
 .search-content {
   max-width: 900px;
-  margin: 140px auto;
+  margin: 120px auto 60px auto;
+  width: 100%;
 }
 
+/* ================= INPUT ================= */
 .search-input {
-  width: 110%;
+  width: 100%;              /* ✅ fixed */
   background: none;
   border: 1px solid #fff;
   padding: 16px;
-  font-size: 12px;
+  font-size: 16px;          /* ✅ better for mobile */
   color: #fff;
+  outline: none;
 }
 
+/* ================= POPULAR ================= */
 .search-popular {
   margin-top: 30px;
 }
 
 .search-popular span {
-  font-size: 12px;
+  font-size: 13px;
   color: #aaa;
+  letter-spacing: 1px;
 }
 
+/* ================= TAGS ================= */
 .search-tags {
-  margin-top: 10px;
+  margin-top: 15px;
   display: flex;
-  gap: 20px;
+  gap: 15px;
   flex-wrap: wrap;
 }
 
-.search-tags a {
-  cursor: pointer;
-  text-decoration: underline;
-}
-
-/* ================= CLOSE ================= */
-.overlay-close {
-  position: absolute;
-  top: 25px;
-  left: 43px;
-  background: none;
-  border: none;
-  font-size: 26px;
-  cursor: pointer;
-  color: inherit;
-}
 .search-tag {
   background: none;
-  border: 1px solid black;
+  border: 1px solid #444;   /* ✅ better visibility */
   color: #fff;
   cursor: pointer;
   font-size: 14px;
-  padding: 4px 8px;
+  padding: 6px 12px;
+  transition: 0.3s ease;
 }
 
 .search-tag:hover {
-  text-decoration: underline;
+  background: #fff;
+  color: #000;
 }
+
+/* ================= CLOSE BUTTON ================= */
+.overlay-close {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background: none;
+  border: none;
+  font-size: 28px;
+  cursor: pointer;
+  color: #fff;
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 768px) {
+
+  .search-content {
+    margin: 100px auto 40px auto;
+  }
+
+  .search-input {
+    font-size: 15px;
+    padding: 14px;
+  }
+
+  .search-tags {
+    gap: 10px;
+  }
+
+  .search-tag {
+    font-size: 13px;
+    padding: 5px 10px;
+  }
+
+}
+
+/* ================= SMALL MOBILE ================= */
+@media (max-width: 480px) {
+
+  .search-content {
+    margin: 80px auto 30px auto;
+  }
+
+  .search-input {
+    font-size: 14px;
+    padding: 12px;
+  }
+
+  .overlay-close {
+    font-size: 24px;
+    top: 15px;
+    left: 15px;
+  }
+
+}
+
+
+/* End of Serach Section */
 
 /* Default colors */
 .pal-navbar-company {

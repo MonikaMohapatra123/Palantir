@@ -4,9 +4,23 @@
   box-sizing: border-box;
 }
 
+/* ========================= */
+/* WRAPPER */
+/* ========================= */
+
 .gotham-wrapper {
-  height: 200vh;
+  height: 180vh; /* slightly reduced for better mobile feel */
 }
+
+@media (max-width: 768px) {
+  .gotham-wrapper {
+    height: 140vh;
+  }
+}
+
+/* ========================= */
+/* STAGE */
+/* ========================= */
 
 .gotham-stage {
   position: sticky;
@@ -15,6 +29,10 @@
   overflow: hidden;
 }
 
+/* ========================= */
+/* VIDEO */
+/* ========================= */
+
 .gotham-video {
   position: absolute;
   inset: 0;
@@ -22,6 +40,10 @@
   height: 100%;
   object-fit: cover;
 }
+
+/* ========================= */
+/* OVERLAY */
+/* ========================= */
 
 .gotham-overlay {
   position: absolute;
@@ -34,78 +56,117 @@
   z-index: 1;
 }
 
+/* ========================= */
+/* BIG TITLE */
+/* ========================= */
+
 .gotham-title {
   position: absolute;
   left: 50%;
   top: 50%;
-  transform: translate(-50%, -5%); /* start slightly above center */
+  transform: translate(-50%, -5%);
   z-index: 2;
 
   font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-  font-size: clamp(140px, 24vw, 520px);
+  font-size: clamp(80px, 18vw, 520px);
   font-weight: 500;
   letter-spacing: -0.02em;
   color: #eaeaea;
   line-height: 0.85;
-  white-space: nowrap;
+  text-align: center;
+
+  white-space: nowrap;   /* ✅ FORCE SINGLE LINE */
+  overflow: hidden;      /* optional */
+  text-overflow: ellipsis; /* optional */
   pointer-events: none;
 }
+
+
+/* Smaller devices */
+@media (max-width: 768px) {
+  .gotham-title {
+    font-size: clamp(50px, 16vw, 120px);
+    line-height: 0.95;
+  }
+}
+
+@media (max-width: 480px) {
+  .gotham-title {
+    font-size: clamp(38px, 14vw, 80px);
+  }
+}
+
+/* ========================= */
+/* HUD */
+/* ========================= */
+
 .gotham-hud {
   position: absolute;
-  top: 38%;
+  top: 35%;
   left: 50%;
   transform: translateX(-50%);
   z-index: 2;
+
   display: flex;
-  align-items: center; /* vertically center */
-  gap: 20px; /* smaller gap */
+  align-items: center;
+  gap: 20px;
+
   font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-  font-size: 10px; /* smaller text */
+  font-size: 10px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.75);
-  white-space: nowrap;
+
   pointer-events: none;
 }
 
-/* Individual HUD items width */
+/* Desktop layout */
 .hud-left,
 .hud-center,
 .hud-right {
-  max-width: 150px; /* adjust as needed */
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  max-width: 220px;
+  text-align: center;
 }
 
-/* Vertical line after right text */
+/* Vertical line */
 .hud-right::after {
   content: "";
   display: inline-block;
   width: 1px;
   height: 14px;
   background-color: rgba(255, 255, 255, 0.75);
-  margin-left: 8px; /* space after text */
+  margin-left: 8px;
   vertical-align: middle;
 }
 
-/* Small screen adjustments */
+/* ========================= */
+/* MOBILE HUD FIX */
+/* ========================= */
+
 @media (max-width: 768px) {
   .gotham-hud {
-    gap: 12px;
+    flex-direction: column;
+    gap: 8px;
+    top: 20%;
     font-size: 8px;
-    top: 22%;
     text-align: center;
-    flex-direction: column; /* stack for mobile */
+    padding: 0 15px;
   }
 
   .hud-left,
   .hud-center,
   .hud-right {
-    max-width: 80px;
+    max-width: 100%;
   }
 
   .hud-right::after {
-    height: 10px;
+    display: none; /* remove line on mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  .gotham-hud {
+    top: 18%;
+    font-size: 7px;
   }
 }

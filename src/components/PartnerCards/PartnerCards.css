@@ -212,3 +212,50 @@
 .partner-scroll {
   scrollbar-width: none;
 }
+
+
+/* ===============================
+   BUTTONS DEFAULT (Hidden)
+================================ */
+.partner-buttons {
+  display: none;
+}
+
+/* ===============================
+   MOBILE ONLY
+================================ */
+@media (max-width: 768px) {
+
+  .partner-buttons {
+    display: flex;
+    justify-content:flex-end;
+    gap: 10px;
+    margin-top: 30px;
+  }
+
+  .partner-buttons button {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: none;
+    background: #fff;
+    color: #111;
+    font-size: 20px;
+    cursor: pointer;
+    border: 1px solid black;
+  }
+
+  .partner-scroll {
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+  }
+
+  .partner-card {
+    scroll-snap-align: start;
+  }
+
+  .partner-track {
+    animation: none;
+  }
+}

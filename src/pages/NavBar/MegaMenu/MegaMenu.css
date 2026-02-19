@@ -400,3 +400,88 @@
   }
 
 }
+
+/* ========================================= */
+/* TABLET + MOBILE (814px and below) */
+/* ========================================= */
+
+@media (max-width: 814px) {
+
+  .mega-container {
+    padding: 70px 30px 40px;
+  }
+
+  /* Main becomes vertical */
+  .mega-main {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+  }
+
+  /* Navigation full width */
+  .mega-left {
+    width: 100%;
+  }
+
+  /* Break top row */
+  .mega-top-row {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+  }
+
+  /* 🔥 REORDER HERE */
+  .mega-offer {
+    order: 1;   /* Offerings comes first */
+    width: 100%;
+    padding-right: 0;
+  }
+
+  .mega-center {
+    order: 2;   /* Latest News comes after Offerings */
+    width: 100%;
+    padding-right: 0;
+  }
+
+  /* Latest news single column */
+  .latest-news-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  /* Footer stacked */
+  .mega-footer {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .mega-footer-right {
+    grid-template-columns: 1fr;
+  }
+
+  /* Fix overflow */
+  .offer-desc {
+    width: 100%;
+  }
+
+  /* Responsive text */
+  .mega-item {
+    font-size: clamp(18px, 2.5vw, 20px);
+  }
+
+  .mega-sub-item {
+    font-size: clamp(14px, 2vw, 16px);
+  }
+
+  .offer-desc {
+    font-size: clamp(16px, 2.5vw, 18px);
+  }
+
+  .latest-news-card p {
+    font-size: clamp(14px, 2vw, 15px);
+  }
+
+  .footer-col a {
+    font-size: clamp(14px, 2vw, 15px);
+  }
+}

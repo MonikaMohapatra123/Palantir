@@ -1,0 +1,16 @@
+.news-hero {
+  height: 500px;
+  background-size: cover;
+  background-position: center;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 50px;
+}
+.news-hero h1{
+    text-align: center;
+}
+.news-hero p{
+    text-align: center;
+}

@@ -1,0 +1,9 @@
+.featured-news {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.featured-news img {
+  width: 50%;
+}

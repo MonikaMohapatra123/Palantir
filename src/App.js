@@ -23,6 +23,7 @@ import EditPage from "./pages/EditPage/EditPage";
 import PostDetails from "./components/PostDetails/PostDetails";
 import MissionDetails from "./pages/MissionDetails/MissionDetails";
 import GetStartedOverlay from "./pages/NavBar/GetStartedOverlay";
+import News from "./pages/News/News";
 
 const App = () => {
   const location = useLocation();
@@ -47,6 +48,7 @@ const App = () => {
         <Route path="/post/:id" element={<PostDetails />} />
         <Route path="/mission/:id" element={<MissionDetails />} />
          <Route path="/get-started" element={ <GetStartedOverlay/>} />
+         <Route path="/newsroom" element={<News/>} />
        
 
         {/* Admin Routes */}

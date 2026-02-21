@@ -360,6 +360,54 @@
     }
   ]
 }
+,
+
+  "4": {
+    "page": "News",
+    "heroSection": {
+      "title": "Latest News & Updates",
+      "description": "Stay updated with our latest company news and announcements.",
+      "backgroundImage": "./p-3.jpg"
+    },
+    "categories": ["All", "Technology", "Business", "Sports", "Politics"],
+    "newsList": [
+      {
+        "id": 1,
+        "title": "AI is Transforming the World",
+        "category": "Technology",
+        "date": "20 Feb 2026",
+        "author": "Admin",
+        "image": "./pic-2.jpg",
+        "description": "Artificial Intelligence is changing industries rapidly.",
+        "featured": true
+      },
+      {
+        "id": 2,
+        "title": "Stock Market Hits Record High",
+        "category": "Business",
+        "date": "18 Feb 2026",
+        "author": "Admin",
+        "image": "./pic-3.jpg",
+        "description": "Markets are reaching new heights this year.",
+        "featured": false
+      },
+      {
+        "id": 3,
+        "title": "Cricket World Cup Updates",
+        "category": "Sports",
+        "date": "15 Feb 2026",
+        "author": "Admin",
+        "image": "./p-2.jpg",
+        "description": "Latest match highlights and scores.",
+        "featured": false
+      }
+    ],
+    "newsletterSection": {
+      "title": "Subscribe to Our Newsletter",
+      "placeholder": "Enter your email",
+      "buttonText": "Subscribe"
+    }
+  }
 
 
 

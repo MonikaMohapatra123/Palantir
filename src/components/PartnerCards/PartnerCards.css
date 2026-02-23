@@ -224,25 +224,21 @@
 /* ===============================
    MOBILE ONLY
 ================================ */
+/* ===============================
+   MOBILE DESIGN IMPROVED
+================================ */
 @media (max-width: 768px) {
 
-  .partner-buttons {
-    display: flex;
-    justify-content:flex-end;
-    gap: 10px;
-    margin-top: 30px;
+  .partner-section {
+    padding: 40px 20px;
   }
 
-  .partner-buttons button {
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-    border: none;
-    background: #fff;
-    color: #111;
-    font-size: 20px;
-    cursor: pointer;
-    border: 1px solid black;
+  .partner-heading {
+    font-size: 28px;
+    line-height: 1.3;
+    width: 100%;
+    white-space: normal;
+    margin-bottom: 30px;
   }
 
   .partner-scroll {
@@ -251,11 +247,99 @@
     scroll-snap-type: x mandatory;
   }
 
-  .partner-card {
-    scroll-snap-align: start;
-  }
-
   .partner-track {
     animation: none;
+    gap: 16px;
+  }
+
+  .partner-card {
+    width: 88vw;
+    min-height: 260px;
+    height: auto;
+    padding: 24px;
+    margin-right: 0;
+
+    background: #ffffff;
+    border-radius: 18px;
+    clip-path: none;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    border: 1px solid #f0f0f0;
+
+    scroll-snap-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .partner-card:active {
+    transform: scale(0.97);
+  }
+
+  .card-title {
+    font-size: 14px;
+    letter-spacing: 1px;
+    margin-bottom: 14px;
+    color: #555;
+  }
+
+  .card-content {
+    margin-top: 0;
+  }
+
+  .card-description {
+    font-size: 15px;
+    line-height: 1.6;
+    transform: none !important;
+  }
+
+  .card-designation {
+    font-size: 13px;
+    opacity: 1;
+    transform: none;
+    margin-top: 12px;
+    color: #888;
+  }
+
+  /* Buttons */
+  .partner-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 25px;
+  }
+
+  .partner-buttons button {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    border: none;
+    background: #111;
+    color: #fff;
+    font-size: 18px;
+    cursor: pointer;
+    transition: 0.3s ease;
+  }
+
+  .partner-buttons button:active {
+    transform: scale(0.9);
+  }
+}
+
+
+/* ===============================
+   SMALL MOBILE EXTRA POLISH
+================================ */
+@media (max-width: 480px) {
+
+  .partner-heading {
+    font-size: 24px;
+  }
+
+  .partner-card {
+    width: 92vw;
+    padding: 20px;
+  }
+
+  .card-description {
+    font-size: 14px;
   }
 }

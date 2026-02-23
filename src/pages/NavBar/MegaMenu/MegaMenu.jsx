@@ -168,7 +168,6 @@ const MegaMenu = ({ menu, dropdownData, close }) => {
                   <Link to="/terms" onClick={close}>Terms & Conditions</Link>
                   <Link to="/cookies" onClick={close}>Cookie Policy</Link>
                 </div>
-
                 <div className="footer-col">
                   <h6>Connect</h6>
                   <Link to="/contact" onClick={close}>Contact</Link>
@@ -176,9 +175,7 @@ const MegaMenu = ({ menu, dropdownData, close }) => {
                   <Link to="/linkedin" onClick={close}>LinkedIn</Link>
                 </div>
               </div>
-
             </div>
-
           </div>
         </div>
       </div>
@@ -187,3 +184,4 @@ const MegaMenu = ({ menu, dropdownData, close }) => {
 };
 
 export default MegaMenu;
+

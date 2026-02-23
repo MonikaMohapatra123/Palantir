@@ -219,13 +219,17 @@
   display: flex;
   flex-direction: column;
   gap: 16px;
+ 
 }
 
 .news-meta {
   font-size: 11px;
   letter-spacing: 1.4px;
   text-transform: uppercase;
-  color: #9a9a9a;
+  color: #fff;
+}
+.news-meta:hover{
+  color: #cfcfcf;
 }
 
 .latest-news-card img {
@@ -237,20 +241,25 @@
 .latest-news-card p {
   font-size: 15px;
   line-height: 1.6;
-  color: #cfcfcf;
+  color: #fff;
   margin: 0;
   max-width: 95%;
 }
-
+.latest-news-card p{
+   color: #cfcfcf;
+}
 /* ========================================= */
 /* OFFERINGS */
 /* ========================================= */
 
 .offer-desc {
-  font-size: 18px;
+  font-size: 17px;
   color: #fff;
   margin-top: 10px;
-  width:105%;
+  width:101%;
+}
+.offer-desc:hover{
+   color: #cfcfcf;
 }
 
 .learn-more {
@@ -261,6 +270,7 @@
 
 .learn-more:hover {
   text-decoration: underline;
+   color: #cfcfcf;
 }
 
 /* ========================================= */

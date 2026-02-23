@@ -1,19 +1,24 @@
+/* =============================
+   MAIN WRAPPER
+============================= */
 .years-wrapper {
   display: grid;
-  grid-template-columns: 320px 1fr;
-  padding: 80px 6%;
-  gap: 60px;
-  background: #fff;
-  font-family: "Inter", sans-serif;
+  grid-template-columns: minmax(250px, 320px) 1fr;
+  gap: clamp(30px, 5vw, 80px);
+  padding: clamp(40px, 6vw, 100px) 6%;
   max-width: 1400px;
   margin: auto;
+  background: #fff;
+  font-family: "Inter", sans-serif;
 }
 
-/* LEFT */
+/* =============================
+   LEFT SIDE
+============================= */
 .years-left h2 {
-  font-size: 38px;
+  font-size: clamp(24px, 3vw, 42px);
   font-weight: 500;
-  margin-bottom: 60px;
+  margin-bottom: clamp(20px, 4vw, 60px);
 }
 
 .years-list {
@@ -24,40 +29,36 @@
 
 .years-list li {
   display: flex;
-  align-items: center;
   gap: 14px;
-  padding: 16px 0;
-  cursor: pointer;
+  align-items: center;
+  padding: 18px 0;
   border-bottom: 1px solid #e5e5e5;
+  cursor: pointer;
   color: #8a8a8a;
-  transition: all 0.3s ease;
+  transition: 0.3s;
 }
 
+.years-list li.active,
 .years-list li:hover {
-  color: #000;
-}
-
-.years-list li.active {
   color: #000;
   font-weight: 500;
 }
 
 .year {
   font-size: 12px;
+  letter-spacing: 1px;
 }
 
 .year-title {
   font-size: 15px;
 }
 
-/* RIGHT */
-.years-right {
-  width: 100%;
-}
-
+/* =============================
+   RIGHT SIDE
+============================= */
 .year-row {
   display: flex;
-  gap: 50px;
+  gap: clamp(30px, 4vw, 60px);
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
@@ -75,36 +76,38 @@
 }
 
 .year-text h3 {
-  font-size: 30px;
+  font-size: clamp(20px, 2.5vw, 32px);
+  margin: 16px 0;
   font-weight: 500;
-  margin: 16px 0 20px;
 }
 
 .year-text p {
-  font-size: 16px;
+  font-size: clamp(14px, 1.2vw, 16px);
   line-height: 1.7;
   color: #444;
 }
 
-/* IMAGE */
+/* =============================
+   IMAGE
+============================= */
 .year-image-wrapper {
   flex: 1;
   min-width: 280px;
-  max-width: 450px;
-  position: relative;
+  max-width: 500px;
   cursor: pointer;
+  position: relative;
 }
 
 .year-image {
   width: 100%;
-  height: 380px;
+  aspect-ratio: 4 / 3;   /* ✅ Responsive height */
   object-fit: cover;
   border-radius: 12px;
   transition: transform 0.3s ease;
 }
 
 .year-image-wrapper:hover .year-image {
-  transform: scale(1.03);
+  transform: scale(1.04);
 }
 
 .click-tip {
@@ -112,44 +115,46 @@
   bottom: 12px;
   right: 12px;
   font-size: 12px;
+  background: rgba(0, 0, 0, 0.6);
   color: #fff;
-  background: rgba(0,0,0,0.6);
   padding: 4px 8px;
   border-radius: 4px;
 }
 
-/* -------------------- */
-/* TABLET */
-/* -------------------- */
+/* ======================================
+   TABLET (1024px)
+====================================== */
 @media (max-width: 1024px) {
   .years-wrapper {
-    grid-template-columns: 260px 1fr;
-    gap: 40px;
-    padding: 60px 5%;
-  }
-
-  .year-image {
-    height: 300px;
-  }
-
-  .year-text h3 {
-    font-size: 26px;
+    grid-template-columns: 240px 1fr;
   }
 }
 
-/* -------------------- */
-/* MOBILE */
-/* -------------------- */
-@media (max-width: 768px) {
+/* ======================================
+   SMALL TABLET (900px)
+====================================== */
+@media (max-width: 900px) {
   .years-wrapper {
     grid-template-columns: 1fr;
-    gap: 40px;
-    padding: 50px 20px;
   }
 
-  .years-left h2 {
-    font-size: 26px;
-    margin-bottom: 24px;
+  .year-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .year-image-wrapper {
+    max-width: 100%;
+  }
+}
+
+/* ======================================
+   MOBILE (768px)
+====================================== */
+@media (max-width: 768px) {
+
+  .years-left {
+    width: 100%;
   }
 
   .years-list {
@@ -166,12 +171,13 @@
   .years-list li {
     flex-direction: column;
     align-items: flex-start;
-    gap: 4px;
+    gap: 6px;
     padding: 12px 16px;
     border: 1px solid #e5e5e5;
     border-radius: 10px;
-    min-width: 120px;
+    min-width: 140px;
     background: #fafafa;
+    white-space: nowrap;
   }
 
   .years-list li.active {
@@ -179,38 +185,22 @@
     color: #fff;
     border-color: #000;
   }
-
-  .year-row {
-    flex-direction: column;
-    gap: 30px;
-  }
-
-  .year-image-wrapper {
-    max-width: 100%;
-  }
-
-  .year-image {
-    height: 240px;
-  }
-
-  .year-text h3 {
-    font-size: 22px;
-  }
-
-  .year-text p {
-    font-size: 14px;
-  }
 }
 
-/* -------------------- */
-/* SMALL MOBILE */
-/* -------------------- */
+/* ======================================
+   SMALL MOBILE (480px)
+====================================== */
 @media (max-width: 480px) {
-  .year-image {
-    height: 200px;
+  .years-wrapper {
+    padding: 40px 16px;
+    width: 100vw;
   }
 
-  .year-text h3 {
-    font-size: 20px;
+  .years-list li {
+    min-width: 120px;
+  }
+
+  .click-tip {
+    font-size: 10px;
   }
 }

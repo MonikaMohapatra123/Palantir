@@ -10,8 +10,9 @@
   gap: 40px;
 }
 
-/* LEFT CARD */
+/* ================= LEFT CARD ================= */
 .quote-showcase-card {
+  flex: 1;
   max-width: 720px;
   background: linear-gradient(180deg, #1c1f22, #14171a);
   border-radius: 14px;
@@ -19,16 +20,17 @@
   box-sizing: border-box;
 }
 
-/* TEXT */
+/* ================= TEXT ================= */
 .quote-showcase-text {
   color: rgba(255, 255, 255, 0.65);
   font-size: 44px;
   line-height: 1.25;
   font-weight: 400;
   letter-spacing: -0.01em;
+  margin: 0;
 }
 
-/* RIGHT SIDE LABELS */
+/* ================= RIGHT SIDE LABELS ================= */
 .quote-showcase-labels {
   display: flex;
   gap: 60px;
@@ -36,26 +38,96 @@
   margin-top: 20px;
 }
 
-.-showcase-labels span {
+.quote-showcase-labels span {
   font-size: 14px;
   letter-spacing: 0.2em;
   color: #000;
   font-weight: 500;
+  white-space: nowrap;
 }
 
-/* RESPONSIVE */
-@media (max-width: 900px) {
+/* =====================================================
+   =================== TABLET ==========================
+===================================================== */
+@media (max-width: 1024px) {
   .quote-showcase-wrap {
-    flex-direction: column;
-    align-items: flex-start;
+    padding: 60px 5%;
+    gap: 30px;
   }
 
   .quote-showcase-text {
-    font-size: 32px;
+    font-size: 36px;
+  }
+
+  .quote-showcase-card {
+    padding: 50px 40px;
   }
 
   .quote-showcase-labels {
-    margin-top: 30px;
+    gap: 40px;
+  }
+}
+
+/* =====================================================
+   =================== MOBILE ==========================
+===================================================== */
+@media (max-width: 768px) {
+  .quote-showcase-wrap {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 50px 20px;
     gap: 30px;
+  }
+
+  .quote-showcase-card {
+    width: 100%;
+    padding: 40px 30px;
+    border-radius: 12px;
+  }
+
+  .quote-showcase-text {
+    font-size: 26px;
+    line-height: 1.4;
+  }
+
+  .quote-showcase-labels {
+    width: 100%;
+    justify-content: space-between;
+    margin-top: 10px;
+    gap: 20px;
+  }
+
+  .quote-showcase-labels span {
+    font-size: 12px;
+    letter-spacing: 0.15em;
+  }
+}
+
+/* =====================================================
+   =============== SMALL MOBILE (Extra Small) ==========
+===================================================== */
+@media (max-width: 480px) {
+  .quote-showcase-wrap {
+    padding: 40px 16px;
+  }
+
+  .quote-showcase-card {
+    padding: 30px 20px;
+  }
+
+  .quote-showcase-text {
+    font-size: 20px;
+    line-height: 1.5;
+  }
+
+  .quote-showcase-labels {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .quote-showcase-labels span {
+    font-size: 11px;
   }
 }

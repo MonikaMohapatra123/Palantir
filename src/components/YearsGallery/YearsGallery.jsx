@@ -8,7 +8,7 @@ const yearsData = [
     title: "Our Beginning",
     content:
       "In 2020, we started our journey with small but meaningful steps.",
-    image: "/pic-5.jpg",
+    image: "/p-2.jpg",
   },
   {
     id: "year2",
@@ -16,7 +16,7 @@ const yearsData = [
     title: "Growing Strong",
     content:
       "In 2021, we expanded our team and launched new projects.",
-    image: "/pic-4.jpg",
+    image: "/p-3.jpg",
   },
   {
     id: "year3",

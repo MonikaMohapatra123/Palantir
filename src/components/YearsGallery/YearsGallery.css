@@ -1,24 +1,44 @@
 /* =============================
+   GLOBAL RESET
+============================= */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden;
+  font-family: "Inter", sans-serif;
+}
+
+/* =============================
    MAIN WRAPPER
 ============================= */
 .years-wrapper {
-  display: grid;
-  grid-template-columns: minmax(250px, 320px) 1fr;
-  gap: clamp(30px, 5vw, 80px);
-  padding: clamp(40px, 6vw, 100px) 6%;
-  max-width: 1400px;
-  margin: auto;
-  background: #fff;
-  font-family: "Inter", sans-serif;
+  width: 100%;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 80px 5%;
+  display: flex;
+  gap: 60px;
 }
 
 /* =============================
    LEFT SIDE
 ============================= */
+.years-left {
+  flex: 0 0 280px;
+}
+
 .years-left h2 {
-  font-size: clamp(24px, 3vw, 42px);
+  font-size: 36px;
+  margin-bottom: 40px;
   font-weight: 500;
-  margin-bottom: clamp(20px, 4vw, 60px);
 }
 
 .years-list {
@@ -28,14 +48,11 @@
 }
 
 .years-list li {
-  display: flex;
-  gap: 14px;
-  align-items: center;
-  padding: 18px 0;
+  padding: 16px 0;
   border-bottom: 1px solid #e5e5e5;
   cursor: pointer;
-  color: #8a8a8a;
-  transition: 0.3s;
+  color: #888;
+  transition: all 0.3s ease;
 }
 
 .years-list li.active,
@@ -46,44 +63,47 @@
 
 .year {
   font-size: 12px;
-  letter-spacing: 1px;
+  display: block;
 }
 
 .year-title {
-  font-size: 15px;
+  font-size: 14px;
 }
 
 /* =============================
    RIGHT SIDE
 ============================= */
-.year-row {
-  display: flex;
-  gap: clamp(30px, 4vw, 60px);
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
+.years-right {
+  flex: 1;
 }
 
+.year-row {
+  display: flex;
+  gap: 40px;
+  align-items: stretch;
+}
+
+/* TEXT */
 .year-text {
   flex: 1;
-  min-width: 280px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .year-meta {
   font-size: 12px;
   color: #777;
-  letter-spacing: 1px;
 }
 
 .year-text h3 {
-  font-size: clamp(20px, 2.5vw, 32px);
-  margin: 16px 0;
-  font-weight: 500;
+  font-size: 28px;
+  margin: 15px 0;
 }
 
 .year-text p {
-  font-size: clamp(14px, 1.2vw, 16px);
-  line-height: 1.7;
+  font-size: 15px;
+  line-height: 1.6;
   color: #444;
 }
 
@@ -92,115 +112,151 @@
 ============================= */
 .year-image-wrapper {
   flex: 1;
-  min-width: 280px;
-  max-width: 500px;
-  cursor: pointer;
   position: relative;
+  cursor: pointer;
+  height: 380px;
+  overflow: hidden;
+  border-radius: 16px;
 }
 
 .year-image {
   width: 100%;
-  aspect-ratio: 4 / 3;   /* ✅ Responsive height */
+  height: 100%;
   object-fit: cover;
-  border-radius: 12px;
-  transition: transform 0.3s ease;
+  display: block;
+  transition: transform 0.4s ease;
 }
 
 .year-image-wrapper:hover .year-image {
-  transform: scale(1.04);
+  transform: scale(1.05);
 }
 
 .click-tip {
   position: absolute;
   bottom: 12px;
   right: 12px;
-  font-size: 12px;
+  font-size: 11px;
   background: rgba(0, 0, 0, 0.6);
   color: #fff;
-  padding: 4px 8px;
-  border-radius: 4px;
+  padding: 6px 12px;
+  border-radius: 6px;
+  pointer-events: none;
 }
 
-/* ======================================
-   TABLET (1024px)
-====================================== */
+/* =========================================
+   TABLET (Below 1024px)
+========================================= */
 @media (max-width: 1024px) {
+
   .years-wrapper {
-    grid-template-columns: 240px 1fr;
+    gap: 40px;
+    padding: 60px 5%;
+  }
+
+  .years-left {
+    flex: 0 0 220px;
+  }
+
+  .years-left h2 {
+    font-size: 28px;
+  }
+
+  .year-text h3 {
+    font-size: 24px;
+  }
+
+  .year-image-wrapper {
+    height: 350px;
   }
 }
 
-/* ======================================
-   SMALL TABLET (900px)
-====================================== */
+/* =========================================
+   BELOW 900px (STACK)
+========================================= */
 @media (max-width: 900px) {
+
   .years-wrapper {
-    grid-template-columns: 1fr;
+    flex-direction: column;
+    gap: 25px;
+    padding: 50px 20px;
+  }
+
+  .years-left {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+
+  .years-left h2 {
+    margin-bottom: 20px;
   }
 
   .year-row {
     flex-direction: column;
-    align-items: flex-start;
+    gap: 25px;
   }
 
   .year-image-wrapper {
-    max-width: 100%;
+    height: 300px; /* equal height */
   }
 }
 
-/* ======================================
-   MOBILE (768px)
-====================================== */
-@media (max-width: 768px) {
-
-  .years-left {
-    width: 100%;
+/* =========================================
+   MOBILE (Below 600px)
+========================================= */
+@media (max-width: 600px) {
+  .years-right{
+    margin-top: -10px;
   }
 
+  .years-wrapper {
+    padding: 30px 15px;
+    gap: 20px;
+  }
+
+  .years-left h2 {
+    font-size: 22px;
+    margin-bottom: 15px;
+  }
+
+  /* Modern Button Style */
   .years-list {
-    display: flex;
-    gap: 12px;
-    overflow-x: auto;
-    padding-bottom: 10px;
-  }
-
-  .years-list::-webkit-scrollbar {
-    display: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 10px;
   }
 
   .years-list li {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 6px;
-    padding: 12px 16px;
-    border: 1px solid #e5e5e5;
+    padding:5px;
     border-radius: 10px;
-    min-width: 140px;
-    background: #fafafa;
-    white-space: nowrap;
+    background: #f5f5f5;
+    border: 1px solid transparent;
+    text-align: center;
+    font-size: 13px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    margin-top:40px;
+  }
+
+  .years-list li:hover {
+    background: #eaeaea;
   }
 
   .years-list li.active {
     background: #000;
     color: #fff;
-    border-color: #000;
-  }
-}
-
-/* ======================================
-   SMALL MOBILE (480px)
-====================================== */
-@media (max-width: 480px) {
-  .years-wrapper {
-    padding: 40px 16px;
-    width: 100vw;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
   }
 
-  .years-list li {
-    min-width: 120px;
+  .year-text h3 {
+    font-size: 20px;
   }
 
-  .click-tip {
-    font-size: 10px;
+  .year-text p {
+    font-size: 14px;
+  }
+
+  .year-image-wrapper {
+    height: 240px; /* equal height for all images */
   }
 }

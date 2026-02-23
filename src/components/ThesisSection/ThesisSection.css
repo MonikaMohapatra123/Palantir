@@ -198,22 +198,25 @@
   }
 
   .thesis-slider {
-    gap: 20px;
-    padding: 0 5%;
+    gap: 0;                /* remove gap */
+    padding: 0;            /* remove side padding */
   }
 
   .thesis-slide {
-    flex: 0 0 90%;
+    flex: 0 0 100%;        /* full width */
     height: 380px;
   }
 
   .thesis-overlay h2 {
     font-size: 26px;
   }
+
+ 
 }
 
 @media (max-width: 480px) {
 
+ 
   .thesis-slide {
     height: 320px;
   }
@@ -230,6 +233,7 @@
     width: 46px;
     height: 36px;
   }
+  
 }
 /* ===============================
    VIEW MORE

@@ -1,93 +1,161 @@
+/* ===== SECTION ===== */
 .team-section {
   width: 100%;
-  padding: 80px 6%;
+  padding: 90px 6%;
+  background: #ffffff;
   box-sizing: border-box;
-  background: #fff;
 }
 
+.team-wrapper {
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* ===== TITLE ===== */
 .team-title {
   text-align: center;
-  font-size: 38px;
+  font-size: 40px;
   font-weight: 700;
-  margin-bottom: 50px;
+  margin-bottom: 60px;
   color: #0b2545;
+  position: relative;
 }
 
-/* Main Layout */
+/* ===== MAIN FLEX LAYOUT ===== */
 .team-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 60px;
+  gap: 70px;
 }
 
-/* Left Side */
+/* ===== LEFT SIDE ===== */
 .team-left {
   flex: 1;
 }
 
-.team-left h3 {
-  font-size: 22px;
+.team-subtitle {
+  font-size: 12px;
   font-weight: 600;
-  margin-bottom: 16px;
-  color: #0b2545;
+  letter-spacing: 1.5px;
+  color: #6c7a89;
+  display: block;
+  margin-bottom: 10px;
 }
 
-.team-left p {
+.team-heading {
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 18px;
+  color: #0b2545;
+  line-height: 1.4;
+}
+
+.team-text {
   font-size: 15px;
-  line-height: 1.7;
+  line-height: 1.8;
   color: #4a5a6a;
-  margin-bottom: 24px;
+  margin-bottom: 28px;
   max-width: 520px;
 }
 
-/* Cement + Black Button */
+/* ===== BUTTON ===== */
 .team-btn {
-  background: linear-gradient(135deg, #d6d6d6, #bcbcbc); /* cement look */
-  color: #000;
-  border: 1px solid #111;
-  padding: 12px 26px;
+  background: #0b2545;
+  color: #fff;
+  border: none;
+  padding: 14px 32px;
   font-size: 13px;
   font-weight: 600;
-  letter-spacing: 0.5px;
- 
+  letter-spacing: 0.8px;
+  border-radius: 6px;
   cursor: pointer;
-  transition: all 0.25s ease;
+  transition: all 0.3s ease;
 }
 
 .team-btn:hover {
-  background: linear-gradient(135deg, #c9c9c9, #a9a9a9);
-  border-color: #000;
-  transform: translateY(-1px);
+  background: #133c75;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
 }
 
-.team-btn:active {
-  transform: translateY(0);
-}
-
-/* Right Side */
+/* ===== RIGHT SIDE ===== */
 .team-right {
   flex: 1;
   display: flex;
   justify-content: center;
 }
 
-.team-right img {
+.team-image {
   width: 100%;
   max-width: 520px;
-  border-radius: 14px;
+  height: 420px;
   object-fit: cover;
+  border-radius: 16px;
 }
 
-/* Responsive */
-@media (max-width: 900px) {
+/* ===============================
+   RESPONSIVE DESIGN
+================================ */
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .team-container {
+    gap: 40px;
+  }
+
+  .team-heading {
+    font-size: 22px;
+  }
+
+  .team-image {
+    height: 360px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
   .team-container {
     flex-direction: column;
     text-align: center;
   }
 
-  .team-left p {
+  .team-text {
     margin-left: auto;
     margin-right: auto;
+  }
+
+  .team-right {
+    width: 100%;
+  }
+
+  .team-image {
+    height: 300px;
+    max-width: 100%;
+  }
+
+  .team-title {
+    font-size: 32px;
+    margin-bottom: 40px;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+  .team-section {
+    padding: 60px 5%;
+  }
+
+  .team-heading {
+    font-size: 20px;
+  }
+
+  .team-text {
+    font-size: 14px;
+  }
+
+  .team-btn {
+    width: 100%;
+    max-width: 250px;
   }
 }

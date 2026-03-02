@@ -2,10 +2,10 @@ import React from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 
 import ScrollToTop from "./components/ScrollToTop/ScrollToTop";
-
 import NavBar from "./pages/NavBar/NavBar";
 
-// Normal imports
+
+// Normal pages
 import Home from "./pages/Home/Home";
 import About from "./pages/About/About";
 import PageDetails from "./pages/PageDetails/PageDetails";
@@ -26,6 +26,7 @@ import EditPage from "./pages/EditPage/EditPage";
 import PostDetails from "./components/PostDetails/PostDetails";
 import MissionDetails from "./pages/MissionDetails/MissionDetails";
 import GetStartedOverlay from "./pages/NavBar/GetStartedOverlay";
+import Footer from "./pages/Footer/Footer";
 
 const App = () => {
   const location = useLocation();
@@ -35,7 +36,7 @@ const App = () => {
     <>
       <ScrollToTop />
 
-      {/* Hide Navbar on Admin */}
+      {/* ✅ Hide Navbar on Admin pages */}
       {!isAdminRoute && <NavBar />}
 
       <Routes>
@@ -53,12 +54,16 @@ const App = () => {
         <Route path="/get-started" element={<GetStartedOverlay />} />
         <Route path="/newsroom" element={<News />} />
 
+        {/* ✅ Admin nested routes */}
         <Route path="/admin" element={<Admin />}>
           <Route path="pages" element={<AdminPages />} />
           <Route path="add" element={<AddPage />} />
           <Route path="edit/:id" element={<EditPage />} />
         </Route>
       </Routes>
+
+      {/* ✅ Hide Footer on Admin pages */}
+      {!isAdminRoute &&  <Footer/>}
     </>
   );
 };

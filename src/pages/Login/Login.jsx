@@ -10,7 +10,6 @@ const Login = () => {
   const handleLogin = (e) => {
     e.preventDefault();
 
-    // simple check (you can connect backend later)
     if (email === "admin" && password === "admin") {
       localStorage.setItem("isAdminLoggedIn", "true");
       navigate("/admin/pages");

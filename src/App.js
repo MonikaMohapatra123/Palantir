@@ -4,7 +4,6 @@ import { Routes, Route, useLocation } from "react-router-dom";
 import ScrollToTop from "./components/ScrollToTop/ScrollToTop";
 import NavBar from "./pages/NavBar/NavBar";
 
-
 // Normal pages
 import Home from "./pages/Home/Home";
 import About from "./pages/About/About";
@@ -17,29 +16,38 @@ import Blog from "./pages/Blog/Blog";
 import CaseStudies from "./pages/CaseStudies/CaseStudies";
 import News from "./pages/News/News";
 
+import PostDetails from "./components/PostDetails/PostDetails";
+import MissionDetails from "./pages/MissionDetails/MissionDetails";
+import GetStartedOverlay from "./pages/NavBar/GetStartedOverlay";
+import Footer from "./pages/Footer/Footer";
+
 // Admin pages
 import Admin from "./pages/Admin/Admin";
 import AdminPages from "./pages/AdminPages/AdminPages";
 import AddPage from "./pages/AddPage/AddPage";
 import EditPage from "./pages/EditPage/EditPage";
 
-import PostDetails from "./components/PostDetails/PostDetails";
-import MissionDetails from "./pages/MissionDetails/MissionDetails";
-import GetStartedOverlay from "./pages/NavBar/GetStartedOverlay";
-import Footer from "./pages/Footer/Footer";
+import Login from "./pages/Login/Login";
+import ProtectedRoute from "./components/ProtectedRoute/ProtectedRoute";
+// import ProtectedRoute from "./components/ProtectedRoute";
 
 const App = () => {
+
   const location = useLocation();
-  const isAdminRoute = location.pathname.startsWith("/admin");
+
+  const isAdminRoute =
+    location.pathname.startsWith("/admin") &&
+    location.pathname !== "/admin/login";
 
   return (
     <>
       <ScrollToTop />
 
-      {/* ✅ Hide Navbar on Admin pages */}
       {!isAdminRoute && <NavBar />}
 
       <Routes>
+
+        {/* Normal Routes */}
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/:pageType/:category" element={<PageDetails />} />
@@ -54,16 +62,27 @@ const App = () => {
         <Route path="/get-started" element={<GetStartedOverlay />} />
         <Route path="/newsroom" element={<News />} />
 
-        {/* ✅ Admin nested routes */}
-        <Route path="/admin" element={<Admin />}>
+        {/* LOGIN */}
+        <Route path="/admin/login" element={<Login />} />
+
+        {/* PROTECTED ADMIN */}
+        <Route
+          path="/admin"
+          element={
+            <ProtectedRoute>
+              <Admin />
+            </ProtectedRoute>
+           
+          }
+        >
           <Route path="pages" element={<AdminPages />} />
           <Route path="add" element={<AddPage />} />
           <Route path="edit/:id" element={<EditPage />} />
         </Route>
+
       </Routes>
 
-      {/* ✅ Hide Footer on Admin pages */}
-      {!isAdminRoute &&  <Footer/>}
+      {!isAdminRoute && <Footer />}
     </>
   );
 };
